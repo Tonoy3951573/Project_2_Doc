@@ -5,7 +5,10 @@ A static, bilingual (English / বাংলা) documentation website for
 GateKeeper JavaFX rate-limiting and abuse-detection simulator.
 
 Everything is plain HTML, CSS and classic JavaScript. There is no build step, no
-package manager and no network dependency: open the page and it works.
+package manager and no build-time network dependency: open the page and it works.
+The only network request is the webfont (Inter, JetBrains Mono and **Hind
+Siliguri** for Bengali) from Google Fonts, and the stylesheet falls back to
+locally installed faces without it.
 
 ## Running it
 
@@ -66,6 +69,14 @@ Rules the content follows, all checked by the validator:
 - A prose leaf is either plain text (language-neutral: code, class names, a
   string quoted from the FXML) or a **flat** `{en, bn}` pair. Never a pair
   inside a pair — `tools/flatten_pairs.py` removes those if they appear.
+- The Bengali of chapters 1–23 and Appendices A–B comes from
+  [`ARCHITECTURE_bn.md`](../ARCHITECTURE_bn.md). `tools/swap_bn.py` pairs the two
+  source documents element by element and writes the result into the `bn` side,
+  leaving the site's own structure, headings, code and English untouched. The
+  headings of that file are still English, so the Bengali headings here are the
+  site's own.
+- A blank line inside a leaf means two source paragraphs were merged; the `p`
+  renderer emits one `<p>` per paragraph.
 - Cross-references are written in the language of the text they sit in:
   `[#10 · Field reference](#/en/controller)` in English,
   `[অধ্যায় ১০ · ফিল্ড রেফারেন্স](#/bn/controller)` in Bengali. `hrefFor()` in
@@ -96,15 +107,17 @@ repository root); the two Python ones start one themselves if needed.
 | `open http://127.0.0.1:8123/tools/dump-chapter.html?id=faq&lang=bn` | One chapter as plain text, for proofreading a translation |
 | `open http://127.0.0.1:8123/tools/syn.html` | Every content file loads and parses |
 | `python3 tools/flatten_pairs.py --check` | Reports nested `{en:{en,bn}}` leaves; without `--check` it rewrites the files |
+| `python3 tools/swap_bn.py` | Re-derives the Bengali of the core chapters from `ARCHITECTURE_bn.md` and reports what it could not match; `--write` applies it, `--pairs <n>` shows the pairing for one source section |
 
 Last run: lint clean on 14 scripts, 34 chapters / 607 blocks / 57 tables with
-zero validator errors, and 69/69 UI checks passing.
+zero validator errors, and 74/74 UI checks passing.
 
 ## Provenance
 
 The Java sources described in the documentation are **not** part of this
-repository — only `ARCHITECTURE.md` is. Every code listing, line count, colour
-value and benchmark figure on the site is quoted from that document rather than
+repository — only the two documents are: `ARCHITECTURE.md` and its Bengali
+translation `ARCHITECTURE_bn.md`. Every code listing, line count, colour value
+and benchmark figure on the site is quoted from those documents rather than
 re-derived from code. Where the site adds analysis of its own (for example the
 measured contrast ratios in Appendix D), the chapter says so and shows how the
 number was obtained. Appendices C to J are marked as extensions; chapters 1–23

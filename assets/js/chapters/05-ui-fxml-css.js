@@ -34,7 +34,7 @@
         "t": "p",
         "text": {
           "en": "A standard JavaFX `Application`.",
-          "bn": "একটি সাধারণ জাভাএফএক্স `Application`।"
+          "bn": "একটি আদর্শ JavaFX `Application`।"
         }
       },
       {
@@ -46,7 +46,7 @@
         "t": "p",
         "text": {
           "en": "`FXMLLoader.load()` instantiates `SimulationController` (named by `fx:controller`) and calls its `initialize()` before returning. The window is fixed at 1000x600 and not resizable.",
-          "bn": "`FXMLLoader.load()` `SimulationController` তৈরি করে (`fx:controller`-এ নাম দেওয়া) এবং ফেরত দেওয়ার আগে তার `initialize()` কল করে। উইন্ডো ১০০০×৬০০-তে নির্দিষ্ট এবং আকার পরিবর্তনযোগ্য নয়।"
+          "bn": "`FXMLLoader.load()` `SimulationController` (`fx:controller` দ্বারা নির্দিষ্ট)-কে ইন্সট্যানশিয়েট করে এবং ফিরে আসার আগে এর `initialize()` কল করে। উইন্ডোটি 1000x600-এ স্থির এবং রিসাইজযোগ্য নয়।"
         }
       },
       {
@@ -74,7 +74,7 @@
         "t": "p",
         "text": {
           "en": "The controller for the whole application. It owns all state, wires the FXML controls, builds the two modals entirely in Java code, and implements three custom `ListCell` renderers. It is by far the largest file in the project; the field reference is [chapter 10](#/en/controller) and the function index is [Appendix A](#/en/appendix-a).",
-          "bn": "পুরো অ্যাপ্লিকেশনের কন্ট্রোলার। এটি সব অবস্থার মালিক, FXML কন্ট্রোলগুলো ওয়্যার করে, দুটি মোডাল পুরোপুরি জাভা কোডে তৈরি করে, এবং তিনটি কাস্টম `ListCell` রেন্ডারার বাস্তবায়ন করে। প্রজেক্টের সবচেয়ে বড় ফাইল এটি; ফিল্ড রেফারেন্স [অধ্যায় ১০](#/bn/controller) এবং ফাংশন সূচি [উপাধিপত্র A](#/bn/appendix-a)।"
+          "bn": "পুরো অ্যাপ্লিকেশনের কন্ট্রোলার। এটি সমস্ত স্টেটের মালিক, FXML কন্ট্রোলগুলোকে সংযুক্ত করে, সম্পূর্ণ Java কোডে দুটি মোডাল তৈরি করে, এবং তিনটি কাস্টম `ListCell` রেন্ডারার বাস্তবায়ন করে। এটি প্রজেক্টের সবচেয়ে বড় ফাইল; ফিল্ড রেফারেন্স হলো [§10](#/bn/controller) এবং ফাংশন ইনডেক্স হলো [Appendix A](#/bn/appendix-a)।"
         }
       },
       {
@@ -108,7 +108,7 @@
             "\"/com/simulator/files/logs.csv\"",
             {
               "en": "Classpath location of the bundled history.",
-              "bn": "বান্ডেল করা ইতিহাসের ক্লাসপাথ অবস্থান।"
+              "bn": "বান্ডল করা হিস্ট্রির ক্লাসপাথ অবস্থান।"
             }
           ],
           [
@@ -116,7 +116,7 @@
             "65536",
             {
               "en": "`BufferedReader` buffer size for the CSV.",
-              "bn": "CSV-এর জন্য `BufferedReader` বাফারের আকার।"
+              "bn": "CSV-এর জন্য `BufferedReader` বাফার সাইজ।"
             }
           ],
           [
@@ -124,7 +124,7 @@
             "1.5",
             {
               "en": "A client may exceed its busiest day by this factor.",
-              "bn": "এই গুণকের দ্বারা একটি ক্লায়েন্ট তার সবচেয়ে ব্যস্ত দিন ছাড়াতে পারে।"
+              "bn": "একজন ক্লায়েন্ট তার সবচেয়ে ব্যস্ত দিনকে এই গুণক দ্বারা অতিক্রম করতে পারে।"
             }
           ],
           [
@@ -132,7 +132,7 @@
             "200",
             {
               "en": "Upper bound on a history-derived limit.",
-              "bn": "ইতিহাস-অনুমানিত লিমিটের ঊর্ধ্ব সীমা।"
+              "bn": "হিস্ট্রি-উদ্ভূত লিমিটের ওপরের সীমা (upper bound)।"
             }
           ],
           [
@@ -140,7 +140,7 @@
             "50000",
             {
               "en": "Cap on resident log entries.",
-              "bn": "মেমরিতে থাকা লগ এন্ট্রির সীমা।"
+              "bn": "রেসিডেন্ট লগ এন্ট্রির সর্বোচ্চ সীমা।"
             }
           ],
           [
@@ -148,7 +148,7 @@
             "`FIXED_WINDOW`",
             {
               "en": "Used by Reset Defaults.",
-              "bn": "Reset Defaults ব্যবহার করে।"
+              "bn": "Reset Defaults দ্বারা ব্যবহৃত।"
             }
           ],
           [
@@ -196,7 +196,7 @@
             "0",
             {
               "en": "\" — 0 means \"derive from history\".",
-              "bn": "\" — ০ মানে \"ইতিহাস থেকে অনুমান\"।"
+              "bn": "\" — 0 মানে \"হিস্ট্রি থেকে উদ্ভূত\"।"
             }
           ],
           [
@@ -220,7 +220,7 @@
             "`HH:mm:ss`",
             {
               "en": "Log cell display.",
-              "bn": "লগ সেলের প্রদর্শন।"
+              "bn": "লগ সেল ডিসপ্লে।"
             }
           ]
         ]
@@ -229,7 +229,7 @@
         "t": "p",
         "text": {
           "en": "The defaults are named constants rather than literals precisely so that \"Reset Defaults\" can repopulate the form **without touching live state** — the dialog's cross is a genuine cancel.",
-          "bn": "ডিফল্টগুলো লিটারেলের বদলে নামানো কনস্ট্যান্ট ঠিক এই কারণেই যে \"Reset Defaults\" ফর্ম পুনরায় পূরণ করতে পারে **লাইভ অবস্থা স্পর্শ না করেই** — ডায়ালগের ক্রস একটি সত্যিকারের বাতিল।"
+          "bn": "ডিফল্টগুলো লিটারেলের পরিবর্তে নামযুক্ত কনস্ট্যান্ট যাতে \"Reset Defaults\" **লাইভ স্টেট স্পর্শ না করে** ফর্ম পুনরায় পপুলেট করতে পারে — ডায়ালগের ক্রস চিহ্নটি একটি সত্যিকারের বাতিলকরণ (cancel)।"
         }
       },
       {
@@ -247,19 +247,19 @@
           {
             "text": {
               "en": "`enum PolicyType { FIXED_WINDOW(\"Fixed Window\"), SLIDING_WINDOW(\"Sliding Window\") }` with a `toString()` returning the display name, so the combo box shows friendly text.",
-              "bn": "`enum PolicyType { FIXED_WINDOW(\"Fixed Window\"), SLIDING_WINDOW(\"Sliding Window\") }` সঙ্গে একটি `toString()` যা প্রদর্শন-নাম ফেরত দেয়, যাতে কম্বো বক্স বন্ধুত্বপূর্ণ লেখা দেখায়।"
+              "bn": "`enum PolicyType { FIXED_WINDOW(\"Fixed Window\"), SLIDING_WINDOW(\"Sliding Window\") }` সাথে একটি `toString()` যা ডিসপ্লে নাম রিটার্ন করে, যাতে কম্বো বক্স ব্যবহারকারী-বান্ধব টেক্সট দেখায়।"
             }
           },
           {
             "text": {
               "en": "`private record HistoryRow(String clientName, RequestType type, LocalDateTime time, String status)` — one parsed CSV line, before it becomes a `Log`.",
-              "bn": "`private record HistoryRow(String clientName, RequestType type, LocalDateTime time, String status)` — একটি পার্স করা CSV লাইন, `Log` হওয়ার আগে।"
+              "bn": "`private record HistoryRow(String clientName, RequestType type, LocalDateTime time, String status)` — একটি পার্স করা CSV লাইন, এটি `Log` হওয়ার পূর্ববর্তী অবস্থা।"
             }
           },
           {
             "text": {
               "en": "`ClientReportCell`, `ClientCardCell`, `LogCell` — the three renderers, detailed in [Appendix B](#/en/appendix-b).",
-              "bn": "`ClientReportCell`, `ClientCardCell`, `LogCell` — তিনটি রেন্ডারার, বিস্তারিত [উপাধিপত্র B](#/bn/appendix-b)-তে।"
+              "bn": "`ClientReportCell`, `ClientCardCell`, `LogCell` — তিনটি রেন্ডারার, যা [Appendix B](#/bn/appendix-b)-এ বিস্তারিত বর্ণিত হয়েছে।"
             }
           }
         ]
@@ -277,7 +277,7 @@
         "t": "p",
         "text": {
           "en": "`buildAndShowSettingsDialog()` is 348 lines of imperative JavaFX. Structure:",
-          "bn": "`buildAndShowSettingsDialog()` ৩৪৮ লাইনের আদেশবাচক জাভাএফএক্স। কাঠামো:"
+          "bn": "`buildAndShowSettingsDialog()` হলো 348 লাইনের ইম্পারেটিভ JavaFX। গঠন:"
         }
       },
       {
@@ -293,14 +293,14 @@
         },
         "text": {
           "en": "**13 spinners in total** (1 window + 3 thresholds + 4 severity + 1 decay + 4 custom). Initial values come from the live settings, except after a reset. Every spinner is created by the same factory, which is why the dialog looks uniform.",
-          "bn": "**মোট ১৩টি স্পিনার** (১ উইন্ডো + ৩ থ্রেশহোল্ড + ৪ সিভারিটি + ১ ডিকে + ৪ কাস্টম)। রিসেটের পরে ছাড়া প্রাথমিক মান আসে লাইভ সেটিংস থেকে। প্রতিটি স্পিনার একই ফ্যাক্টরিতে তৈরি, তাই ডায়ালগটি সমরূপ দেখায়।"
+          "bn": "**মোট 13টি স্পিনার** (1 উইন্ডো + 3 থ্রেশহোল্ড + 4 সিভিয়ারিটি + 1 ডিকে + 4 কাস্টম)। প্রাথমিক মানগুলো লাইভ সেটিংস থেকে আসে, রিসেটের পরবর্তী অবস্থা ছাড়া।"
         }
       },
       {
         "t": "p",
         "text": {
           "en": "Three local helper factories keep the code readable:",
-          "bn": "তিনটি লোকাল হেল্পার ফ্যাক্টরি কোড পাঠযোগ্য রাখে:"
+          "bn": "তিনটি লোকাল হেল্পার ফ্যাক্টরি কোডকে পাঠযোগ্য রাখে:"
         }
       },
       {
@@ -309,19 +309,19 @@
           {
             "text": {
               "en": "`createSection(Label)` — a titled `VBox` section.",
-              "bn": "`createSection(Label)` — শিরোনামসহ একটি `VBox` সেকশন।"
+              "bn": "`createSection(Label)` — শিরোনামযুক্ত একটি `VBox` সেকশন।"
             }
           },
           {
             "text": {
               "en": "`createSpinner(int[] {min, max, initial})` — a dark-themed editable `Spinner<Integer>`, 110 px wide.",
-              "bn": "`createSpinner(int[] {min, max, initial})` — ডার্ক-থিমড সম্পাদনাযোগ্য `Spinner<Integer>`, ১১০ px চওড়া।"
+              "bn": "`createSpinner(int[] {min, max, initial})` — একটি ডার্ক-থিমযুক্ত এডিটেবল `Spinner<Integer>`, 110 px প্রশস্ত।"
             }
           },
           {
             "text": {
               "en": "`createPolicyCombo()` — a `ComboBox<PolicyType>` seeded with the live policy.",
-              "bn": "`createPolicyCombo()` — লাইভ পলিসি দিয়ে প্রাথমিকভাবে সাজানো `ComboBox<PolicyType>`।"
+              "bn": "`createPolicyCombo()` — লাইভ পলিসি দিয়ে সিড করা একটি `ComboBox<PolicyType>`।"
             }
           }
         ]
@@ -330,7 +330,7 @@
         "t": "p",
         "text": {
           "en": "The dialog is draggable by its header bar: a mouse-press records the scene offset, and mouse-drag sets the stage's screen position accordingly.",
-          "bn": "ডায়ালগটি তার হেডার বার দিয়ে টানা যায়: মাউস-প্রেস দৃশ্যের অফসেট মনে রাখে, আর মাউস-ড্র্যাগ স্টেজের পর্দার অবস্থান সেই অনুযায়ী ঠিক করে।"
+          "bn": "ডায়ালগটি এর হেডার বার দ্বারা টেনে সরানো যায় (draggable): মাউস-প্রেস সিন অফসেট রেকর্ড করে, এবং মাউস-ড্র্যাগ সেই অনুযায়ী স্টেজের স্ক্রিন পজিশন সেট করে।"
         }
       },
       {
@@ -391,7 +391,7 @@
         "t": "p",
         "text": {
           "en": "`showAbuseReportPopUp(...)` is ~150 lines. Structure:",
-          "bn": "`showAbuseReportPopUp(...)` প্রায় ১৫০ লাইন। কাঠামো:"
+          "bn": "`showAbuseReportPopUp(...)` হলো ~150 লাইন। গঠন:"
         }
       },
       {
@@ -402,7 +402,7 @@
         "t": "p",
         "text": {
           "en": "The KPI values:",
-          "bn": "KPI-র মান:"
+          "bn": "KPI মানসমূহ:"
         }
       },
       {
@@ -423,7 +423,7 @@
         }
       }
     ]
-  });
+  });;
 
   DOC.register({
     "id": "fxml",
@@ -548,7 +548,7 @@
             "x238 y46, r8",
             {
               "en": "Fill `#10b981`, stroke black; pulsed by a `FadeTransition`",
-              "bn": "ফিল `#10b981`, স্ট্রোক কালো; একটি `FadeTransition`-এর সঙ্গে নাড়া-নাড়া হয়"
+              "bn": "Fill `#10b981`, stroke black; একটি `FadeTransition` দ্বারা পালস করা"
             }
           ]
         ]
@@ -693,7 +693,7 @@
             "x60 y36",
             {
               "en": "Accepted total, bound.",
-              "bn": "গৃহীত মোট, বাইন্ড করা।"
+              "bn": "Accepted মোট, বাউন্ড (bound)।"
             }
           ],
           [
@@ -702,7 +702,7 @@
             "x178 y36",
             {
               "en": "Violations total, bound.",
-              "bn": "লঙ্ঘনের মোট, বাইন্ড করা।"
+              "bn": "Violations মোট, বাউন্ড (bound)।"
             }
           ],
           [
@@ -729,7 +729,7 @@
             "x20 y65, 443x158",
             {
               "en": "`styleClass traffic-chart`, `animated=false`, legend hidden",
-              "bn": "`styleClass traffic-chart`, `animated=false`, লেজেন্ড লুকানো"
+              "bn": "`styleClass traffic-chart`, `animated=false`, লিজেন্ড লুকানো"
             }
           ],
           [
@@ -806,7 +806,7 @@
         },
         "text": {
           "en": "`RequestInfoPanel` is a single `Pane` holding four absolutely positioned `Label`s. Only two of them (`totalRequestLabel`, `violationLabel`) are bound to data; the other two are updated imperatively by `updatePolicyDisplay()`. The document calls them \"four KPI numbers across the top\" because that is how they read, not because of how they are built.",
-          "bn": "`RequestInfoPanel` একটি একক `Pane`, যার ভেতরে পরমাপ স্থানাঙ্কে বসানো চারটি `Label`। এদের মধ্যে কেবল দুটি (`totalRequestLabel`, `violationLabel`) ডেটার সঙ্গে বাইন্ড; বাকি দুটি `updatePolicyDisplay()` দ্বারা আদেশবাচকভাবে হালনাগাদ হয়। নথিতে এগুলোকে \"উপরে চারটি KPI সংখ্যা\" বলা হয়েছে কারণ পড়ার ভঙ্গিতে এমন লাগে, নির্মাণের ভঙ্গিতে নয়।"
+          "bn": "`RequestInfoPanel` একটি একক `Pane`, যার ভেতরে পরমাপ স্থানাঙ্কে বসানো চারটি `Label`। এদের মধ্যে কেবল দুটি (`totalRequestLabel`, `violationLabel`) ডেটার সঙ্গে বাইন্ড; বাকি দুটি `updatePolicyDisplay()` দ্বারা আদেশবাচকভাবে হালনাগাদ হয়। ডকুমেন্টে এগুলোকে \"উপরে চারটি KPI সংখ্যা\" বলা হয়েছে কারণ পড়ার ভঙ্গিতে এমন লাগে, নির্মাণের ভঙ্গিতে নয়।"
         }
       },
       {
@@ -824,19 +824,19 @@
           {
             "text": {
               "en": "The client registry's style class is **`ClintLog`** — a typo that is now load-bearing, because it is what `style.css` targets. A dead `.ClintList` rule alongside it was removed.",
-              "bn": "ক্লায়েন্ট রেজিস্ট্রির স্টাইল ক্লাসটি **`ClintLog`** — একটি বানানভুল, যা এখন কাজে লাগে, কারণ `style.css` এটিকেই লক্ষ্য করে। পাশের নিষ্ক্রিয় `.ClintList` নিয়মটি সরানো হয়েছিল।"
+              "bn": "ক্লায়েন্ট রেজিস্ট্রির স্টাইল ক্লাস হলো **`ClintLog`** — একটি টাইপো যা এখন গুরুত্বপূর্ণ ভূমিকা পালন করছে (load-bearing), কারণ এটিই `style.css` টার্গেট করে। এর পাশাপাশি থাকা একটি অব্যবহৃত `.ClintList` রুল সরিয়ে ফেলা হয়েছে।"
             }
           },
           {
             "text": {
               "en": "`stylesheets=\"@style.css\"` is repeated on ten individual nodes rather than once at the root. Harmless but redundant; JavaFX de-duplicates the URL.",
-              "bn": "`stylesheets=\"@style.css\"` একবার রুটে না দিয়ে দশটি আলাদা নোডে পুনরাবৃত্তি করা। ক্ষতিকর নয় কিন্তু অপচয়; জাভাএফএক্স URL-টি ডুপ্লিকেট করে না।"
+              "bn": "রুটে একবারের বদলে দশটি পৃথক নোডে `stylesheets=\"@style.css\"` পুনরাবৃত্তি করা হয়েছে। ক্ষতিকর নয় তবে অপ্রয়োজনীয়; JavaFX URL-এর ডুপ্লিকেট দূর করে।"
             }
           },
           {
             "text": {
               "en": "All eight `onAction` handlers exist in the controller. A missing one makes `FXMLLoader` throw at startup, so the wiring fails loudly.",
-              "bn": "আটটি `onAction` হ্যান্ডলারই কন্ট্রোলারে আছে। কোনো একটি না থাকলে `FXMLLoader` স্টার্টআপে ছুঁড়ে দেয়, তাই ওয়্যারিং জোরে ব্যর্থ হয়।"
+              "bn": "আটটি `onAction` হ্যান্ডলারই কন্ট্রোলারে বিদ্যমান। কোনো একটি অনুপস্থিত থাকলে স্টার্টআপে `FXMLLoader` এক্সেপশন থ্রো করে, তাই ওয়্যারিংয়ের ব্যর্থতা স্পষ্টভাবেই প্রকাশ পায়।"
             }
           }
         ]
@@ -854,7 +854,7 @@
         }
       }
     ]
-  });
+  });;
 
   DOC.register({
     "id": "css",
@@ -1010,14 +1010,14 @@
             "`.root`",
             {
               "en": "Page background.",
-              "bn": "পেজ ব্যাকগ্রাউন্ড।"
+              "bn": "পেজের ব্যাকগ্রাউন্ড।"
             }
           ],
           [
             "`.AppNamePanel`, `.ReportGenaratePanel`, `.LogClearPanal`",
             {
               "en": "Dark panel fills.",
-              "bn": "গাঢ় প্যানেল ফিল।"
+              "bn": "ডার্ক প্যানেল ফিল।"
             }
           ],
           [
@@ -1031,21 +1031,21 @@
             "`.SimCard`",
             {
               "en": "Rounded (24 px) request-control card.",
-              "bn": "গোলাকার (২৪ px) অনুরোধ-কন্ট্রোল কার্ড।"
+              "bn": "গোলাকার (24 px) রিকোয়েস্ট-কন্ট্রোল কার্ড।"
             }
           ],
           [
             "`.ClintLog`",
             {
               "en": "Client registry container: fill + border.",
-              "bn": "ক্লায়েন্ট রেজিস্ট্রি কনটেইনার: ফিল + বর্ডার।"
+              "bn": "ক্লায়েন্ট রেজিস্ট্রি কন্টেইনার: ফিল + বর্ডার।"
             }
           ],
           [
             "`.LogList`",
             {
               "en": "Log container: transparent fill + border.",
-              "bn": "লগ কনটেইনার: স্বচ্ছ ফিল + বর্ডার।"
+              "bn": "লগ কন্টেইনার: স্বচ্ছ ফিল + বর্ডার।"
             }
           ]
         ]
@@ -1076,14 +1076,14 @@
             "`.LogList .list-cell`",
             {
               "en": "Transparent, 8 px radius, 14 px text, `8 12` padding.",
-              "bn": "স্বচ্ছ, ৮ px ব্যাসার, ১৪ px লেখা, `8 12` প্যাডিং।"
+              "bn": "স্বচ্ছ, 8 px ব্যাসার্ধ, 14 px টেক্সট, `8 12` প্যাডিং।"
             }
           ],
           [
             "`.LogList .list-cell:empty`",
             {
               "en": "Filler cells collapse to nothing.",
-              "bn": "ফিলার সেল কিছুই না হয়ে সংকুচিত হয়।"
+              "bn": "ফিলার সেলগুলো সম্পূর্ণ সংকুচিত হয়ে যায়।"
             }
           ],
           [
@@ -1104,21 +1104,21 @@
             "`.ClintLog .list-cell:filled:hover`",
             {
               "en": "Suppress the default hover fill.",
-              "bn": "ডিফল্ট হোভার ফিল বন্ধ করে।"
+              "bn": "ডিফল্ট হোভার ফিল দমন করে।"
             }
           ],
           [
             "`.ClintLog .list-cell:selected`",
             {
               "en": "Suppress the default selected fill.",
-              "bn": "ডিফল্ট সিলেক্টেড ফিল বন্ধ করে।"
+              "bn": "ডিফল্ট সিলেক্টেড ফিল দমন করে।"
             }
           ],
           [
             "`.report-list`, `.report-list .list-cell`, `:empty`",
             {
               "en": "The abuse report's list.",
-              "bn": "অপব্যবহার রিপোর্টের তালিকা।"
+              "bn": "অ্যাবিউজ রিপোর্টের লিস্ট।"
             }
           ]
         ]
@@ -1149,7 +1149,7 @@
             "`.traffic-chart`",
             {
               "en": "Translucent navy card, 16 px radius.",
-              "bn": "স্বচ্ছ নেভি কার্ড, ১৬ px ব্যাসার।"
+              "bn": "ট্রান্সলুসেন্ট নেভি কার্ড, 16 px ব্যাসার্ধ।"
             }
           ],
           [
@@ -1163,35 +1163,35 @@
             "`.chart-horizontal-grid-lines, .chart-vertical-grid-lines`",
             {
               "en": "Faint dashed grid (rule 19) and, again at rule 49, forced transparent — **a duplicate that cancels itself out**.",
-              "bn": "হালকা ড্যাশড গ্রিড (নিয়ম ১৯) এবং আবার নিয়ম ৪৯-এ জোরে স্বচ্ছ — **একটি ডুপ্লিকেট যা নিজেকেই বাতিল করে**।"
+              "bn": "আবছা ড্যাশড গ্রিড (রুল 19) এবং, রুল 49-এ আবার, জোরপূর্বক স্বচ্ছ করা হয়েছে — **একটি ডুপ্লিকেট যা নিজেই নিজেকে বাতিল করে**।"
             }
           ],
           [
             "`.axis`, `.axis-line`",
             {
               "en": "Muted tick labels, invisible axis line.",
-              "bn": "ম্লান টিক লেবেল, অদৃশ্য অক্ষরেখা।"
+              "bn": "মিউটেড টিক লেবেল, অদৃশ্য অক্ষ রেখা।"
             }
           ],
           [
             "`.default-color0.chart-series-line`",
             {
               "en": "2.8 px `#3b82f6` line with a `dropshadow` glow.",
-              "bn": "২.৮ px `#3b82f6` রেখা, সঙ্গে `dropshadow` ঝলক।"
+              "bn": "`dropshadow` গ্লোসহ 2.8 px `#3b82f6` লাইন।"
             }
           ],
           [
             "`.chart-series-line`",
             {
               "en": "Rounded caps, transparent stroke.",
-              "bn": "গোলাকার প্রান্ত, স্বচ্ছ স্ট্রোক।"
+              "bn": "গোলাকার ক্যাপ, স্বচ্ছ স্ট্রোক।"
             }
           ],
           [
             "`.chart-line-symbol`",
             {
               "en": "Hides the data-point dots.",
-              "bn": "ডেটা-পয়েন্টের বিন্দু লুকায়।"
+              "bn": "ডেটা-পয়েন্ট ডটগুলো লুকিয়ে রাখে।"
             }
           ],
           [
@@ -1205,7 +1205,7 @@
             "`.chart-alternative-row-fill`, `-column-fill`",
             {
               "en": "Transparent (the FXML also sets `alternativeRowFillVisible=false`).",
-              "bn": "স্বচ্ছ (FXML-ও `alternativeRowFillVisible=false` দেয়)।"
+              "bn": "স্বচ্ছ (FXML-ও `alternativeRowFillVisible=false` সেট করে)।"
             }
           ]
         ]
@@ -1272,7 +1272,7 @@
             "`.icon-btn` / `:hover`",
             {
               "en": "`#1e293b` / `#334155` with a `#3b82f6` border",
-              "bn": "`#1e293b` / `#334155`, সঙ্গে `#3b82f6` বর্ডার"
+              "bn": "`#1e293b` / `#334155` সাথে একটি `#3b82f6` বর্ডার"
             }
           ],
           [
@@ -1288,7 +1288,7 @@
         "t": "p",
         "text": {
           "en": "Note `.auto-sim-btn` is overridden **inline** at runtime when the simulation starts (red) and stops (blue), because inline styles beat CSS.",
-          "bn": "লক্ষ্য করুন `.auto-sim-btn` সিমুলেশন শুরু হলে (লাল) ও থামলে (নীল) রানটাইমে **ইনলাইন** ওভাররাইড হয়, কারণ ইনলাইন স্টাইল CSS-কে হারায়।"
+          "bn": "উল্লেখ্য যে সিমুলেশন শুরু (লাল) এবং বন্ধ (নীল) হওয়ার সময় রানটাইমে `.auto-sim-btn` **ইনলাইন** ওভাররাইড করা হয়, কারণ ইনলাইন স্টাইল CSS-কে পরাস্ত করে।"
         }
       },
       {
@@ -1304,7 +1304,7 @@
         "t": "p",
         "text": {
           "en": "`.combo-box` fill, `.list-cell` text, `.arrow-button` transparent, `.arrow` white, and the popup list (`.combo-box-popup .list-view`, `.list-cell`, `:hover`, `:selected`).",
-          "bn": "`.combo-box` ফিল, `.list-cell` লেখা, `.arrow-button` স্বচ্ছ, `.arrow` সাদা, আর পপআপ তালিকা (`.combo-box-popup .list-view`, `.list-cell`, `:hover`, `:selected`)।"
+          "bn": "`.combo-box` ফিল, `.list-cell` টেক্সট, `.arrow-button` স্বচ্ছ, `.arrow` সাদা, এবং পপআপ লিস্ট (`.combo-box-popup .list-view`, `.list-cell`, `:hover`, `:selected`)।"
         }
       },
       {
@@ -1320,7 +1320,7 @@
         "t": "p",
         "text": {
           "en": "A shared block applied to `.LogList`, `.ClintLog` and `.report-list`: 7 px wide, transparent track, `#475569` thumb (lightening to `#64748b` on hover), and both increment and decrement arrow buttons removed via `-fx-shape: \"\"`. Horizontal bars are collapsed entirely (`-fx-pref-height: 0; -fx-max-height: 0; -fx-opacity: 0`).",
-          "bn": "`.LogList`, `.ClintLog` ও `.report-list`-এ প্রয়োগ একটি যৌথ ব্লক: ৭ px চওড়া, স্বচ্ছ ট্র্যাক, `#475569` থাম্ব (হোভারে `#64748b`-এ হালকা), আর `-fx-shape: \"\"` দিয়ে ইনক্রিমেন্ট ও ডিক্রিমেন্ট তিরচিহ্ন বোতাম দুটোই সরানো। অনুভূমিক বার সম্পূর্ণ সংকুচিত (`-fx-pref-height: 0; -fx-max-height: 0; -fx-opacity: 0`)।"
+          "bn": "একটি শেয়ার্ড ব্লক যা `.LogList`, `.ClintLog` এবং `.report-list`-এ প্রয়োগ করা হয়েছে: 7 px প্রশস্ত, স্বচ্ছ ট্র্যাক, `#475569` থাম্ব (হোভারে `#64748b`-তে হালকা হয়), এবং `-fx-shape: \"\"` দ্বারা ইনক্রিমেন্ট ও ডিক্রিমেন্ট উভয় অ্যারো বাটন সরিয়ে ফেলা হয়েছে। অনুভূমিক বারগুলো সম্পূর্ণরূপে সংকুচিত করা হয়েছে (`-fx-pref-height: 0; -fx-max-height: 0; -fx-opacity: 0`)।"
         }
       },
       {
@@ -1336,7 +1336,7 @@
         "t": "p",
         "text": {
           "en": "`.report-list` container and cells, plus `.kpi-card` (`#1e293b` fill, `#334155` border, rounded).",
-          "bn": "`.report-list` কনটেইনার ও সেল, সঙ্গে `.kpi-card` (`#1e293b` ফিল, `#334155` বর্ডার, গোলাকার)।"
+          "bn": "`.report-list` কন্টেইনার এবং সেলসমূহ, সাথে `.kpi-card` (`#1e293b` ফিল, `#334155` বর্ডার, গোলাকার)।"
         }
       },
       {
@@ -1352,7 +1352,7 @@
         "t": "p",
         "text": {
           "en": "The threat meter's *text* colour and its *bar* colour use different band boundaries:",
-          "bn": "থ্রেট মিটারের *লেখার* রং ও *বারের* রং ভিন্ন ব্যান্ড সীমা ব্যবহার করে:"
+          "bn": "থ্রেট মিটারের *টেক্সট* কালার এবং এর *বার* কালার ভিন্ন ভিন্ন ব্যান্ড সীমানা ব্যবহার করে:"
         }
       },
       {
@@ -1361,13 +1361,13 @@
           {
             "text": {
               "en": "Text (`scoreColor`): `<= 0.2` green, `<= 0.5` amber, `<= 0.8` orange, else red.",
-              "bn": "লেখা (`scoreColor`): `<= 0.2` সবুজ, `<= 0.5` অ্যাম্বার, `<= 0.8` কমলা, বাকি লাল।"
+              "bn": "টেক্সট (`scoreColor`): `<= 0.2` সবুজ, `<= 0.5` অ্যাম্বার, `<= 0.8` কমলা, অন্যথায় লাল।"
             }
           },
           {
             "text": {
               "en": "Bar (`createFill`): `<= 0.35` green gradient, `<= 0.7` amber gradient, else red gradient.",
-              "bn": "বার (`createFill`): `<= 0.35` সবুজ গ্রেডিয়েন্ট, `<= 0.7` অ্যাম্বার গ্রেডিয়েন্ট, বাকি লাল গ্রেডিয়েন্ট।"
+              "bn": "বার (`createFill`): `<= 0.35` সবুজ গ্রেডিয়েন্ট, `<= 0.7` অ্যাম্বার গ্রেডিয়েন্ট, অন্যথায় লাল গ্রেডিয়েন্ট।"
             }
           }
         ]
@@ -1376,7 +1376,7 @@
         "t": "p",
         "text": {
           "en": "So between score fractions 0.2 and 0.35 the label is amber while the bar is still green. Cosmetic, but it is a genuine inconsistency rather than intent.",
-          "bn": "তাই স্কোর ভগ্নাংশ ০.২ থেকে ০.৩৫-এর মধ্যে লেবেল অ্যাম্বার হলেও বার এখনো সবুজ। সৌন্দর্যবিষয়ক, তবে এটি আসলেই একটি অসামঞ্জস্য, উদ্দেশ্য নয়।"
+          "bn": "অতএব স্কোরের ভগ্নাংশ 0.2 এবং 0.35-এর মধ্যে লেবেলটি অ্যাম্বার থাকে যখন বারটি তখনও সবুজ থাকে। এটি কসমেটিক, তবে ইচ্ছাকৃত না হয়ে একটি বাস্তব অসঙ্গতি।"
         }
       },
       {
@@ -1392,5 +1392,5 @@
         }
       }
     ]
-  });
+  });;
 })();

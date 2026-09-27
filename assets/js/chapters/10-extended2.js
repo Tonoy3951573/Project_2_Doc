@@ -19,7 +19,7 @@
     },
     "lead": {
       "en": "The source document is an architecture reference, not a manual. This appendix is the manual: what to click, in what order, and what to watch for while you do it.",
-      "bn": "মূল নথি একটি আর্কিটেকচার রেফারেন্স, পরিচিতি নয়। এই উপাধিপত্রটি পরিচিতি: কী ক্লিক করবেন, কোন ক্রমে, এবং করার সময় কী লক্ষ্য রাখবেন।"
+      "bn": "মূল ডকুমেন্ট একটি আর্কিটেকচার রেফারেন্স, পরিচিতি নয়। এই উপাধিপত্রটি পরিচিতি: কী ক্লিক করবেন, কোন ক্রমে, এবং করার সময় কী লক্ষ্য রাখবেন।"
     },
     "blocks": [
       {
@@ -31,7 +31,7 @@
         },
         "text": {
           "en": "Every button, label and behaviour described here is quoted from the source document. The task ordering is this website's contribution.",
-          "bn": "এখানে বর্ণিত প্রতিটি বোতাম, লেবেল ও আচরণ মূল নথি থেকে উদ্ধৃত। কাজের ক্রম এই ওয়েবসাইটের অবদান।"
+          "bn": "এখানে বর্ণিত প্রতিটি বোতাম, লেবেল ও আচরণ মূল ডকুমেন্ট থেকে উদ্ধৃত। কাজের ক্রম এই ওয়েবসাইটের অবদান।"
         }
       },
       {
@@ -817,7 +817,7 @@
     },
     "lead": {
       "en": "The source document repeatedly contrasts the program with an earlier version. This appendix consolidates every one of those contrasts into a single table, so the current state can be read as a delta rather than as a list of requirements.",
-      "bn": "মূল নথি বারবার এই প্রোগ্রামকে আগের সংস্করণের সঙ্গে তুলনা করে। এই উপাধিপত্র সেই প্রতিটি তুলনা একটি টেবিলে জোগাড়া করে, যাতে বর্তমান অবস্থা একটি প্রয়োজনের তালিকা নয়, বরং একটি পার্থক্য হিসেবে পড়া যায়।"
+      "bn": "মূল ডকুমেন্ট বারবার এই প্রোগ্রামকে আগের সংস্করণের সঙ্গে তুলনা করে। এই উপাধিপত্র সেই প্রতিটি তুলনা একটি টেবিলে জোগাড়া করে, যাতে বর্তমান অবস্থা একটি প্রয়োজনের তালিকা নয়, বরং একটি পার্থক্য হিসেবে পড়া যায়।"
     },
     "blocks": [
       {
@@ -1228,7 +1228,7 @@
     },
     "lead": {
       "en": "Questions the source document implies an answer to but never states directly, or that a newcomer asks in the first ten minutes.",
-      "bn": "যে প্রশ্নগুলোর উত্তর মূল নথি নিজেই বোঝায় কিন্তু সরাসরি বলে না, অথবা একজন নতুন কাজী প্রথম দশ মিনিটে করেন।"
+      "bn": "যে প্রশ্নগুলোর উত্তর মূল ডকুমেন্ট নিজেই বোঝায় কিন্তু সরাসরি বলে না, অথবা একজন নতুন কাজী প্রথম দশ মিনিটে করেন।"
     },
     "blocks": [
       {
@@ -1240,7 +1240,7 @@
         },
         "text": {
           "en": "Answers are quoted from the source document where it speaks; the rest are inferences from it, marked as such.",
-          "bn": "মূল নথি যেখানে কথা বলে সেখানে উত্তর উদ্ধৃত; বাকি সেখান থেকে করা অনুমান, তা চিহ্নিত করা আছে।"
+          "bn": "মূল ডকুমেন্ট যেখানে কথা বলে সেখানে উত্তর উদ্ধৃত; বাকি সেখান থেকে করা অনুমান, তা চিহ্নিত করা আছে।"
         }
       },
       {
@@ -1390,7 +1390,7 @@
             },
             "v": {
               "en": "Because limits are derived from the history index, and Clear empties the index. The client falls back to the built-in floors. This is documented, intended behaviour.",
-              "bn": "কারণ লিমিট ইতিহাস ইনডেক্স থেকে অনুমানিত, আর Clear ইনডেক্স খালি করে। ক্লায়েন্ট অন্তর্নিহিত নিম্নতলায় ফিরে যায়। এটি নথিভুক্ত, অভিপ্রেত আচরণ।"
+              "bn": "কারণ লিমিট ইতিহাস ইনডেক্স থেকে অনুমানিত, আর Clear ইনডেক্স খালি করে। ক্লায়েন্ট অন্তর্নিহিত নিম্নতলায় ফিরে যায়। এটি ডকুমেন্টভুক্ত, অভিপ্রেত আচরণ।"
             }
           },
           {

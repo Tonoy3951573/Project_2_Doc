@@ -56,7 +56,7 @@
             "`String`",
             {
               "en": "`Client-001` … `Client-020`. Resolved by name.",
-              "bn": "`Client-001` … `Client-020`। নামে সমাধান করা হয়।"
+              "bn": "`Client-001` … `Client-020`। নাম দ্বারা নির্ধারিত।"
             }
           ],
           [
@@ -64,7 +64,7 @@
             "`RequestType`",
             {
               "en": "Must match the enum exactly, or the row is skipped.",
-              "bn": "এনামের সঙ্গে হুবহু মেলতে হবে, নয়তো সারিটি বাদ পড়ে।"
+              "bn": "এনামের সাথে হুবহু মিলতে হবে, অন্যথায় সারিটি স্কিপ করা হয়।"
             }
           ],
           [
@@ -72,7 +72,7 @@
             "`LocalDateTime`",
             {
               "en": "ISO-8601, no zone, parsed with `yyyy-MM-dd'T'HH:mm:ss`.",
-              "bn": "ISO-8601, জোন ছাড়া, `yyyy-MM-dd'T'HH:mm:ss` দিয়ে পার্স হয়।"
+              "bn": "ISO-8601, কোনো জোন নেই, `yyyy-MM-dd'T'HH:mm:ss` দিয়ে পার্স করা।"
             }
           ],
           [
@@ -89,7 +89,7 @@
         "t": "p",
         "text": {
           "en": "Rows that are malformed — fewer than four fields, an empty field, an unknown type, or an unparseable timestamp — are **skipped**, so one bad line cannot abort the load and leave the application half-populated.",
-          "bn": "ত্রুটিপূর্ণ সারি — চারটির কম ফিল্ড, খালি ফিল্ড, অজানা টাইপ, বা অপার্সযোগ্য টাইমস্ট্যাম্প — **বাদ দেওয়া** হয়, যাতে একটি খারাপ লাইন লোড বন্ধ করে অ্যাপ্লিকেশনকে অর্ধেক ভরা অবস্থায় রেখে না দেয়।"
+          "bn": "যেসব সারি বিকৃত (malformed) — চারটির কম ফিল্ড, একটি খালি ফিল্ড, একটি অজানা টাইপ, বা একটি আনপার্সেবল টাইমস্ট্যাম্প — সেগুলোকে **স্কিপ করা হয়**, যাতে একটি খারাপ লাইন লোড বাতিল করে অ্যাপ্লিকেশনটিকে অর্ধেক পপুলেট অবস্থায় ফেলে না দেয়।"
         }
       },
       {
@@ -150,7 +150,7 @@
             },
             {
               "en": "366, from 2025-09-20 to 2026-09-20",
-              "bn": "৩৬৬, ২০২৫-০৯-২০ থেকে ২০২৬-০৯-২০"
+              "bn": "366, 2025-09-20 থেকে 2026-09-20 পর্যন্ত"
             }
           ],
           [
@@ -160,7 +160,7 @@
             },
             {
               "en": "**516,544 `ACCEPTED` — zero `BLOCKED`**",
-              "bn": "**৫,১৬,৫৪৪টি `ACCEPTED` — একটিও `BLOCKED` নেই**"
+              "bn": "**516,544 `ACCEPTED` — শূন্য `BLOCKED`**"
             }
           ],
           [
@@ -184,14 +184,20 @@
               "en": "Busiest client",
               "bn": "সবচেয়ে ব্যস্ত ক্লায়েন্ট"
             },
-            "`Client-017`, 52,145 rows"
+            {
+              "en": "`Client-017`, 52,145 rows",
+              "bn": "`Client-017`, 52,145 সারি"
+            }
           ],
           [
             {
               "en": "Quietest client",
               "bn": "সবচেয়ে নিস্তব্ধ ক্লায়েন্ট"
             },
-            "`Client-011`, 9,410 rows"
+            {
+              "en": "`Client-011`, 9,410 rows",
+              "bn": "`Client-011`, 9,410 সারি"
+            }
           ]
         ]
       },
@@ -199,7 +205,7 @@
         "t": "p",
         "text": {
           "en": "Peak single-day counts, by type — these are what the auto-calculated limits are built from:",
-          "bn": "টাইপ অনুযায়ী একক দিনের শীর্ষ সংখ্যা — স্বয়ংক্রিয় গণনাকৃত লিমিটগুলো এগুলো থেকেই তৈরি:"
+          "bn": "টাইপ অনুসারে পিক একক দিনের কাউন্ট — এগুলো থেকেই স্বয়ংক্রিয়ভাবে গণনা করা লিমিটগুলো তৈরি হয়:"
         }
       },
       {
@@ -302,7 +308,7 @@
         },
         "text": {
           "en": "Every historical row was accepted. So the \"Abuse Rate\" percentage in the report is always 0% until you generate blocked traffic yourself, and the `BLOCKED` branch of the log cell is only ever exercised by live simulation.",
-          "bn": "ঐতিহাসের প্রতিটি সারি গৃহীত হয়েছিল। তাই রিপোর্টের \"Abuse Rate\" শতকরা আপনি নিজে প্রত্যাখ্যাত ট্রাফিক তৈরি না করা পর্যন্ত সবসময় ০%, আর লগ সেলের `BLOCKED` শাখা কেবল লাইভ সিমুলেশনেই চলে।"
+          "bn": "**ডেটাবেসে কোনো ব্লকড ট্রাফিক নেই।** প্রতিটি ঐতিহাসিক সারি গৃহীত হয়েছিল। সুতরাং আপনি নিজে ব্লকড ট্রাফিক তৈরি না করা পর্যন্ত রিপোর্টে \"Abuse Rate\" শতাংশ সর্বদা 0% থাকে, এবং লগ সেলের `BLOCKED` ব্রাঞ্চটি শুধুমাত্র লাইভ সিমুলেশন দ্বারাই ব্যবহৃত হয়।"
         }
       },
       {
@@ -314,7 +320,7 @@
         },
         "text": {
           "en": "That is because the defaults were written as small illustrative numbers rather than as real thresholds. With history-derived limits, `READ` goes from a default of 50 to up to 200. See [chapter 7](#/en/example) for how this plays out in practice.",
-          "bn": "কারণ ডিফল্টগুলো বাস্তব থ্রেশহোল্ড নয়, ছোট উদাহরণমূলক সংখ্যা হিসেবে লেখা হয়েছিল। ইতিহাস-অনুমানিত লিমিটের সঙ্গে `READ` ৫০-এর ডিফল্ট থেকে সর্বোচ্চ ২০০-এ যায়। বাস্তবে কীভাবে লাগে তা [অধ্যায় ৭](#/bn/example) দেখায়।"
+          "bn": "**স্বয়ংক্রিয়ভাবে গণনা করা লিমিটগুলো বিল্ট-ইন ডিফল্টের চেয়ে যথেষ্ট উদার**, কারণ ডিফল্টগুলো বাস্তব থ্রেশহোল্ডের পরিবর্তে ছোট উদাহরণমূলক সংখ্যা হিসেবে লেখা হয়েছিল। হিস্ট্রি-উদ্ভূত লিমিটের সাথে, `READ` ডিফল্ট 50 থেকে বেড়ে 200 পর্যন্ত পৌঁছে। বাস্তবে এটি কীভাবে কাজ করে তা দেখতে [§7](#/bn/example) দেখুন।"
         }
       },
       {
@@ -330,7 +336,7 @@
         }
       }
     ]
-  });
+  });;
 
   DOC.register({
     "id": "flows",
@@ -420,7 +426,7 @@
         "t": "p",
         "text": {
           "en": "See [chapter 6](#/en/limiting) for the decision logic and [chapter 7](#/en/example) for a full numeric trace. The surrounding bookkeeping in `onSingleRequest()`:",
-          "bn": "সিদ্ধান্তের যুক্তির জন্য [অধ্যায় ৬](#/bn/limiting) এবং সম্পূর্ণ সংখ্যাগত ট্রেসের জন্য [অধ্যায় ৭](#/bn/example) দেখুন। `onSingleRequest()`-এর আশপাশের হিসাবরক্ষণ:"
+          "bn": "সিদ্ধান্তের লজিকের জন্য [§6](#/bn/limiting) এবং একটি পূর্ণ সংখ্যার ট্রেসের জন্য [§7](#/bn/example) দেখুন। `onSingleRequest()`-এর আশেপাশের বুককিপিং:"
         }
       },
       {
@@ -495,7 +501,7 @@
         "t": "p",
         "text": {
           "en": "`onBurst()` calls `onSingleRequest()` twenty times in a row on the FX thread. All twenty land in the same window, so the limit is exceeded partway through and the remainder are blocked — the intended demonstration.",
-          "bn": "`onBurst()` FX থ্রেডে পরপর বিশবার `onSingleRequest()` কল করে। সবগুলো একই উইন্ডোতে পড়ে, তাই মাঝপথে লিমিট ছাড়িয়ে যায় এবং বাকিগুলো প্রত্যাখ্যাত হয় — এটিই উদ্দেশ্যযুক্ত প্রদর্শন।"
+          "bn": "`onBurst()` FX থ্রেডে পরপর বিশ বার `onSingleRequest()` কল করে। বিশটির সবগুলোই একই উইন্ডোতে পড়ে, তাই পথিমধ্যেই লিমিট অতিক্রম করে এবং বাকিগুলো ব্লক হয় — যা উদ্দিষ্ট প্রদর্শন।"
         }
       },
       {
@@ -523,7 +529,7 @@
         "t": "p",
         "text": {
           "en": "An 800 ms `Timeline`. Each tick round-robins a client by index, picks a random type, **moves the on-screen selection to match**, and issues one request. It runs until the button is pressed again, the registry becomes empty, or the settings dialog opens (which pauses it and restores it afterwards).",
-          "bn": "একটি ৮০০ মিলিসেকেন্ডের `Timeline`। প্রতিটি টিক ইনডেক্সে রাউন্ড-রবিন করে একটি ক্লায়েন্ট বেছে নেয়, একটি ধরন এলোমেলো বেছে নেয়, **স্ক্রিনের সিলেকশন তার সঙ্গে মেলায়**, এবং একটি অনুরোধ পাঠায়। এটি চলে যতক্ষণ না বোতামটি আবার চাপা হয়, রেজিস্ট্রি খালি হয়, বা সেটিংস ডায়ালগ খোলে (যা এটিকে থামায় এবং পরে ফিরিয়ে আনে)।"
+          "bn": "একটি 800 ms `Timeline`। প্রতিটি টিক ইনডেক্স অনুসারে ক্লায়েন্টকে রাউন্ড-রবিন করে, একটি র্যান্ডম টাইপ বেছে নেয়, **অন-স্ক্রিন সিলেকশনকে মেলানোর জন্য স্থানান্তরিত করে**, এবং একটি রিকোয়েস্ট ইস্যু করে। বাটনটি আবার চাপ না দেওয়া পর্যন্ত, রেজিস্ট্রি খালি না হওয়া পর্যন্ত, বা সেটিংস ডায়ালগ খোলা না হওয়া পর্যন্ত এটি চলতে থাকে (যা এটিকে পজ করে এবং পরে পুনরায় চালু করে)।"
         }
       },
       {
@@ -535,7 +541,7 @@
         },
         "text": {
           "en": "There is deliberately no `CRITICAL` short-circuit: a locked-out client must keep asking so the policy can lift the lockout once the cooldown expires. Skip the evaluation and a locked-out client would stay locked out forever, because the cooldown is measured from the last violation and no new violation would ever be recorded to restart it.",
-          "bn": "ইচ্ছাকৃতভাবে টিকে কোনো `CRITICAL` শর্ট-সার্কিট নেই: লক-আউট থাকা ক্লায়েন্টকে জিজ্ঞেস করতেই হবে, যাতে কুলডাউন শেষ হলে পলিসি লক তুলতে পারে। মূল্যায়ন এড়িয়ে গেলে লক-আউট থাকা ক্লায়েন্ট চিরকাল লক-আউট থাকত, কারণ কুলডাউন গোনা হয় শেষ লঙ্ঘন থেকে আর নতুন লঙ্ঘন কখনো না হওয়ায় সেটি আবার শুরু হতো না।"
+          "bn": "টিকে ইচ্ছাকৃতভাবেই কোনো `CRITICAL` শর্ট-সার্কিট নেই: একজন লকআউট ক্লায়েন্টকে অবশ্যই রিকোয়েস্ট পাঠাতে থাকতে হবে যাতে কুলডাউন শেষ হয়ে গেলে পলিসি লকআউট তুলে নিতে পারে।"
         }
       },
       {
@@ -551,7 +557,7 @@
         "t": "p",
         "text": {
           "en": "`onClear()` returns if the log is already empty, else `resetSimulationState()`: log, index, window state and every client's telemetry are wiped together, so no client is left holding a score that nothing backs. The client **registry** is preserved.",
-          "bn": "`onClear()` লগ ইতিমধ্যে খালি হলে ফিরে আসে, নয়তো `resetSimulationState()`: লগ, ইনডেক্স, উইন্ডোর অবস্থা এবং প্রতিটি ক্লায়েন্টের টেলিমেট্রি একসঙ্গে মুছে ফেলে, যাতে কোনো ক্লায়েন্ট এমন স্কোর ধরে না থাকে যার কোনো ভিত্তি নেই। ক্লায়েন্ট **রেজিস্ট্রি** থেকে যায়।"
+          "bn": "`onClear()` লগ ইতিমধ্যে খালি থাকলে রিটার্ন করে, অন্যথায় `resetSimulationState()`: লগ, ইনডেক্স, উইন্ডো স্টেট এবং প্রতিটি ক্লায়েন্টের টেলিমেট্রি একসাথে মুছে ফেলা হয়, যাতে কোনো ক্লায়েন্ট এমন স্কোর ধরে না রাখে যার পেছনে কোনো ভিত্তি নেই। ক্লায়েন্ট **রেজিস্ট্রি** সংরক্ষণ করা হয়।"
         }
       },
       {
@@ -575,7 +581,7 @@
         "t": "p",
         "text": {
           "en": "`onReloadHistory()` ignores re-entry during a load, resets, then re-reads the CSV. Useful after clearing by accident.",
-          "bn": "`onReloadHistory()` লোড চলাকালীন পুনরায় প্রবেশ উপেক্ষা করে, রিসেট করে, তারপর CSV পুনরায় পড়ে। ভুল করে Clear করার পরে কাজে লাগে।"
+          "bn": "`onReloadHistory()` লোড চলাকালীন পুনরায় প্রবেশ উপেক্ষা করে, রিসেট করে, তারপর পুনরায় CSV রিড করে। ভুলবশত ক্লিয়ার করার পরে দরকারী।"
         }
       },
       {
@@ -591,14 +597,14 @@
         "t": "p",
         "text": {
           "en": "Opened via `onSettings()`. The auto simulation is stopped first, because a modal dialog runs a nested event loop that would otherwise keep generating traffic behind it and shift the limits being edited. It is restarted in a `finally`.",
-          "bn": "`onSettings()` দিয়ে খোলা হয়। প্রথমে অটো সিমুলেশন থামানো হয়, কারণ একটি মোডাল ডায়ালগ নেস্টেড ইভেন্ট লুপ চালায়, যা নইলে এর পেছনে ট্রাফিক তৈরি করতে থাকবে এবং সম্পাদনাধীন লিমিটগুলো সরিয়ে দেবে। এটি একটি `finally`-তে আবার চালু হয়।"
+          "bn": "`onSettings()`-এর মাধ্যমে খোলা হয়। অটো সিমুলেশন প্রথমে থামানো হয়, কারণ একটি মোডাল ডায়ালগ একটি নেস্টেড ইভেন্ট লুপ চালায় যা অন্যথায় এর পেছনে ট্রাফিক তৈরি করতে থাকবে এবং সম্পাদিত লিমিটগুলোকে সরিয়ে দেবে। এটি একটি `finally`-তে পুনরায় চালু করা হয়।"
         }
       },
       {
         "t": "p",
         "text": {
           "en": "See [chapter 13](#/en/ui) for the widget inventory.",
-          "bn": "উইজেট তালিকার জন্য [অধ্যায় ১৩](#/bn/ui) দেখুন।"
+          "bn": "উইজেটের তালিকার জন্য [§13](#/bn/ui) দেখুন।"
         }
       },
       {
@@ -614,7 +620,7 @@
         "t": "p",
         "text": {
           "en": "`onGenerateAbuseReport()` builds an undecorated application-modal window. Because its list is bound to the same `clients` observable list, it reflects live state as it changes.",
-          "bn": "`onGenerateAbuseReport()` একটি আনডেকোরেটেড অ্যাপ্লিকেশন-মোডাল উইন্ডো তৈরি করে। যেহেতু এর তালিকা একই `clients` অবজার্ভেবল লিস্টের সঙ্গে যুক্ত, এটি বদলানো লাইভ অবস্থা প্রতিফলিত করে।"
+          "bn": "`onGenerateAbuseReport()` একটি আনডেকোরেটেড অ্যাপ্লিকেশন-মোডাল উইন্ডো তৈরি করে। যেহেতু এর লিস্ট একই `clients` observable লিস্টের সাথে আবদ্ধ, তাই এটি পরিবর্তিত হওয়ার সাথে সাথে লাইভ স্টেটকে প্রতিফলিত করে।"
         }
       },
       {
@@ -626,7 +632,7 @@
         "text": "            clients  types  requests  logs  trafficSeries\n─────────────────────────────────────────────────────────\nonAddClient    +1               +1\nonSingleReq    ~             ~      +1\nonBurst       ~             ~      +20\nonAutoSim     ~             ~      +1 / 800ms\nonClear        ~              clear  clear   clear  clear\nonReload      +20            clear  clear   +516k  ~\nonSettings     ~              ~\nAbuseReport    ~  (reads)                    ~  (reads)"
       }
     ]
-  });
+  });;
 
   DOC.register({
     "id": "performance",
@@ -666,14 +672,14 @@
         "t": "p",
         "text": {
           "en": "Parsing half a million rows on the FX Application Thread froze the application before its window was even shown, and appending row by row fired 516,544 list change events.",
-          "bn": "FX অ্যাপ্লিকেশন থ্রেডে আধা-মিলিয়ন সারি পার্স করা উইন্ডো দেখানোর আগেই অ্যাপ্লিকেশনকে ফ্রিজ করে দিত, আর সারি ধরে অ্যাপেন্ড করলে ৫,১৬,৫৪৪টি লিস্ট পরিবর্তন ইভেন্ট পড়ত।"
+          "bn": "FX Application Thread-এ অর্ধ মিলিয়ন সারি পার্স করার ফলে এর উইন্ডো প্রদর্শিত হওয়ার আগেই অ্যাপ্লিকেশনটি জমে (freeze) যেত, এবং সারি ধরে সারি অ্যাপেন্ড করার ফলে 516,544টি লিস্ট চেঞ্জ ইভেন্ট ফায়ার হতো।"
         }
       },
       {
         "t": "p",
         "text": {
           "en": "Now the file read, splitting and timestamp parsing happen on a daemon thread; only object construction and a single `setAll` touch the FX thread.",
-          "bn": "এখন ফাইল পড়া, স্প্লিটিং ও টাইমস্ট্যাম্প পার্সিং ডেমন থ্রেডে হয়; কেবল অবজেক্ট নির্মাণ ও একটি একক `setAll` FX থ্রেড স্পর্শ করে।"
+          "bn": "এখন ফাইল রিড, স্প্লিটিং এবং টাইমস্ট্যাম্প পার্সিং একটি ডেমন থ্রেডে ঘটে; কেবল অবজেক্ট নির্মাণ এবং একটি একক `setAll` FX থ্রেড স্পর্শ করে।"
         }
       },
       {
@@ -714,7 +720,7 @@
         "t": "p",
         "text": {
           "en": "The residual 1,282 ms is JVM and JavaFX toolkit startup (measured at ~330 ms bare) plus FXML/CSS construction; it is no longer the CSV.",
-          "bn": "অবশিষ্ট ১,২৮২ মিসে হলো JVM ও জাভাএফএক্স টুলকিট স্টার্টআপ (খালি অবস্থায় ~৩৩০ মিসে মাপা) এবং FXML/CSS নির্মাণ; এটি আর CSV নয়।"
+          "bn": "অবশিষ্ট 1,282 ms হলো JVM এবং JavaFX টুলকিট স্টার্টআপ (খালি অবস্থায় ~330 ms পরিমাপ করা হয়েছে) সাথে FXML/CSS নির্মাণ; এটি আর CSV-এর জন্য নয়।"
         }
       },
       {
@@ -730,7 +736,7 @@
         "t": "p",
         "text": {
           "en": "Deriving a limit needs the busiest day a client ever had. The original code regrouped all 516,544 log entries on **every request and every selection change**, with nested `Collectors.groupingBy` allocating maps of maps.",
-          "bn": "লিমিট অনুমান করতে লাগে কোনো ক্লায়েন্টের সবচেয়ে ব্যস্ত দিন। মূল কোড **প্রতিটি অনুরোধ ও প্রতিটি সিলেকশন পরিবর্তনে** সব ৫,১৬,৫৪৪ লগ এন্ট্রি পুনর্বিন্যাস করত, ম্যাপের ম্যাপ বানানো নেস্টেড `Collectors.groupingBy` সহ।"
+          "bn": "একটি লিমিট পাওয়ার জন্য একজন ক্লায়েন্টের সবচেয়ে ব্যস্ত দিনটি প্রয়োজন। মূল কোডটি **প্রতিটি রিকোয়েস্ট এবং প্রতিটি সিলেকশন পরিবর্তনের সময়** সমস্ত 516,544টি লগ এন্ট্রি পুনরায় গ্রুপ করত, যেখানে নেস্টেড `Collectors.groupingBy` ম্যাপের ম্যাপ বরাদ্দ করত।"
         }
       },
       {
@@ -781,7 +787,7 @@
         "t": "p",
         "text": {
           "en": "A `ListChangeListener` on `logs` (see [the index itself](#/en/model/index)) keeps the index synchronised, so it is correct for any mutation path rather than depending on manual bookkeeping scattered around the controller.",
-          "bn": "`logs`-এর একটি `ListChangeListener` ইনডেক্সকে সমন্বয়ে রাখে, তাই এটি যেকোনো পরিবর্তনের পথে সঠিক থাকে, কন্ট্রোলারের ছড়িয়ে ছিটিয়ে রাখা হাতে-লেখা হিসাবের উপর নির্ভর করে না।"
+          "bn": "`logs`-এর ওপর একটি `ListChangeListener` ইনডেক্সটিকে সিঙ্ক্রোনাইজ রাখে, তাই কন্ট্রোলারের আশেপাশে ছড়িয়ে থাকা ম্যানুয়াল হিসাবের ওপর নির্ভর করার চেয়ে এটি যে কোনো মিউটেশন পাথের জন্যই সঠিক থাকে।"
         }
       },
       {
@@ -809,14 +815,14 @@
         "t": "p",
         "text": {
           "en": "The `requests` list was only ever pruned when a request was blocked, so accepted requests accumulated for the whole session and every evaluation rescanned the entire history — quadratic.",
-          "bn": "`requests` লিস্ট আগে কেবল কোনো অনুরোধ প্রত্যাখ্যাত হলে ছাঁটাই হতো, তাই গৃহীত অনুরোধ পুরো সেশন জমতে থাকত এবং প্রতিটি মূল্যায়ন পুরো ইতিহাস আবার স্ক্যান করত — বর্গাকার।"
+          "bn": "একটি রিকোয়েস্ট ব্লক হলে শুধুমাত্র তখনই `requests` লিস্টটি প্রুন (prune) করা হতো, তাই পুরো সেশনের জন্য গৃহীত রিকোয়েস্টগুলো জমা হতো এবং প্রতিটি মূল্যায়ন পুরো হিস্ট্রি পুনরায় স্ক্যান করত — যা কোয়াড্রেটিক (quadratic)।"
         }
       },
       {
         "t": "p",
         "text": {
           "en": "Both policies look back at most one window from the newest request, and the request under evaluation is always the newest, so anything older than `now - window` can never be counted again. `evictRequestsOutsideWindow` drops it.",
-          "bn": "দুটি পলিসিই সবচেয়ে নতুন অনুরোধ থেকে সর্বোচ্চ একটি উইন্ডো আগে তাকায়, আর মূল্যায়নাধীন অনুরোধটি সবসময় সবচেয়ে নতুন, তাই `now - window`-এর চেয়ে পুরোনো যা কিছু আর কখনো গোনা হবে না। `evictRequestsOutsideWindow` সেটি বাদ দেয়।"
+          "bn": "উভয় পলিসি সর্বশেষ রিকোয়েস্ট থেকে সর্বাধিক একটি উইন্ডো পেছনে তাকায়, এবং মূল্যায়নাধীন রিকোয়েস্টটি সর্বদা সর্বশেষ হয়, তাই `now - window`-এর চেয়ে পুরানো যে কোনো কিছু আর কখনোই গণনা করা যাবে না। `evictRequestsOutsideWindow` এটি বাদ দেয়।"
         }
       },
       {
@@ -865,7 +871,7 @@
         },
         "text": {
           "en": "**160 scenarios** (both policies × 8 window lengths × 5 limits × bursty and even traffic, 4,000 requests each) produced identical verdict sequences with and without it. That is the kind of claim you can only make about a change that removes work, not one that changes behaviour — which is exactly why it was worth making.",
-          "bn": "**১৬০টি পরিস্থিতি** (দুটি পলিসি × ৮টি উইন্ডো দৈর্ঘ্য × ৫টি লিমিট × ঝড়ের ও সমান ট্রাফিক, প্রতিটিতে ৪,০০০ অনুরোধ) এটি থাকা ও না থাকা — উভয় ক্ষেত্রে একই সিদ্ধান্ত-ক্রম উৎপন্ন করে। এই ধরনের দাবি কেবল কাজ সরানো একটি পরিবর্তনের জন্য করা যায়, আচরণ বদলানো একটির জন্য নয় — এ কারণেই এটি করা যথেষ্ট ছিল।"
+          "bn": "এটি প্রমাণযোগ্যভাবে ক্ষয়হীন (lossless): **160টি দৃশ্যপট** (উভয় পলিসি × 8 উইন্ডো দৈর্ঘ্য × 5 লিমিট × বার্স্টি এবং সমান ট্রাফিক, প্রতিটিতে 4,000 রিকোয়েস্ট) এটি ছাড়া এবং এটিসহ অভিন্ন রায়ের অনুক্রম তৈরি করেছে।"
         }
       },
       {
@@ -881,7 +887,7 @@
         "t": "p",
         "text": {
           "en": "Holding all 516,544 `Log` objects cost roughly 395 MB for a list the dashboard only scrolls near the top of. `MAX_RETAINED_LOGS = 50_000` caps it.",
-          "bn": "সব ৫,১৬,৫৪৪টি `Log` অবজেক্ট ধরে রাখা প্রায় ৩৯৫ MB খরচ করত, যে তালিকার উপরে ড্যাশবোর্ড শুধু শুরুর দিকেই স্ক্রল করে। `MAX_RETAINED_LOGS = 50_000` সেটি সীমিত করে।"
+          "bn": "সমস্ত 516,544 `Log` অবজেক্ট ধরে রাখার জন্য প্রায় 395 MB খরচ হতো এমন একটি লিস্টের জন্য যার ড্যাশবোর্ড কেবল শীর্ষের কাছাকাছি স্ক্রোল করে। `MAX_RETAINED_LOGS = 50_000` এটিকে সীমাবদ্ধ করে।"
         }
       },
       {
@@ -927,7 +933,7 @@
         },
         "text": {
           "en": "The log list and the index are coupled through the change listener, so trimming an `ACCEPTED` entry would decrement the index and silently lower that client's derived limit. The index is therefore **cumulative** and trimming runs with listener sync suppressed. Verified: after trimming, the index still matches a from-scratch rebuild over all 516,544 rows for all 80 client × type pairs, and every enforced limit is unchanged.",
-          "bn": "লগ লিস্ট ও ইনডেক্স পরিবর্তন লিসেনার মাধ্যমে যুক্ত, তাই একটি `ACCEPTED` এন্ট্রি ছাঁটালে ইনডেক্স কমে যেত এবং ওই ক্লায়েন্টের অনুমানিত লিমিট নীরবে নিচে নামত। তাই ইনডেক্স **ক্রমবর্ধমান** এবং ছাঁটাই চলে লিসেনার সমন্বয় বন্ধ রেখে। যাচাই করা হয়েছে: ছাঁটাইয়ের পরও সব ৮০টি ক্লায়েন্ট × টাইপ জোড়ার জন্য ইনডেক্স সব ৫,১৬,৫৪৪ সারিতে শূন্য থেকে নতুন করে তৈরি ইনডেক্সের সঙ্গে মেলে, এবং প্রতিটি প্রয়োগ হওয়া লিমিট অপরিবর্তিত।"
+          "bn": "**সূক্ষ্মতা:** লগ লিস্ট এবং ইনডেক্স চেঞ্জ লিসেনারের মাধ্যমে সংযুক্ত, তাই একটি `ACCEPTED` এন্ট্রি ট্রিম করলে ইনডেক্স হ্রাস পাবে এবং নিঃশব্দে সেই ক্লায়েন্টের প্রাপ্ত সীমা কমে যাবে। তাই ইনডেক্সটি **ক্রমপুঞ্জিত (cumulative)** এবং লিসেনার সিঙ্ক অবদমিত রেখে ট্রিমিং চলে। যাচাই করা হয়েছে: ট্রিমিংয়ের পরেও, সমস্ত 80টি client × type পেয়ারের জন্য ইনডেক্স এখনও সমস্ত 516,544 সারির শুরু থেকে পুনর্নির্মাণের সাথে মেলে, এবং প্রতিটি প্রয়োগকৃত সীমা অপরিবর্তিত থাকে।"
         }
       },
       {
@@ -955,7 +961,7 @@
         "t": "p",
         "text": {
           "en": "A 1,200-request burst through the real handlers, with the limit raised so that every request is genuinely evaluated rather than short-circuiting on a lockout:",
-          "bn": "প্রকৃত হ্যান্ডলারের মাধ্যমে ১,২০০-অনুরোধের ঝড়, লিমিট বাড়িয়ে দেওয়া যাতে প্রতিটি অনুরোধ সত্যিই মূল্যায়ন হয়, লক-আউটে স্টপ-কোর্ট না হয়ে:"
+          "bn": "একটি লকআউটে শর্ট-সার্কিট না হয়ে প্রতিটি রিকোয়েস্ট যাতে সত্যিকার অর্থে মূল্যায়ন করা যায় সেজন্য লিমিট বাড়িয়ে বাস্তব হ্যান্ডলারের মাধ্যমে একটি 1,200-রিকোয়েস্টের বার্স্ট:"
         }
       },
       {
@@ -1016,5 +1022,5 @@
         }
       }
     ]
-  });
+  });;
 })();

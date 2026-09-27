@@ -25,7 +25,7 @@
         "t": "p",
         "text": {
           "en": "Real services use such a layer to decide, for each incoming request, whether to serve it or refuse it, and to keep a score of how badly each caller has behaved.",
-          "bn": "বাস্তব সেবা এমন একটি স্তর ব্যবহার করে, যা প্রতিটি আসা অনুরোধের জন্য সিদ্ধান্ত নেয় — সেটি পরিবেশন করা হবে, নাকি প্রত্যাখ্যান — এবং কোন ক্রেতা কতটা খারাপ আচরণ করেছে তার স্কোর রাখে।"
+          "bn": "GateKeeper একটি API-এর সামনে থাকা request-admission লেয়ারের অনুকরণ করে। বাস্তব সার্ভিসগুলো প্রতিটি ইনকামিং রিকোয়েস্টের ক্ষেত্রে সেটিকে সার্ভ করা হবে নাকি প্রত্যাখ্যান (refuse) করা হবে তা নির্ধারণ করতে এবং প্রতিটি কলার কতটা খারাপ আচরণ করেছে তার একটি স্কোর রাখতে এই ধরনের লেয়ার ব্যবহার করে।"
         }
       },
       {
@@ -33,7 +33,7 @@
         "kind": "key",
         "text": {
           "en": "GateKeeper is a **simulator**: there is no server, no network, and no real API. It is a GUI over a synthetic model. You pick a client and a request type, press a button, and the program decides whether that request would have been allowed. It also replays a bundled half-million-row request history so the rate limits can be derived from how each client has actually behaved.",
-          "bn": "GateKeeper একটি **সিমুলেটর**: কোনো সার্ভার নেই, নেটওয়ার্ক নেই, আসল API নেই। এটি একটি কৃত্রিম মডেলের উপরে তৈরি গ্রাফিক্যাল ইন্টারফেস। আপনি একটি ক্লায়েন্ট ও একটি অনুরোধের ধরন বেছে নেন, বোতাম চাপেন, আর প্রোগ্রাম সিদ্ধান্ত নেয় যে ওই অনুরোধটি অনুমোদিত হতো কি না। এটি সঙ্গে একটি বান্ডেল করা আধা-মিলিয়ন সারির ইতিহাসও চালায়, যাতে রেট লিমিট অনুমান করা যায় প্রতিটি ক্লায়েন্টের প্রকৃত আচরণ থেকেই।"
+          "bn": "GateKeeper হলো একটি **সিমুলেটর**: এখানে কোনো সার্ভার নেই, কোনো নেটওয়ার্ক নেই, এবং কোনো বাস্তব API নেই। এটি একটি সিন্থেটিক মডেলের ওপর তৈরি GUI। আপনি একজন ক্লায়েন্ট এবং একটি রিকোয়েস্ট টাইপ নির্বাচন করেন, একটি বাটনে চাপ দেন, এবং প্রোগ্রামটি সিদ্ধান্ত নেয় যে সেই রিকোয়েস্টটি অনুমোদন করা হতো কি না। এটি একটি বান্ডল করা অর্ধ-মিলিয়ন-সারির রিকোয়েস্ট হিস্ট্রিও রিপ্লে করে যাতে প্রতিটি ক্লায়েন্ট বাস্তবে কীভাবে আচরণ করেছে তা থেকে রেট লিমিটগুলো নির্ধারণ করা যায়।"
         }
       },
       {
@@ -82,7 +82,7 @@
             "`onAddClient`",
             {
               "en": "Registers a new client by name. Duplicate names are refused.",
-              "bn": "নাম দিয়ে নতুন ক্লায়েন্ট নিবন্ধন করে। ডুপ্লিকেট নাম প্রত্যাখ্যান করে।"
+              "bn": "নাম দিয়ে একটি নতুন ক্লায়েন্ট রেজিস্টার করে। ডুপ্লিকেট নাম প্রত্যাখ্যান করা হয়।"
             }
           ],
           [
@@ -90,7 +90,7 @@
             "`onSingleRequest`",
             {
               "en": "Evaluates one request. Logs `ACCEPTED` or `BLOCKED`.",
-              "bn": "একটি অনুরোধ মূল্যায়ন করে। `ACCEPTED` বা `BLOCKED` লগ করে।"
+              "bn": "একটি রিকোয়েস্ট মূল্যায়ন করে। `ACCEPTED` বা `BLOCKED` লগ করে।"
             }
           ],
           [
@@ -98,7 +98,7 @@
             "`onBurst`",
             {
               "en": "The same, twenty times back to back.",
-              "bn": "একই কাজ, পরপর বিশ বার।"
+              "bn": "একই কাজ, পরপর বিশ বার ব্যাক-টু-ব্যাক করে।"
             }
           ],
           [
@@ -106,7 +106,7 @@
             "`onAutoSimulate`",
             {
               "en": "A background timer picks a client and a type at random every 800 ms until pressed again.",
-              "bn": "একটি ব্যাকগ্রাউন্ড টাইমার প্রতি ৮০০ মিলিসেকেন্ডে এলোমেলোভাবে একটি ক্লায়েন্ট ও একটি ধরন বেছে নেয়, যতক্ষণ না আবার চাপা হয়।"
+              "bn": "আবার চাপ না দেওয়া পর্যন্ত একটি ব্যাকগ্রাউন্ড টাইমার প্রতি 800 ms পরপর এলোমেলোভাবে একজন ক্লায়েন্ট এবং একটি টাইপ বেছে নেয়।"
             }
           ],
           [
@@ -114,7 +114,7 @@
             "`onGenerateAbuseReport`",
             {
               "en": "Opens a modal dashboard of per-client risk.",
-              "bn": "প্রতি-ক্লায়েন্ট ঝুঁকির একটি মোডাল ড্যাশবোর্ড খোলে।"
+              "bn": "ক্লায়েন্ট-ভিত্তিক ঝুঁকির একটি মডেল ড্যাশবোর্ড খোলে।"
             }
           ],
           [
@@ -122,7 +122,7 @@
             "`onSettings`",
             {
               "en": "Modal to change policy, window, thresholds, severity, decay, per-type limits.",
-              "bn": "পলিসি, উইন্ডো, থ্রেশহোল্ড, সিভারিটি, ডিকে, প্রতি-টাইপ লিমিট বদলানোর মোডাল।"
+              "bn": "পলিসি, উইন্ডো, থ্রেশহোল্ড, সিভিয়ারিটি, ডিকে, প্রতি-টাইপ লিমিট পরিবর্তনের জন্য মোডাল।"
             }
           ],
           [
@@ -138,7 +138,7 @@
             "`onReloadHistory`",
             {
               "en": "Re-reads the bundled CSV.",
-              "bn": "বান্ডেল করা CSV পুনরায় পড়ে।"
+              "bn": "বান্ডল করা CSV পুনরায় রিড করে।"
             }
           ]
         ]
@@ -165,19 +165,19 @@
           {
             "text": {
               "en": "**Top bar (73 px)** — logo and title on the left; \"Generate Abuse Report\", the settings gear, and a pulsing green status dot on the right.",
-              "bn": "**টপ বার (৭৩ px)** — বাম দিকে লোগো ও শিরোনাম; ডান দিকে \"Generate Abuse Report\", সেটিংসের গিয়ার, এবং একটি নাড়া-নাড়া সবুজ স্ট্যাটাস ডট।"
+              "bn": "**Top bar (73 px)** — বাম দিকে লোগো এবং টাইটেল; ডান দিকে \"Generate Abuse Report\", সেটিংস গিয়ার, এবং একটি পালসিং সবুজ স্ট্যাটাস ডট।"
             }
           },
           {
             "text": {
               "en": "**Left column (250 px)** — the client registry (cards with a status badge) and below it the live request log with its Clear / Reload History buttons.",
-              "bn": "**বাম কলাম (২৫০ px)** — ক্লায়েন্ট রেজিস্ট্রি (স্ট্যাটাস ব্যাজসহ কার্ড) এবং তার নিচে লাইভ অনুরোধ লগ, সঙ্গে Clear / Reload History বোতাম।"
+              "bn": "**Left column (250 px)** — ক্লায়েন্ট রেজিস্ট্রি (স্ট্যাটাস ব্যাজসহ কার্ড) এবং এর নিচে লাইভ রিকোয়েস্ট লগ যার সাথে Clear / Reload History বাটন রয়েছে।"
             }
           },
           {
             "text": {
               "en": "**Centre (750 px)** — four KPI numbers across the top, a traffic line chart, and the request controls.",
-              "bn": "**মাঝের অংশ (৭৫০ px)** — উপরে চারটি KPI সংখ্যা, একটি ট্রাফিক লাইন চার্ট, এবং অনুরোধের কন্ট্রোল।"
+              "bn": "**Centre (750 px)** — শীর্ষ জুড়ে চারটি KPI নম্বর, একটি ট্রাফিক লাইন চার্ট, এবং রিকোয়েস্ট কন্ট্রোলসমূহ।"
             }
           }
         ]
@@ -195,7 +195,7 @@
         }
       }
     ]
-  });
+  });;
 
   DOC.register({
     "id": "build",
@@ -225,13 +225,13 @@
           {
             "text": {
               "en": "**JDK 21.** The code uses records, exhaustive `switch` expressions, and `List.removeFirst` (a Java 21 sequenced-collection method).",
-              "bn": "**JDK 21।** কোডে ব্যবহার হয়েছে রেকর্ড, exhaustive `switch` এক্সপ্রেশন, এবং `List.removeFirst` (জাভা ২১-এর sequenced-collection পদ্ধতি)।"
+              "bn": "**JDK 21.** কোডটিতে records, exhaustive `switch` expressions, এবং `List.removeFirst` (একটি Java 21 sequenced-collection মেথড) ব্যবহার করা হয়েছে।"
             }
           },
           {
             "text": {
               "en": "**JavaFX.** The project declares **no dependencies in any build file, because it has no build file at all.** IntelliJ IDEA is configured to use the JavaFX jars already installed on the system.",
-              "bn": "**JavaFX।** প্রজেক্টে **কোনো বিল্ড ফাইলে কোনো নির্ভরতা ঘোষণা করা নেই, কারণ কোনো বিল্ড ফাইলই নেই।** IntelliJ IDEA সিস্টেমে ইনস্টল করা জাভাএফএক্স জার ব্যবহার করতে কনফিগার করা।"
+              "bn": "**JavaFX.** প্রজেক্টটি **কোনো বিল্ড ফাইলে কোনো ডিপেন্ডেন্সি ঘোষণা করে না, কারণ এতে কোনো বিল্ড ফাইলই নেই।** IntelliJ IDEA সিস্টেমে ইতিমধ্যে ইনস্টল করা JavaFX jar-গুলো ব্যবহার করার জন্য কনফিগার করা হয়েছে।"
             }
           }
         ]
@@ -262,28 +262,28 @@
             "`GateKeeper.iml`",
             {
               "en": "Declares `src` as the source root and `resources` as a *java-resource* root, and adds a library called `lib`.",
-              "bn": "`src`-কে সোর্স রুট, `resources`-কে *java-resource* রুট ঘোষণা করে, এবং `lib` নামে একটি লাইব্রেরি যোগ করে।"
+              "bn": "`src`-কে সোর্স রুট হিসেবে এবং `resources`-কে একটি *java-resource* রুট হিসেবে ঘোষণা করে, এবং `lib` নামের একটি লাইব্রেরি যোগ করে।"
             }
           ],
           [
             "`.idea/libraries/lib.xml`",
             {
               "en": "Points that library at `/usr/share/openjfx/lib` — a **hard-coded absolute path**.",
-              "bn": "ওই লাইব্রেরিকে `/usr/share/openjfx/lib`-এ নির্দেশ করে — একটি **হার্ড-কোড করা নির্বিচার পথ**।"
+              "bn": "সেই লাইব্রেরিকে `/usr/share/openjfx/lib`-এর দিকে নির্দেশ করে — যা একটি **হার্ড-কোডেড অ্যাবসলিউট পাথ**।"
             }
           ],
           [
             "`.idea/misc.xml`",
             {
               "en": "Sets `languageLevel = JDK_21`, `project-jdk-name = 21`, output to `./out`.",
-              "bn": "`languageLevel = JDK_21`, `project-jdk-name = 21` ঠিক করে, আউটপুট `./out`-এ দেয়।"
+              "bn": "`languageLevel = JDK_21`, `project-jdk-name = 21`, আউটপুট `./out`-এ সেট করে।"
             }
           ],
           [
             "`.idea/vcs.xml`",
             {
               "en": "Git integration.",
-              "bn": "গিট ইন্টিগ্রেশন।"
+              "bn": "Git ইন্টিগ্রেশন।"
             }
           ]
         ]
@@ -297,14 +297,14 @@
         },
         "text": {
           "en": "On any machine where JavaFX lives elsewhere, the project will not compile until that path is changed. This is the single highest-priority missing piece in the project; chapter 22 names it, and chapter 20 gives the `pom.xml` recipe.",
-          "bn": "যেকোনো মেশিনে যেখানে জাভাএফএক্স অন্য কোথাও আছে, সেই পথ বদলানোর আগে প্রজেক্ট কম্পাইল হবে না। এটিই প্রজেক্টের সবচেয়ে অগ্রাধিকারযোগ্য অনুপস্থিত জিনিস; অধ্যায় ২২-এ তা উল্লেখ করা হয়েছে, আর অধ্যায় ২০-এ `pom.xml`-এর রেসিপি দেওয়া আছে।"
+          "bn": "**ফলাফল:** যে কোনো মেশিনে যেখানে JavaFX অন্য কোথাও অবস্থিত, সেই পাথ পরিবর্তন না করা পর্যন্ত প্রজেক্টটি কম্পাইল হবে না। একটি শেল থেকে আপনি ম্যানুয়ালি কম্পাইল এবং রান করতে পারেন:"
         }
       },
       {
         "t": "p",
         "text": {
           "en": "From a shell you can compile and run manually:",
-          "bn": "শেল থেকে আপনি ম্যানুয়ালি কম্পাইল ও চালাতে পারেন:"
+          "bn": "**ফলাফল:** যে কোনো মেশিনে যেখানে JavaFX অন্য কোথাও অবস্থিত, সেই পাথ পরিবর্তন না করা পর্যন্ত প্রজেক্টটি কম্পাইল হবে না। একটি শেল থেকে আপনি ম্যানুয়ালি কম্পাইল এবং রান করতে পারেন:"
         }
       },
       {
@@ -336,7 +336,7 @@
         "t": "p",
         "text": {
           "en": "`src/com/simulator/Main.java` is a nine-line shim that only calls `MainApp.main(args)`. It exists because the IDE run configuration points at it. `MainApp` is the real entry point.",
-          "bn": "`src/com/simulator/Main.java` হলো নয়-লাইনের একটি শিম, যা কেবল `MainApp.main(args)` কল করে। এটি আছে কারণ IDE-র রান কনফিগারেশন এটিকেই নির্দেশ করে। আসল এন্ট্রি পয়েন্ট `MainApp`।"
+          "bn": "`src/com/simulator/Main.java` হলো একটি নয় লাইনের শিম (shim) যা কেবল `MainApp.main(args)` কল করে। এটি বিদ্যমান কারণ IDE রান কনফিগারেশন এর দিকে নির্দেশ করে। `MainApp` হলো আসল এন্ট্রি পয়েন্ট।"
         }
       },
       {
@@ -356,7 +356,7 @@
         "t": "p",
         "text": {
           "en": "The classpath must contain **both**:",
-          "bn": "ক্লাসপাথে **উভয়ই** থাকতে হবে:"
+          "bn": "ক্লাসপাতে **উভয়ই** থাকতে হবে:"
         }
       },
       {
@@ -367,7 +367,7 @@
         "t": "p",
         "text": {
           "en": "`dashboard.fxml`, `style.css` and the logo come from the `resources` root. `logs.csv` comes from `src` — it is not Java source, but IntelliJ copies non-`.java` files from a source root onto the classpath, which is how the application finds it. This is fragile by design of the current project layout: if the CSV is not copied, the app reports the history as unavailable in the log list's placeholder rather than crashing.",
-          "bn": "`dashboard.fxml`, `style.css` ও লোগো আসে `resources` রুট থেকে। `logs.csv` আসে `src` থেকে — এটি জাভা সোর্স নয়, কিন্তু IntelliJ সোর্স রুট থেকে `.java` নয় এমন ফাইল ক্লাসপাথে কপি করে, যেভাবে অ্যাপ্লিকেশন সেটি খুঁজে পায়। বর্তমান প্রজেক্টের বিন্যাসের কারণেই এটি ঝুঁকিপূর্ণ: CSV কপি না হলে অ্যাপ ক্র্যাশ করার বদলে লগ লিস্টের প্লেসহোল্ডারে ইতিহাস অনুপলব্ধ বলে জানায়।"
+          "bn": "`dashboard.fxml`, `style.css` এবং লোগো আসে `resources` রুট থেকে। `logs.csv` আসে `src` থেকে — এটি কোনো Java সোর্স নয়, কিন্তু IntelliJ একটি সোর্স রুট থেকে নন-`.java` ফাইলগুলোকে ক্লাসপাতে কপি করে, যা অ্যাপ্লিকেশনটিকে এটি খুঁজে পেতে সাহায্য করে। এটি বর্তমান প্রজেক্ট লেআউটের নকশাগত কারণে ভঙ্গুর: যদি CSV কপি না করা হয়, অ্যাপটি ক্র্যাশ না করে লগ লিস্টের প্লেসহোল্ডারে হিস্ট্রি অনুপলব্ধ হিসেবে রিপোর্ট করে।"
         }
       },
       {
@@ -387,7 +387,7 @@
         "t": "p",
         "text": {
           "en": "The FXML declares `xmlns=\"http://javafx.com/javafx/25\"` (exported from a newer Scene Builder) while the installed runtime is JavaFX 11. The document loads correctly. The warning can be silenced by changing the FXML namespace to `.../javafx/11`.",
-          "bn": "FXML ঘোষণা করে `xmlns=\"http://javafx.com/javafx/25\"` (নতুন একটি Scene Builder থেকে এক্সপোর্ট করা), অথচ ইনস্টল করা রানটাইম JavaFX 11। ডকুমেন্ট ঠিকভাবে লোড হয়। FXML-এর নেমস্পেস `.../javafx/11`-এ বদলে সতর্কবার্তাটি বন্ধ করা যায়।"
+          "bn": "FXML-এ `xmlns=\"http://javafx.com/javafx/25\"` ঘোষণা করা হয়েছে (একটি নতুন Scene Builder থেকে এক্সপোর্ট করা) যেখানে ইনস্টল করা রানটাইম হলো JavaFX 11। ডকুমেন্টটি সঠিকভাবে লোড হয়। FXML নেমস্পেস পরিবর্তন করে `.../javafx/11` করলে ওয়ার্নিংটি দূর করা যায়।"
         }
       },
       {
@@ -399,7 +399,7 @@
         }
       }
     ]
-  });
+  });;
 
   DOC.register({
     "id": "layout",
@@ -536,7 +536,7 @@
         "t": "p",
         "text": {
           "en": "Rate limits are *derived from history*. A client that has historically made up to 240 reads in a day gets a higher read limit than one that made 51. Without a real history every client would look identical, and the \"auto-calculate from history\" feature — a headline feature of the settings dialog — would have nothing to work from.",
-          "bn": "রেট লিমিট *ইতিহাস থেকে অনুমান করা* হয়। যে ক্লায়েন্ট ঐতিহাসে দিনে সর্বোচ্চ ২৪০টি রিড করেছে তার রিড লিমিট বেশি হয়, যে ৫১টি করেছে তার কম। প্রকৃত ইতিহাস ছাড়া সব ক্লায়েন্ট একই দেখাত, আর সেটিংস ডায়ালগের একটি প্রধান বৈশিষ্ট্য — \"ইতিহাস থেকে স্বয়ংক্রিয় গণনা\" — কাজ করার কিছুই পেত না।"
+          "bn": "রেট লিমিটগুলো *হিস্ট্রি থেকে উদ্ভূত হয় (derived from history)*। যে ক্লায়েন্ট অতীতে একদিনে সর্বোচ্চ 240টি রিড করেছে, সে একদিনে 51টি রিড করা ক্লায়েন্টের চেয়ে বেশি রিড লিমিট পায়। একটি বাস্তব হিস্ট্রি ছাড়া প্রতিটি ক্লায়েন্ট অভিন্ন দেখাত, এবং \"auto-calculate from history\" ফিচারটি — যা সেটিংস ডায়ালগের একটি প্রধান ফিচার — কাজ করার মতো কিছুই পেত না।"
         }
       },
       {
@@ -552,7 +552,7 @@
         }
       }
     ]
-  });
+  });;
 
   DOC.register({
     "id": "javafx",
@@ -564,7 +564,7 @@
     },
     "lead": {
       "en": "The minimum you need to know about JavaFX to read the rest of this document. Skip it if you already know the framework — but if anything below is unfamiliar, keep it open; chapters 8, 13 and 14 all assume it.",
-      "bn": "এই নথির বাকি অংশ পড়তে জাভাএফএক্স সম্পর্কে যা কমপক্ষে জানা দরকার। ফ্রেমওয়ার্ক ইতিমধ্যে জানলে এড়িয়ে যান — তবে নিচের যেকোনো বিষয় অচেনা হলে খোলা রাখুন; অধ্যায় ৮, ১৩ ও ১৪ সবই এটি ধরে নেয়।"
+      "bn": "এই ডকুমেন্টের বাকি অংশ পড়তে জাভাএফএক্স সম্পর্কে যা কমপক্ষে জানা দরকার। ফ্রেমওয়ার্ক ইতিমধ্যে জানলে এড়িয়ে যান — তবে নিচের যেকোনো বিষয় অচেনা হলে খোলা রাখুন; অধ্যায় ৮, ১৩ ও ১৪ সবই এটি ধরে নেয়।"
     },
     "blocks": [
       {
@@ -580,7 +580,7 @@
         "t": "p",
         "text": {
           "en": "Every visual element is a **`Node`**. Nodes are organised in a tree: a parent *contains* children. The tree of the main window is declared in `dashboard.fxml` and instantiated by `FXMLLoader`.",
-          "bn": "প্রতিটি দৃশ্যমান উপাদান একটি **`Node`**। নোডগুলো একটি গাছে সাজানো: একটি প্যারেন্ট *ধারণ করে* তার চাইল্ডগুলোকে। প্রধান উইন্ডোর গাছটি `dashboard.fxml`-এ ঘোষণা করা এবং `FXMLLoader` তা তৈরি করে।"
+          "bn": "প্রতিটি ভিজ্যুয়াল উপাদান হলো একটি **`Node`**। নোডগুলো একটি ট্রিতে সাজানো থাকে: একটি প্যারেন্ট চিলড্রেনদের *ধারণ করে (contains)*। প্রধান উইন্ডোর ট্রিটি `dashboard.fxml`-এ ঘোষণা করা হয়েছে এবং `FXMLLoader` দ্বারা ইন্সট্যানশিয়েট করা হয়েছে।"
         }
       },
       {
@@ -600,42 +600,42 @@
             "`StackPane`",
             {
               "en": "Stacks children on top of each other, all filling the space.",
-              "bn": "চাইল্ডদের একটির উপর আরেকটি স্তূপ করে, সবগুলোই পুরো জায়গা ভরে।"
+              "bn": "চিলড্রেনদের একের ওপর আরেকটিকে স্তূপ করে রাখে, সবাই সম্পূর্ণ স্থান পূরণ করে।"
             }
           ],
           [
             "`VBox`",
             {
               "en": "Vertical stack; each child gets its preferred height.",
-              "bn": "লম্বালম্বি সাজানো; প্রতিটি চাইল্ড তার পছন্দের উচ্চতা পায়।"
+              "bn": "উল্লম্ব স্তূপ (vertical stack); প্রতিটি চাইল্ড তার প্রেফার্ড উচ্চতা পায়।"
             }
           ],
           [
             "`HBox`",
             {
               "en": "Horizontal stack; each child gets its preferred width.",
-              "bn": "পাশাপাশি সাজানো; প্রতিটি চাইল্ড তার পছন্দের প্রস্থ পায়।"
+              "bn": "অনুভূমিক স্তূপ (horizontal stack); প্রতিটি চাইল্ড তার প্রেফার্ড প্রস্থ পায়।"
             }
           ],
           [
             "`BorderPane`",
             {
               "en": "Five regions: top, bottom, left, right, centre.",
-              "bn": "পাঁচটি অঞ্চল: উপর, নিচ, বাম, ডান, মাঝখান।"
+              "bn": "পাঁচটি অঞ্চল: top, bottom, left, right, centre।"
             }
           ],
           [
             "`ScrollPane`",
             {
               "en": "Makes its content larger than itself scrollable.",
-              "bn": "নিজের চেয়ে বড় কনটেন্টকে স্ক্রলযোগ্য করে।"
+              "bn": "এর ভেতরের কনটেন্ট এর নিজের চেয়ে বড় হলে স্ক্রোলযোগ্য করে তোলে।"
             }
           ],
           [
             "`Region`",
             {
               "en": "A generic, styleable rectangle used for spacers and meter bars.",
-              "bn": "একটি সাধারণ, স্টাইলযোগ্য আয়তক্ষেত্র — স্পেসার ও মিটার বারের জন্য।"
+              "bn": "একটি জেনেরিক, স্টাইলযোগ্য আয়তক্ষেত্র যা স্পেসার এবং মিটার বারের জন্য ব্যবহৃত হয়।"
             }
           ]
         ]
@@ -644,7 +644,7 @@
         "t": "p",
         "text": {
           "en": "Controls used here: `Label`, `Button`, `TextField`, `ListView`, `ComboBox`, `Spinner`, `LineChart`, `Circle`, `SVGPath`.",
-          "bn": "এখানে ব্যবহৃত কন্ট্রোল: `Label`, `Button`, `TextField`, `ListView`, `ComboBox`, `Spinner`, `LineChart`, `Circle`, `SVGPath`।"
+          "bn": "এখানে ব্যবহৃত কন্ট্রোলসমূহ: `Label`, `Button`, `TextField`, `ListView`, `ComboBox`, `Spinner`, `LineChart`, `Circle`, `SVGPath`।"
         }
       },
       {
@@ -662,13 +662,13 @@
           {
             "text": {
               "en": "A **`Stage`** is a top-level operating-system window. It has a title bar and can be shown, hidden, and styled (`StageStyle.DECORATED` by default; `TRANSPARENT` and `UNDECORATED` are used by the modals).",
-              "bn": "একটি **`Stage`** হলো অপারেটিং সিস্টেমের উচ্চতর স্তরের উইন্ডো। এতে টাইটেল বার থাকে এবং এটি দেখানো, লুকানো ও স্টাইল করা যায় (ডিফল্ট `StageStyle.DECORATED`; মোডালগুলো `TRANSPARENT` ও `UNDECORATED` ব্যবহার করে)।"
+              "bn": "একটি **`Stage`** হলো একটি টপ-লেভেল অপারেটিং সিস্টেম উইন্ডো। এর একটি টাইটেল বার থাকে এবং এটি দেখানো, লুকানো এবং স্টাইল করা যায় (ডিফল্টভাবে `StageStyle.DECORATED`; মোডালগুলোর ক্ষেত্রে `TRANSPARENT` এবং `UNDECORATED` ব্যবহৃত হয়)।"
             }
           },
           {
             "text": {
               "en": "A **`Scene`** holds one scene graph and is attached to a `Stage`.",
-              "bn": "একটি **`Scene`** একটি সিন গ্রাফ ধরে রাখে এবং একটি `Stage`-এর সঙ্গে যুক্ত থাকে।"
+              "bn": "একটি **`Scene`** একটি দৃশ্য গ্রাফ ধারণ করে এবং একটি `Stage`-এর সাথে সংযুক্ত থাকে।"
             }
           }
         ]
@@ -677,7 +677,7 @@
         "t": "p",
         "text": {
           "en": "The application has four stages: the main window, the settings dialog, the abuse-report popup, and a small validation-error dialog.",
-          "bn": "অ্যাপ্লিকেশনে চারটি স্টেজ আছে: প্রধান উইন্ডো, সেটিংস ডায়ালগ, অপব্যবহার-রিপোর্ট পপ-আপ, এবং একটি ছোট যাচাই-ব্যর্থতার ডায়ালগ।"
+          "bn": "অ্যাপ্লিকেশনটিতে চারটি স্টেজ রয়েছে: প্রধান উইন্ডো, সেটিংস ডায়ালগ, অ্যাবিউজ-রিপোর্ট পপআপ, এবং একটি ছোট ভ্যালিডেশন-এরর ডায়ালগ।"
         }
       },
       {
@@ -705,7 +705,7 @@
         "t": "p",
         "text": {
           "en": "JavaFX allows exactly **one** thread to touch the scene graph: the *FX Application Thread*. Any attempt from another thread throws `IllegalStateException: Not on FX application thread`. To hand work across, use `Platform.runLater(runnable)`. See chapter 9.",
-          "bn": "জাভাএফএক্স সিন গ্রাফ স্পর্শ করতে ঠিক **একটি** থ্রেডকে অনুমতি দেয়: *FX অ্যাপ্লিকেশন থ্রেড*। অন্য কোনো থ্রেড থেকে চেষ্টা করলে `IllegalStateException: Not on FX application thread` ছুঁড়ে যায়। কাজ পাঠাতে `Platform.runLater(runnable)` ব্যবহার করুন। অধ্যায় ৯ দেখুন।"
+          "bn": "JavaFX দৃশ্য গ্রাফ স্পর্শ করার জন্য ঠিক **একটি** থ্রেড অনুমোদন করে: *FX Application Thread*। অন্য কোনো থ্রেড থেকে যে কোনো প্রচেষ্টা `IllegalStateException: Not on FX application thread` থ্রো করে। কাজ হ্যান্ড অফ করতে `Platform.runLater(runnable)` ব্যবহার করুন। দেখুন [§9](#/bn/threading)।"
         }
       },
       {
@@ -721,7 +721,7 @@
         "t": "p",
         "text": {
           "en": "JavaFX ships observable versions of its data structures so the UI can update itself:",
-          "bn": "UI নিজে আপডেট করতে পারে, এ জন্য জাভাএফএক্স তার ডেটা স্ট্রাকচারের অবজার্ভেবল সংস্করণ দেয়:"
+          "bn": "JavaFX তার ডেটা স্ট্রাকচারগুলোর observable সংস্করণ সরবরাহ করে যাতে UI নিজেই নিজেকে আপডেট করতে পারে:"
         }
       },
       {
@@ -730,19 +730,19 @@
           {
             "text": {
               "en": "**`ObservableList<E>`** — a `List` that fires a `ListChangeListener` when elements are added, removed or replaced. `FXCollections.observableArrayList()` creates one.",
-              "bn": "**`ObservableList<E>`** — একটি `List`, যা উপাদান যোগ, সরানো বা প্রতিস্থাপনের সময় `ListChangeListener` ছুঁড়ে। `FXCollections.observableArrayList()` এটি তৈরি করে।"
+              "bn": "**`ObservableList<E>`** — একটি `List` যা উপাদান যোগ, অপসারণ বা প্রতিস্থাপন করার সময় একটি `ListChangeListener` ফায়ার করে। `FXCollections.observableArrayList()` এমন একটি তৈরি করে।"
             }
           },
           {
             "text": {
               "en": "**`IntegerProperty` / `ObjectProperty<T>`** — observable single values, with `get()`, `set(value)` and `addListener(...)`.",
-              "bn": "**`IntegerProperty` / `ObjectProperty<T>`** — অবজার্ভেবল একক মান, `get()`, `set(value)` ও `addListener(...)`-সহ।"
+              "bn": "**`IntegerProperty` / `ObjectProperty<T>`** — observable একক মান, যার সাথে `get()`, `set(value)` এবং `addListener(...)` রয়েছে।"
             }
           },
           {
             "text": {
               "en": "**`Bindings.createStringBinding(supplier, observables...)`** — recomputes a `String` automatically whenever any of the observed sources changes.",
-              "bn": "**`Bindings.createStringBinding(supplier, observables...)`** — পর্যবেক্ষকের যেকোনো উৎস বদলালেই `String` নিজে থেকে নতুন করে হিসাব করে।"
+              "bn": "**`Bindings.createStringBinding(supplier, observables...)`** — পর্যবেক্ষণ করা উৎসগুলোর যেকোনো একটি পরিবর্তিত হলে স্বয়ংক্রিয়ভাবে একটি `String` পুনঃগণনা করে।"
             }
           }
         ]
@@ -751,7 +751,7 @@
         "t": "p",
         "text": {
           "en": "`ListView` and `ComboBox` are *observers*: hand them an `ObservableList` and they refresh themselves. This is why the controller rarely calls a \"refresh\" method.",
-          "bn": "`ListView` ও `ComboBox` *পর্যবেক্ষক*: এদের একটি `ObservableList` দিলে এরা নিজেরাই রিফ্রেশ হয়। এ কারণেই কন্ট্রোলারে \"রিফ্রেশ\" মেথড খুব কমই ডাকা হয়।"
+          "bn": "`ListView` এবং `ComboBox` হলো *observers*: এদের একটি `ObservableList` দিন এবং তারা নিজেরাই নিজেদের রিফ্রেশ করে নেয়। এই কারণেই কন্ট্রোলার খুব কমই কোনো \"refresh\" মেথড কল করে।"
         }
       },
       {
@@ -767,7 +767,7 @@
         "t": "p",
         "text": {
           "en": "`FXCollections.observableArrayList(extractor)` lets you declare which properties of each element the list should watch:",
-          "bn": "`FXCollections.observableArrayList(extractor)` দিয়ে আপনি ঘোষণা করতে পারেন প্রতিটি উপাদানের কোন প্রপার্টিগুলো লিস্টটি নজরে রাখবে:"
+          "bn": "`FXCollections.observableArrayList(extractor)` আপনাকে ঘোষণা করতে দেয় যে প্রতিটি উপাদানের কোন প্রপার্টিগুলো লিস্টটির পর্যবেক্ষণ করা উচিত:"
         }
       },
       {
@@ -779,7 +779,7 @@
         "t": "p",
         "text": {
           "en": "Without this, mutating a `Client`'s score would not notify the list and the badge would go stale. With it, the list fires a change event and the affected cells re-render. See chapter 8.",
-          "bn": "এটি ছাড়া `Client`-এর স্কোর বদলালে লিস্টটি জানতই পারত না, আর ব্যাজটি হালকা হয়ে যেত (stale)। এটি থাকলে লিস্ট একটি পরিবর্তন ইভেন্ট ছুঁড়ে এবং প্রভাবিত সেলগুলো আবার আঁকা হয়। অধ্যায় ৮ দেখুন।"
+          "bn": "এটি ছাড়া, কোনো `Client`-এর স্কোর পরিবর্তন করলে তা লিস্টকে অবহিত করত না এবং ব্যাজটি পুরনো (stale) থেকে যেত। এর মাধ্যমে, লিস্টটি একটি চেঞ্জ ইভেন্ট ফায়ার করে এবং প্রভাবিত সেলগুলো পুনরায় রেন্ডার হয়। দেখুন [§8](#/bn/architecture)।"
         }
       },
       {
@@ -795,7 +795,7 @@
         "t": "p",
         "text": {
           "en": "`ListView` does **not** create one node per item. It renders only the rows currently on screen, recycling nodes as you scroll (\"virtual flow\"). This is why a `ListView` can hold 50,000 items cheaply, and why the *data* (not the widget count) is what costs memory.",
-          "bn": "`ListView` প্রতি আইটেমের জন্য **একটি করে নোড তৈরি করে না**। এটি কেবল স্ক্রিনে দেখা যাচ্ছে এমন সারিগুলো আঁকে, স্ক্রল করার সময় নোড পুনর্ব্যবহার করে (\"virtual flow\")। এ কারণেই একটি `ListView` সস্তায় ৫০,০০০ আইটেম ধরে রাখতে পারে, এবং মেমরির খরচ উইজেটের সংখ্যায় নয়, *ডেটার* উপর পড়ে।"
+          "bn": "`ListView` প্রতিটি আইটেমের জন্য একটি করে নোড তৈরি করে **না**। এটি কেবল স্ক্রিনে বর্তমানে থাকা সারিগুলো রেন্ডার করে, আপনি স্ক্রোল করার সাথে সাথে নোডগুলোকে পুনর্ব্যবহার করে (\"virtual flow\")। এই কারণেই একটি `ListView` সাশ্রয়ীভাবে 50,000টি আইটেম ধারণ করতে পারে, এবং উইজেট সংখ্যার বদলে *ডেটা* মেমোরির খরচ বাড়ায়।"
         }
       },
       {
@@ -811,7 +811,7 @@
         "t": "p",
         "text": {
           "en": "The renderer for one row. Subclass `ListCell<T>` and override `updateItem(T item, boolean empty)`. The `empty` flag is true for the filler cells that pad a partially filled list; when it is true you must clear the graphic and text. `setGraphic(node)` installs your custom row. This project has three such renderers — see Appendix B.",
-          "bn": "একটি সারির রেন্ডারার। `ListCell<T>`-কে সাবক্লাস করে `updateItem(T item, boolean empty)` ওভাররাইড করুন। `empty` পতাকা আংশিকভাবে ভরা লিস্টের প্যাডিং সেলগুলোর জন্য সত্য; সত্য হলে গ্রাফিক ও টেক্সট মুছে ফেলতে হয়। `setGraphic(node)` আপনার কাস্টম সারিটি বসায়। এই প্রজেক্টে এমন তিনটি রেন্ডারার আছে — উপাধিপত্র B দেখুন।"
+          "bn": "একটি সারির রেন্ডারার। `ListCell<T>` সাবক্লাস করুন এবং `updateItem(T item, boolean empty)` ওভাররাইড করুন। আংশিক পূর্ণ লিস্টে প্যাডিং হিসেবে থাকা ফিলার সেলগুলোর জন্য `empty` ফ্ল্যাগটি true হয়; এটি true হলে আপনাকে অবশ্যই গ্রাফিক এবং টেক্সট সাফ করতে হবে। `setGraphic(node)` আপনার কাস্টম সারি ইনস্টল করে। এই প্রজেক্টে এই ধরনের তিনটি রেন্ডারার রয়েছে — দেখুন [Appendix B](#/bn/appendix-b)।"
         }
       },
       {
@@ -835,7 +835,7 @@
         "t": "p",
         "text": {
           "en": "`FXMLLoader` parses `dashboard.fxml`, creates the nodes, and injects them into the controller's fields annotated `@FXML` by matching `fx:id`. Two other mechanisms are used here:",
-          "bn": "`FXMLLoader` `dashboard.fxml` পার্স করে, নোডগুলো তৈরি করে, এবং `fx:id` মিলিয়ে সেগুলো কন্ট্রোলারের `@FXML`-অ্যানোটেটেড ফিল্ডে ঢোকে। এখানে আরও দুটি ব্যবস্থা ব্যবহৃত হয়:"
+          "bn": "`FXMLLoader` `dashboard.fxml` পার্স করে, নোডগুলো তৈরি করে, এবং `fx:id` মেলানোর মাধ্যমে `@FXML` অ্যানোটেড কন্ট্রোলারের ফিল্ডগুলোতে ইনজেক্ট করে। এখানে আরও দুটি মেকানিজম ব্যবহৃত হয়:"
         }
       },
       {
@@ -844,13 +844,13 @@
           {
             "text": {
               "en": "`onAction=\"#methodName\"` on a button calls a controller method.",
-              "bn": "বোতামে `onAction=\"#methodName\"` কন্ট্রোলারের একটি মেথড কল করে।"
+              "bn": "একটি বাটনে `onAction=\"#methodName\"` একটি কন্ট্রোলার মেথড কল করে।"
             }
           },
           {
             "text": {
               "en": "`fx:controller=\"fully.qualified.ClassName\"` names the controller.",
-              "bn": "`fx:controller=\"fully.qualified.ClassName\"` কন্ট্রোলারের নাম দেয়।"
+              "bn": "`fx:controller=\"fully.qualified.ClassName\"` কন্ট্রোলারের নাম নির্ধারণ করে।"
             }
           }
         ]
@@ -859,7 +859,7 @@
         "t": "p",
         "text": {
           "en": "If a referenced handler does not exist, `FXMLLoader` throws during `load()` — so a typo in the FXML fails loudly at startup rather than silently.",
-          "bn": "উল্লিখিত হ্যান্ডলার না থাকলে `FXMLLoader` `load()`-এর সময়ই ছুঁড়ে দেয় — তাই FXML-এ একটি ভুল বানান নীরবে না, স্টার্টআপেই জোরে ব্যর্থতা দেয়।"
+          "bn": "যদি কোনো রেফারেন্সকৃত হ্যান্ডলারের অস্তিত্ব না থাকে, তবে `FXMLLoader` `load()` চলাকালীন এক্সেপশন থ্রো করে — তাই FXML-এর একটি টাইপো নিঃশব্দে থাকার বদলে স্টার্টআপেই স্পষ্টভাবে ফেইল করে।"
         }
       },
       {
@@ -875,7 +875,7 @@
         "t": "p",
         "text": {
           "en": "`Stage.initModality(Modality.APPLICATION_MODAL)` blocks the rest of the application while the stage is showing. `showAndWait()` additionally blocks the *caller* until the stage closes, by starting a **nested event loop**. Animated `Timeline`s and other timers keep running inside a nested loop, which is why the auto-simulation must be explicitly paused when the settings dialog opens.",
-          "bn": "`Stage.initModality(Modality.APPLICATION_MODAL)` স্টেজ দেখানো থাকা অবস্থায় বাকি অ্যাপ্লিকেশনকে আটকে রাখে। `showAndWait()` অতিরিক্তভাবে *কলকারীকে* স্টেজ বন্ধ না হওয়া পর্যন্ত আটকে রাখে — একটি **নেস্টেড ইভেন্ট লুপ** চালু করে। অ্যানিমেটেড `Timeline` ও অন্যান্য টাইমার নেস্টেড লুপের ভেতরেও চলতে থাকে, তাই সেটিংস ডায়ালগ খোলার সময় অটো-সিমুলেশনকে স্পষ্টভাবে থামাতে হয়।"
+          "bn": "`Stage.initModality(Modality.APPLICATION_MODAL)` স্টেজটি প্রদর্শিত থাকা অবস্থায় অ্যাপ্লিকেশনের বাকি অংশকে ব্লক করে। `showAndWait()` একটি **nested event loop** শুরু করার মাধ্যমে স্টেজটি বন্ধ না হওয়া পর্যন্ত অতিরিক্তভাবে *কলারকে* ব্লক করে। অ্যানিমেটেড `Timeline` এবং অন্যান্য টাইমার একটি নেস্টেড লুপের ভেতরে চলতে থাকে, যে কারণে সেটিংস ডায়ালগ খোলার সময় অটো-সিমুলেশন স্পষ্টভাবে পজ (pause) করতে হবে।"
         }
       },
       {
@@ -893,19 +893,19 @@
           {
             "text": {
               "en": "**`Timeline`** — fires an event on a schedule. Used for the 1-second traffic sampler and the 800 ms auto-simulation tick. `Timeline.INDEFINITE` repeats forever.",
-              "bn": "**`Timeline`** — একটি সূচিতে ঘটনা ছুঁড়ে। ১ সেকেন্ডের ট্রাফিক স্যাম্পলার ও ৮০০ মিলিসেকেন্ডের অটো-সিমুলেশন টিক-এর জন্য ব্যবহৃত। `Timeline.INDEFINITE` চিরকাল চলে।"
+              "bn": "**`Timeline`** — একটি শিডিউলে একটি ইভেন্ট ফায়ার করে। 1-সেকেন্ডের ট্রাফিক স্যাম্পলার এবং 800 ms অটো-সিমুলেশন টিক-এর জন্য ব্যবহৃত হয়। `Timeline.INDEFINITE` চিরকাল পুনরাবৃত্তি করে।"
             }
           },
           {
             "text": {
               "en": "**`KeyFrame`** — one scheduled moment with its handler.",
-              "bn": "**`KeyFrame`** — নিজের হ্যান্ডলারসহ একটি নির্ধারিত মুহূর্ত।"
+              "bn": "**`KeyFrame`** — হ্যান্ডলারসহ একটি নির্ধারিত মুহূর্ত।"
             }
           },
           {
             "text": {
               "en": "**`FadeTransition`** — animates a property between two values; used for the pulsing status dot.",
-              "bn": "**`FadeTransition`** — দুটি মানের মধ্যে একটি প্রপার্টি অ্যানিমেট করে; নাড়া-নাড়া স্ট্যাটাস ডটের জন্য ব্যবহৃত।"
+              "bn": "**`FadeTransition`** — দুটি মানের মধ্যে একটি প্রপার্টি অ্যানিমেট করে; পালসিং স্ট্যাটাস ডটের জন্য ব্যবহৃত হয়।"
             }
           }
         ]
@@ -923,7 +923,7 @@
         "t": "p",
         "text": {
           "en": "Two mechanisms, used together here:",
-          "bn": "দুটি ব্যবস্থা, এখানে একসঙ্গে ব্যবহৃত:"
+          "bn": "দুটি মেকানিজম, এখানে একসাথে ব্যবহৃত হয়েছে:"
         }
       },
       {
@@ -932,13 +932,13 @@
           {
             "text": {
               "en": "**CSS** (`style.css`) targets *style classes*, applied via the `styleClass` attribute in FXML. Class names in this project are camelCase and occasionally misspelled — `.ClintLog` is the client registry, `.LogList` the log.",
-              "bn": "**CSS** (`style.css`) *স্টাইল ক্লাস*কে লক্ষ্য করে, যা FXML-এর `styleClass` অ্যাট্রিবিউট দিয়ে প্রয়োগ হয়। এই প্রজেক্টে ক্লাসের নাম camelCase এবং মাঝে মাঝে ভুল বানানে লেখা — `.ClintLog` হলো ক্লায়েন্ট রেজিস্ট্রি, `.LogList` হলো লগ।"
+              "bn": "**CSS** (`style.css`) *স্টাইল ক্লাসগুলোকে* টার্গেট করে, যা FXML-এ `styleClass` অ্যাট্রিবিউটের মাধ্যমে প্রয়োগ করা হয়। এই প্রজেক্টে ক্লাসের নামগুলো camelCase এবং মাঝে মাঝে ভুল বানানে লেখা — `.ClintLog` হলো ক্লায়েন্ট রেজিস্ট্রি, `.LogList` হলো লগ।"
             }
           },
           {
             "text": {
               "en": "**Inline styles** set from Java with `setStyle(\"...\")`, for anything that depends on runtime state (a badge colour that depends on the current violation level, for example).",
-              "bn": "জাভা থেকে `setStyle(\"...\")` দিয়ে সেট করা **ইনলাইন স্টাইল**, যেকোনো কিছুর জন্য যা রানটাইমের অবস্থার উপর নির্ভরশীল (যেমন বর্তমান ভায়োলেশন লেভেলের উপর নির্ভরশীল ব্যাজের রং)।"
+              "bn": "**Inline styles** Java থেকে `setStyle(\"...\")` দিয়ে সেট করা হয়, এমন যেকোনো কিছুর জন্য যা রানটাইম স্টেটের ওপর নির্ভর করে (উদাহরণস্বরূপ, একটি ব্যাজের রঙ যা বর্তমান ভায়োলেশন লেভেলের ওপর নির্ভর করে)।"
             }
           }
         ]
@@ -947,7 +947,7 @@
         "t": "p",
         "text": {
           "en": "Inline styles win over CSS, which is why dynamic badges look right and why duplicating a rule in both places causes confusion.",
-          "bn": "ইনলাইন স্টাইল CSS-এর উপরে জেতে — তাই গতিশীল ব্যাজগুলো ঠিক দেখায়, এবং একই নিয়ম দুই জায়গায় লেখা বিভ্রান্তি তৈরি করে।"
+          "bn": "ইনলাইন স্টাইলগুলো CSS-এর ওপর অগ্রাধিকার পায়, যে কারণে ডাইনামিক ব্যাজগুলো দেখতে সঠিক মনে হয় এবং উভয় স্থানে একটি রুল ডুপ্লিকেট করলে বিভ্রান্তির সৃষ্টি হয়।"
         }
       },
       {
@@ -963,7 +963,7 @@
         }
       }
     ]
-  });
+  });;
 
   DOC.register({
     "id": "domain",
@@ -991,7 +991,7 @@
         "t": "p",
         "text": {
           "en": "A caller of the API, identified by a **name** (`\"Client-014\"`). A `Client` carries mutable telemetry:",
-          "bn": "API-এর একজন ক্রেতা, চিহ্নিত হয় একটি **নামে** (`\"Client-014\"`)। একটি `Client` বহন করে পরিবর্তনযোগ্য টেলিমেট্রি:"
+          "bn": "API-এর একজন কলার, যা একটি **নাম** (`\"Client-014\"`) দ্বারা চিহ্নিত। একজন `Client` পরিবর্তনযোগ্য টেলিমেট্রি বহন করে:"
         }
       },
       {
@@ -1016,7 +1016,7 @@
             "`String` (final)",
             {
               "en": "The registry key.",
-              "bn": "রেজিস্ট্রির কী।"
+              "bn": "রেজিস্ট্রি কি (registry key)।"
             }
           ],
           [
@@ -1024,7 +1024,7 @@
             "`IntegerProperty`",
             {
               "en": "Accepted requests this session.",
-              "bn": "এই সেশনে গৃহীত অনুরোধ।"
+              "bn": "এই সেশনের গৃহীত (accepted) রিকোয়েস্ট।"
             }
           ],
           [
@@ -1032,7 +1032,7 @@
             "`IntegerProperty`",
             {
               "en": "Blocked requests this session.",
-              "bn": "এই সেশনে প্রত্যাখ্যাত অনুরোধ।"
+              "bn": "এই সেশনের ব্লক করা রিকোয়েস্ট।"
             }
           ],
           [
@@ -1040,7 +1040,7 @@
             "`IntegerProperty`",
             {
               "en": "Accumulated penalty; decays over time.",
-              "bn": "জমা জরিমানা; সময়ের সঙ্গে কমে আসে।"
+              "bn": "পুঞ্জীভূত পেনাল্টি; সময়ের সাথে সাথে ক্ষয় (decay) হয়।"
             }
           ],
           [
@@ -1048,7 +1048,7 @@
             "`ObjectProperty<ViolationLevel>`",
             {
               "en": "Risk badge, derived from the score.",
-              "bn": "ঝুঁকির ব্যাজ, স্কোর থেকে অনুমানিত।"
+              "bn": "ঝুঁকি ব্যাজ, স্কোর থেকে উদ্ভূত।"
             }
           ],
           [
@@ -1056,7 +1056,7 @@
             "`LocalDateTime`",
             {
               "en": "When the score last increased. Drives the cooldown.",
-              "bn": "স্কোর সর্বশেষ কখন বেড়েছিল। কুলডাউন চালায়।"
+              "bn": "স্কোর সর্বশেষ কখন বেড়েছিল। কুলডাউন পরিচালনা করে।"
             }
           ]
         ]
@@ -1065,7 +1065,7 @@
         "t": "p",
         "text": {
           "en": "The first four are JavaFX properties, which is what lets the UI update itself when a score changes.",
-          "bn": "প্রথম চারটি জাভাএফএক্স প্রপার্টি, যা স্কোর বদলালে UI-কে নিজে আপডেট হতে দেয়।"
+          "bn": "প্রথম চারটি হলো JavaFX properties, যা স্কোর পরিবর্তিত হলে UI-কে নিজে থেকেই আপডেট হতে দেয়।"
         }
       },
       {
@@ -1081,7 +1081,7 @@
         "t": "p",
         "text": {
           "en": "One attempt by a client to perform an action of a given `RequestType`, stamped with the moment it was made. Requests live only in a short in-memory window and are never persisted.",
-          "bn": "কোনো একটি নির্দিষ্ট `RequestType`-এর কাজ করার জন্য কোনো ক্লায়েন্টের একটি চেষ্টা, যাতে সময়ের ছাপ থাকে কখন করা হয়েছিল। অনুরোধগুলো কেবল একটি ছোট ইন-মেমরি উইন্ডোতে থাকে এবং কখনো সংরক্ষণ করা হয় না।"
+          "bn": "প্রদত্ত একটি `RequestType`-এর অ্যাকশন সম্পাদন করার জন্য একজন ক্লায়েন্টের একটি প্রচেষ্টা, যা তৈরির মুহূর্তের টাইমস্ট্যাম্পযুক্ত। রিকোয়েস্টগুলো কেবল একটি ছোট ইন-মেমোরি উইন্ডোতে থাকে এবং কখনোই পারসিস্ট করা হয় না।"
         }
       },
       {
@@ -1097,7 +1097,7 @@
         "t": "p",
         "text": {
           "en": "The kind of action: `READ`, `WRITE`, `LOGIN`, `PAYMENT`. Each carries a **severity weight** (default `READ` 1, `WRITE` 2, `LOGIN` 3, `PAYMENT` 2) — a login storm is more concerning than a read flood, so violations of a severe type cost more score.",
-          "bn": "কাজের ধরন: `READ`, `WRITE`, `LOGIN`, `PAYMENT`। প্রতিটির সঙ্গে একটি **সিভারিটি ওজন** আছে (ডিফল্ট `READ` ১, `WRITE` ২, `LOGIN` ৩, `PAYMENT` ২) — লগইনের ঝড় একটি রিডের বন্যার চেয়ে বেশি উদ্বেগজনক, তাই তীব্র টাইপের লঙ্ঘনে বেশি স্কোর খরচ পড়ে।"
+          "bn": "অ্যাকশনের ধরন: `READ`, `WRITE`, `LOGIN`, `PAYMENT`। প্রতিটি একটি **সিভিয়ারিটি ওয়েট (severity weight)** বহন করে (ডিফল্ট `READ` 1, `WRITE` 2, `LOGIN` 3, `PAYMENT` 2) — একটি লগইন স্টর্ম একটি রিড ফ্লাডের চেয়ে বেশি উদ্বেগজনক, তাই গুরুতর টাইপের ভায়োলেশনগুলোর কারণে বেশি স্কোর খরচ হয়।"
         }
       },
       {
@@ -1113,7 +1113,7 @@
         "t": "p",
         "text": {
           "en": "A durable record of a request's outcome: the client, type, timestamp, and a status of `ACCEPTED` or `BLOCKED`. Logs are what the user scrolls through, and what rate limits are derived from.",
-          "bn": "একটি অনুরোধের ফলাফলের স্থায়ী রেকর্ড: ক্লায়েন্ট, টাইপ, সময়চিহ্ন, এবং `ACCEPTED` বা `BLOCKED` অবস্থা। লগই সেই জিনিস যা ব্যবহারকারী স্ক্রল করে দেখেন, এবং যেখান থেকে রেট লিমিট অনুমান করা হয়।"
+          "bn": "একটি রিকোয়েস্টের ফলাফলের একটি স্থায়ী রেকর্ড: ক্লায়েন্ট, টাইপ, টাইমস্ট্যাম্প, এবং `ACCEPTED` বা `BLOCKED` স্ট্যাটাস। লগগুলো হলো সেই উপাদান যা ব্যবহারকারী স্ক্রোল করে দেখেন, এবং যেখান থেকে রেট লিমিট নির্ধারণ করা হয়।"
         }
       },
       {
@@ -1129,7 +1129,7 @@
         "t": "p",
         "text": {
           "en": "The four-step risk label shown on a client's badge, ordered by increasing severity. **It is derived purely from `violationScore`** by descending comparison against three configurable thresholds (default 20 / 50 / 100). Nothing else may set it.",
-          "bn": "ক্লায়েন্টের ব্যাজে দেখানো ঝুঁকির চার-ধাপের লেবেল, তীব্রতা বাড়ার ক্রমে সাজানো। **এটি সম্পূর্ণরূপে `violationScore` থেকেই অনুমানিত**, তিনটি কনফিগারযোগ্য থ্রেশহোল্ডের (ডিফল্ট ২০ / ৫০ / ১০০) সঙ্গে অবরোহিত তুলনা করে। অন্য কিছু এটি সেট করতে পারে না।"
+          "bn": "ক্লায়েন্টের ব্যাজে দেখানো চার-ধাপের ঝুঁকির লেবেল, যা ক্রমবর্ধমান তীব্রতা অনুসারে সাজানো। **এটি কেবল `violationScore` থেকে উদ্ভূত হয়**, তিনটি কনফিগারযোগ্য থ্রেশহোল্ডের (ডিফল্ট 20 / 50 / 100) সাথে অবরোহী (descending) তুলনার মাধ্যমে। অন্য কিছুই এটি সেট করতে পারে না।"
         }
       },
       {
@@ -1145,7 +1145,7 @@
         "t": "p",
         "text": {
           "en": "A **window** is a length of time (default 10 s, configurable 1–3600 s). A **limit** is how many requests of one type a client may make inside it. The two policies differ only in where the window's edges fall:",
-          "bn": "একটি **উইন্ডো** হলো একটি সময়ের দৈর্ঘ্য (ডিফল্ট ১০ সে, কনফিগারযোগ্য ১–৩৬০০ সে)। একটি **লিমিট** হলো এর ভেতরে কোনো ক্লায়েন্ট একটি নির্দিষ্ট টাইপের কতগুলো অনুরোধ করতে পারে। দুটি পলিসির মধ্যে পার্থক্য কেবল একটাই — উইন্ডোর প্রান্তগুলো কোথায় পড়ে:"
+          "bn": "একটি **উইন্ডো (window)** হলো সময়ের দৈর্ঘ্য (ডিফল্ট 10 s, কনফিগারযোগ্য 1–3600 s)। একটি **লিমিট (limit)** হলো এর মধ্যে একজন ক্লায়েন্ট একটি নির্দিষ্ট টাইপের কতগুলো রিকোয়েস্ট করতে পারে। দুটি পলিসি কেবল উইন্ডোর প্রান্তগুলো কোথায় পড়ে সে ক্ষেত্রে ভিন্ন:"
         }
       },
       {
@@ -1154,13 +1154,13 @@
           {
             "text": {
               "en": "**Fixed** — snaps to a global grid of whole windows.",
-              "bn": "**Fixed** — পূর্ণ উইন্ডোর একটি বৈশ্বিক গ্রিডে মিলে খাঁপায়।"
+              "bn": "**Fixed** — সম্পূর্ণ উইন্ডোর একটি গ্লোবাল গ্রিডে স্ন্যাপ করে।"
             }
           },
           {
             "text": {
               "en": "**Sliding** — always ends at the newest matching request.",
-              "bn": "**Sliding** — সবসময় সবচেয়ে নতুন মিলে যাওয়া অনুরোধের উপর শেষ হয়।"
+              "bn": "**Sliding** — সর্বদা সর্বশেষ ম্যাচিং রিকোয়েস্টে শেষ হয়।"
             }
           }
         ]
@@ -1183,7 +1183,7 @@
         },
         "text": {
           "en": "These three are deliberately separate. An earlier version conflated the first two, which made a client's badge contradict the score printed beside it. They are now carried independently in `RatePolicy.Decision`.",
-          "bn": "এই তিনটি সচেতনভাবে আলাদা রাখা হয়েছে। আগের একটি সংস্করণে প্রথম দুটি এক করে দেওয়া হয়েছিল, ফলে ক্লায়েন্টের ব্যাজ তার পাশে ছাপা স্কোরের বিরুদ্ধে দেখাত। এখন এগুলি `RatePolicy.Decision`-এ স্বাধীনভাবে বহন করা হয়।"
+          "bn": "এগুলো ইচ্ছাকৃতভাবেই আলাদা। একটি পূর্ববর্তী সংস্করণে প্রথম দুটিকে একত্রিত করা হয়েছিল, যার ফলে ক্লায়েন্টের ব্যাজ তার পাশে মুদ্রিত স্কোরের সাথে সাংঘর্ষিক হয়ে উঠত। এগুলো এখন `RatePolicy.Decision`-এ স্বাধীনভাবে বহন করা হয়।"
         }
       },
       {
@@ -1253,5 +1253,5 @@
         }
       }
     ]
-  });
+  });;
 })();

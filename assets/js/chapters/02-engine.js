@@ -42,7 +42,7 @@
         "t": "p",
         "text": {
           "en": "For each request the policy needs: the client, the request type, the list of recent requests, the limit for that (client, type), the window length, the severity weights, and the three score thresholds.",
-          "bn": "প্রতিটি অনুরোধের জন্য পলিসির দরকার: ক্লায়েন্ট, অনুরোধের ধরন, সাম্প্রতিক অনুরোধের তালিকা, ওই (ক্লায়েন্ট, টাইপ)-এর লিমিট, উইন্ডোর দৈর্ঘ্য, সিভারিটি ওজন, এবং তিনটি স্কোর থ্রেশহোল্ড।"
+          "bn": "প্রতিটি রিকোয়েস্টের জন্য পলিসির যা প্রয়োজন: ক্লায়েন্ট, রিকোয়েস্ট টাইপ, সাম্প্রতিক রিকোয়েস্টের তালিকা, সেই (client, type)-এর লিমিট, উইন্ডোর দৈর্ঘ্য, সিভিয়ারিটি ওয়েটসমূহ, এবং তিনটি স্কোর থ্রেশহোল্ড।"
         }
       },
       {
@@ -67,7 +67,7 @@
         },
         "text": {
           "en": "The comparisons are strict (`>`), so a client may make exactly `limit` requests per window; the next one is refused. This is the ordinary reading of \"at most N per window\", and it is why the worked example in chapter 7 refuses request 4 when the limit is 3.",
-          "bn": "তুলনাগুলো কঠোর (`>`), তাই একটি ক্লায়েন্ট প্রতি উইন্ডোয় ঠিক `limit`টি অনুরোধ করতে পারে; পরেরটি প্রত্যাখ্যাত হয়। এটিই \"প্রতি উইন্ডোয় সর্বোচ্চ Nটি\"-এর স্বাভাবিক অর্থ, এবং তাই অধ্যায় ৭-এর উদাহরণে লিমিট ৩ হলে চতুর্থ অনুরোধ প্রত্যাখ্যাত হয়।"
+          "bn": "লক্ষ্য করুন তুলনাগুলো কঠোর (`>`), তাই একজন ক্লায়েন্ট প্রতি উইন্ডোতে ঠিক `limit` সংখ্যক রিকোয়েস্ট করতে পারে; পরবর্তীটি প্রত্যাখ্যান করা হয়।"
         }
       },
       {
@@ -111,7 +111,7 @@
         "t": "p",
         "text": {
           "en": "Always ends at the newest matching request:",
-          "bn": "সবসময় সবচেয়ে নতুন মিলে যাওয়া অনুরোধের উপর শেষ হয়:"
+          "bn": "**Sliding window** — সর্বদা সর্বশেষ ম্যাচিং রিকোয়েস্টে শেষ হয়:"
         }
       },
       {
@@ -123,7 +123,7 @@
         "t": "p",
         "text": {
           "en": "The `plusNanos(1)` makes the range half-open, matching every other window in the codebase. A burst of 8 requests in 8 seconds is always seen in full, even if it straddles what would be two fixed windows.",
-          "bn": "`plusNanos(1)` পরিসরটিকে অর্ধ-উন্মুক্ত (half-open) করে, যা কোডবেসের বাকি প্রতিটি উইন্ডোর সঙ্গে মেলে। ৮ সেকেন্ডে ৮টি অনুরোধের একটি ঝড় সবসময় সম্পূর্ণ দেখা যায়, এমনকি সেটি দুটি ফিক্সড উইন্ডোর মাঝখানে পড়লেও।"
+          "bn": "`plusNanos(1)` পরিসরটিকে half-open করে তোলে, যা কোডবেসের প্রতিটি উইন্ডোর সাথে মিলে যায়। 8 সেকেন্ডে 8টি রিকোয়েস্টের একটি বার্স্ট সর্বদা সম্পূর্ণরূপে দেখা যায়, এমনকি যদি এটি দুটি ফিক্সড উইন্ডো হতে পারত এমন অংশ জুড়েও বিস্তৃত হয়।"
         }
       },
       {
@@ -139,7 +139,7 @@
         "t": "p",
         "text": {
           "en": "Snaps to a global grid anchored to the Unix epoch:",
-          "bn": "ইউনিক্স এপোকের সঙ্গে সংযুক্ত একটি বৈশ্বিক গ্রিডে মিলে খাঁপায়:"
+          "bn": "**Fixed window** — Unix epoch-এ নোঙর করা একটি গ্লোবাল গ্রিডে স্ন্যাপ করে:"
         }
       },
       {
@@ -168,7 +168,7 @@
         "t": "p",
         "text": {
           "en": "The defining property of an aligned window is that the verdict depends only on `offset mod windowLength`. The current implementation satisfies that for every window length tested (7, 10, 30, 45, 90, 600, 3600 seconds).",
-          "bn": "সারিবদ্ধ উইন্ডোর সংজ্ঞাক্ষিগত বৈশিষ্ট্য হলো সিদ্ধান্ত কেবল `offset mod windowLength`-এর উপর নির্ভর করে। বর্তমান বাস্তবায়ন পরীক্ষা করা প্রতিটি উইন্ডো দৈর্ঘ্যের জন্য (৭, ১০, ৩০, ৪৫, ৯০, ৬০০, ৩৬০০ সেকেন্ড) এই শর্ত পূরণ করে।"
+          "bn": "একটি অ্যালাইন্ড উইন্ডোর সংজ্ঞায়িত বৈশিষ্ট্য হলো যে এর রায় কেবল `offset mod windowLength`-এর ওপর নির্ভর করে। বর্তমান বাস্তবায়নটি পরীক্ষিত প্রতিটি উইন্ডো দৈর্ঘ্যের জন্য (7, 10, 30, 45, 90, 600, 3600 সেকেন্ড) এটি পূরণ করে।"
         }
       },
       {
@@ -180,7 +180,7 @@
         },
         "text": {
           "en": "A burst straddling a boundary is split across two windows, so a fixed window under-reports peak load. That is exactly why the sliding window exists, and the settings dialog lets you switch between them to see the difference. A client can send twice the limit in a few seconds and be allowed, because half the burst landed in each window.",
-          "bn": "সীমানার উপর দিয়ে যাওয়া একটি ঝড় দুটি উইন্ডোতে ভাগ হয়ে যায়, তাই ফিক্সড উইন্ডো শীর্ষ লোড কমিয়ে দেখায়। ঠিক এ কারণেই স্লাইডিং উইন্ডোর অস্তিত্ব, আর সেটিংস ডায়ালগে দুটির মধ্যে বদলানোর সুযোগ আছে, যাতে পার্থক্য দেখা যায়। একটি ক্লায়েন্ট কয়েক সেকেন্ডে লিমিটের দ্বিগুণ পাঠাতে পারে এবং অনুমোদিত পেতে পারে, কারণ ঝড়ের অর্ধেক প্রতিটি উইন্ডোতে পড়েছিল।"
+          "bn": "ট্রেড-অফটি অন্তর্নিহিত এবং ইচ্ছাকৃত: একটি সীমানা অতিক্রমকারী বার্স্ট দুটি উইন্ডোতে বিভক্ত হয়ে যায়, তাই একটি ফিক্সড উইন্ডো পিক লোডকে কম রিপোর্ট করে। ঠিক এই কারণেই স্লাইডিং উইন্ডোটি বিদ্যমান, এবং সেটিংস ডায়ালগ আপনাকে পার্থক্য দেখার জন্য তাদের মধ্যে স্যুইচ করতে দেয়।"
         }
       },
       {
@@ -192,7 +192,7 @@
         },
         "text": {
           "en": "Request timestamps are naive `LocalDateTime` values with no zone. They are *treated* as UTC purely to obtain a stable grid. The absolute offset is irrelevant; what matters is that a given instant always falls in the same window.",
-          "bn": "অনুরোধের টাইমস্ট্যাম্প জোনবিহীন `LocalDateTime` মান, কোনো জোন নেই। স্থিতিশীল গ্রিড পেতে সেগুলোকে *UTC হিসেবে ধরা* হয়। নির্বিচার অফসেট অপ্রাসঙ্গিক; গুরুত্বপূর্ণ হলো একটি নির্দিষ্ট মুহূর্ত সবসময় একই উইন্ডোতে পড়ে।"
+          "bn": "রিকোয়েস্ট টাইমস্ট্যাম্পগুলো হলো কোনো জোন ছাড়া সাধারণ `LocalDateTime` মান। একটি স্থিতিশীল গ্রিড পাওয়ার জন্য সেগুলোকে বিশুদ্ধভাবে UTC হিসেবে বিবেচনা করা হয়। পরম অফসেটটি অপ্রাসঙ্গিক; যা গুরুত্বপূর্ণ তা হলো একটি নির্দিষ্ট মুহূর্ত সর্বদা একই উইন্ডোতে পড়ে।"
         }
       },
       {
@@ -208,7 +208,7 @@
         "t": "p",
         "text": {
           "en": "`resolveThreshold(client, type)` is the single authority:",
-          "bn": "`resolveThreshold(client, type)` একমাত্র কর্তৃত্বপূর্ণ কাজটি করে:"
+          "bn": "`resolveThreshold(client, type)` হলো একক কর্তৃপক্ষ:"
         }
       },
       {
@@ -219,7 +219,7 @@
         "t": "p",
         "text": {
           "en": "Built-in defaults (the floor): `LOGIN` 5, `PAYMENT` 10, `WRITE` 20, `READ` 50.",
-          "bn": "অন্তর্নিহিত ডিফল্ট (নিম্নতলা): `LOGIN` ৫, `PAYMENT` ১০, `WRITE` ২০, `READ` ৫০।"
+          "bn": "বিল্ট-ইন ডিফল্ট (ফ্লোর): `LOGIN` 5, `PAYMENT` 10, `WRITE` 20, `READ` 50।"
         }
       },
       {
@@ -231,7 +231,7 @@
         },
         "text": {
           "en": "**Both the dashboard label and the enforcing policy call this one function**, so the number the user sees is by construction the number that is enforced. They used to compute limits by two different routes, which is why the figure on screen was frequently not the figure being applied.",
-          "bn": "**ড্যাশবোর্ডের লেবেলও এবং প্রয়োগকারী পলিসিও — দুটোই এই একটি ফাংশন কল করে**, তাই ব্যবহারকারী যে সংখ্যা দেখেন সেটি গঠনগতভাবেই প্রয়োগ হওয়া সংখ্যা। আগে দুটি ভিন্ন পথে সীমা হিসাব হতো, তাই স্ক্রিনে দেখানো সংখ্যা প্রায়ই প্রয়োগ হওয়ার সংখ্যা ছিল না।"
+          "bn": "**ড্যাশবোর্ড লেবেল এবং প্রয়োগকারী পলিসি উভয়ই এই একটি ফাংশন কল করে**, তাই ব্যবহারকারী যে সংখ্যাটি দেখেন তা কাঠামোগতভাবেই সেই সংখ্যা যা প্রয়োগ করা হয়।"
         }
       },
       {
@@ -311,7 +311,7 @@
         "t": "p",
         "text": {
           "en": "The score-to-level mapping (with default thresholds):",
-          "bn": "স্কোর থেকে লেভেলের ম্যাপিং (ডিফল্ট থ্রেশহোল্ডসহ):"
+          "bn": "স্কোর থেকে লেভেল ম্যাপিং (ডিফল্ট থ্রেশহোল্ডসহ):"
         }
       },
       {
@@ -361,7 +361,7 @@
         "kind": "warn",
         "text": {
           "en": "A `CRITICAL` client is refused without further penalty until a full window passes with no new violation. It can then be served again, and every accepted request decays its score, eventually dropping it below the critical threshold. The badge text differs between the two views on purpose: the registry says `ACTIVE` for a clean client while the report says `NORMAL`.",
-          "bn": "`CRITICAL` ক্লায়েন্টকে আরও জরিমানা ছাড়াই প্রত্যাখ্যান করা হয়, যতক্ষণ না নতুন লঙ্ঘন ছাড়া একটি পূর্ণ উইন্ডো না কেটে যায়। এরপর সে আবার পরিবেশন করা হতে পারে, এবং প্রতিটি গৃহীত অনুরোধ তার স্কোর কমায়, ফলে ধীরে ধীরে তা ক্রিটিক্যাল থ্রেশহোল্ডের নিচে নামে। দুই দৃশ্যে ব্যাজের লেখা ইচ্ছাকৃতভাবে আলাদা: পরিষ্কার ক্লায়েন্টের জন্য রেজিস্ট্রি বলে `ACTIVE`, রিপোর্ট বলে `NORMAL`।"
+          "bn": "একজন `CRITICAL` ক্লায়েন্টকে কোনো নতুন ভায়োলেশন ছাড়া একটি পূর্ণ উইন্ডো অতিক্রান্ত না হওয়া পর্যন্ত আর কোনো অতিরিক্ত পেনাল্টি ছাড়াই প্রত্যাখ্যান করা হয়। এরপর তাকে আবার সার্ভ করা যেতে পারে, এবং প্রতিটি গৃহীত রিকোয়েস্ট তার স্কোর কমিয়ে দেয়, অবশেষে এটিকে ক্রিটিকাল থ্রেশহোল্ডের নিচে নামিয়ে আনে।"
         }
       },
       {
@@ -373,7 +373,7 @@
         "text": "score 0 ─────────────────────────────────────────────────────────▶\n             A A A B B B B B B B B B B B B  (A=allowed, B=blocked)\n             v v v |              |\n        score 0    15 30 45 60 75 90 105 ── CRITICAL\n                                       ┊\n                        cooldown ───────┘  (frozen, no further penalty)\n                                       v\n                    A A A A A A        (each allowed request decays by 1)\n        score 105 104 103 102 101 100 99 ── HIGH again"
       }
     ]
-  });
+  });;
 
   DOC.register({
     "id": "example",
@@ -392,7 +392,7 @@
         "t": "p",
         "text": {
           "en": "Settings: a **custom LOGIN limit of 3** (so the numbers are small), a 10-second window, LOGIN severity 3, thresholds 20 / 50 / 100, decay 1. The client starts at score 0, level `NONE`.",
-          "bn": "সেটিংস: **কাস্টম LOGIN লিমিট ৩** (যাতে সংখ্যাগুলো ছোট থাকে), ১০ সেকেন্ডের উইন্ডো, LOGIN সিভারিটি ৩, থ্রেশহোল্ড ২০ / ৫০ / ১০০, ডিকে ১। ক্লায়েন্ট শুরু করে স্কোর ০, লেভেল `NONE` থেকে।"
+          "bn": "অ্যালগরিদমটিকে বাস্তবসম্মত করার জন্য, এখানে একটি সম্পূর্ণ ট্রেস দেওয়া হলো। সেটিংস: একটি **কাস্টম LOGIN লিমিট 3** (যাতে সংখ্যাগুলো ছোট থাকে), একটি 10-সেকেন্ডের উইন্ডো, LOGIN সিভিয়ারিটি 3, থ্রেশহোল্ড 20 / 50 / 100, ডিকে 1। ক্লায়েন্টটি স্কোর 0, লেভেল `NONE`-এ শুরু করে।"
         }
       },
       {
@@ -588,7 +588,7 @@
         "t": "p",
         "text": {
           "en": "Continuing, if the client keeps going, the score climbs 15 points per refusal: 90, then 105, at which point it crosses the critical threshold. From then on:",
-          "bn": "চালিয়ে গেলে প্রতি প্রত্যাখ্যানে স্কোর ১৫ পয়েন্ট বাড়ে: ৯০, তারপর ১০৫, যেখানে এটি ক্রিটিক্যাল থ্রেশহোল্ড পেরিয়ে যায়। তারপর থেকে:"
+          "bn": "ধারাবাহিকভাবে, ক্লায়েন্ট যদি চালিয়ে যেতে থাকে, স্কোর প্রতি প্রত্যাখ্যানে 15 পয়েন্ট করে বাড়ে: 90, তারপর 105, যে পর্যায়ে এটি ক্রিটিকাল থ্রেশহোল্ড অতিক্রম করে। তখন থেকে:"
         }
       },
       {
@@ -611,7 +611,7 @@
             },
             {
               "en": "Every request refused immediately, with **no further penalty** — the score is frozen.",
-              "bn": "প্রতিটি অনুরোধ সঙ্গে সঙ্গে প্রত্যাখ্যাত, **আর কোনো জরিমানা নয়** — স্কোর থমকে থাকে।"
+              "bn": "**কোনো অতিরিক্ত পেনাল্টি ছাড়াই** প্রতিটি রিকোয়েস্ট অবিলম্বে প্রত্যাখ্যান করা হয় — স্কোর হিমায়িত (frozen) থাকে।"
             }
           ],
           [
@@ -621,7 +621,7 @@
             },
             {
               "en": "The next request is evaluated normally. Count is 1 (≤ 3), so it is **allowed** and the score decays by 1.",
-              "bn": "পরের অনুরোধটি স্বাভাবিকভাবে মূল্যায়ন হয়। সংখ্যা ১ (≤ ৩), তাই সেটি **অনুমোদিত** এবং স্কোর ১ কমে।"
+              "bn": "পরবর্তী রিকোয়েস্টটি সাধারণভাবে মূল্যায়ন করা হয়। কাউন্ট 1 (≤ 3), তাই এটি **অনুমোদন (allowed)** করা হয় এবং স্কোর 1 কমে যায়।"
             }
           ],
           [
@@ -631,7 +631,7 @@
             },
             {
               "en": "Score decays by 1. From 105, six accepted requests bring it to 99 — below critical, so the badge drops to `HIGH` and the client is usable again.",
-              "bn": "স্কোর ১ কমে। ১০৫ থেকে ছয়টি গৃহীত অনুরোধে ৯৯ — ক্রিটিক্যালের নিচে, তাই ব্যাজ `HIGH`-এ নামে এবং ক্লায়েন্ট আবার ব্যবহারযোগ্য হয়।"
+              "bn": "স্কোর 1 করে কমে। 105 থেকে, ছয়টি গৃহীত রিকোয়েস্ট এটিকে 99-এ নিয়ে আসে — ক্রিটিকালের নিচে, তাই ব্যাজটি `HIGH`-এ নেমে আসে এবং ক্লায়েন্ট আবার ব্যবহারযোগ্য হয়।"
             }
           ],
           [
@@ -641,7 +641,7 @@
             },
             {
               "en": "56 accepted requests to fall below 50 (`WARNING`→ boundary), 86 to fall below 20 (back to `NONE`).",
-              "bn": "৫০-এর নিচে নামতে ৫৬টি গৃহীত অনুরোধ (`WARNING`→ সীমানা), ২০-এর নিচে নামতে ৮৬টি (আবার `NONE`)।"
+              "bn": "50-এর নিচে নামতে 56টি গৃহীত রিকোয়েস্ট (`WARNING` সীমানা), 20-এর নিচে নামতে 86টি (`NONE`-এ ফেরত)।"
             }
           ]
         ]
@@ -671,5 +671,5 @@
         }
       }
     ]
-  });
+  });;
 })();

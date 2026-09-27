@@ -14,7 +14,7 @@
     "part": "start",
     "title": {
       "en": "Welcome, and how to read this documentation",
-      "bn": "স্বাগতম, এবং এই নথিটি কীভাবে পড়বেন"
+      "bn": "স্বাগতম, এবং এই ডকুমেন্টটি কীভাবে পড়বেন"
     },
     "lead": {
       "en": "This website turns the repository's 2,017-line `ARCHITECTURE.md` into something you can navigate, search and read in Bengali — without leaving anything out. It covers every package, every file, every function, the rate-limiting algorithm traced step by step, the dataset behind it, the performance work, and the reasoning behind every non-obvious decision, in English and বাংলা.",
@@ -76,7 +76,7 @@
             "v": "2,017",
             "l": {
               "en": "lines in the source document",
-              "bn": "মূল নথির লাইন সংখ্যা"
+              "bn": "মূল ডকুমেন্টের লাইন সংখ্যা"
             }
           },
           {
@@ -124,7 +124,7 @@
         "t": "p",
         "text": {
           "en": "This site is a faithful, expanded rendering of the repository's `ARCHITECTURE.md`. That file is 2,017 lines long and already unusually complete: it explains what the program does, teaches the JavaFX vocabulary it needs, walks the rate-limiting algorithm line by line, traces eight requests through it by hand, maps every file and every method, itemises all 58 CSS rules, profiles a 516,544-row dataset, and closes with a recipe list, a troubleshooting guide and a limitations section. This website reorganises all of that into something you can navigate, search and read in Bengali — and adds chapters the original did not have.",
-          "bn": "এই সাইটটি রিপোজিটরির `ARCHITECTURE.md` ফাইলের একটি বিশ্বস্ত, সম্প্রসারিত রূপান্তর। ফাইলটি ২,০১৭ লাইনের এবং ইতিমধ্যে অস্বাভাবিকভাবে সম্পূর্ণ: এতে প্রোগ্রামটি কী করে তা বলা আছে, প্রয়োজনীয় জাভাএফএক্স পরিভাষা শেখানো হয়েছে, রেট লিমিটিং অ্যালগরিদম লাইনে লাইনে ব্যাখ্যা করা হয়েছে, আটটি অনুরোধ হাতে-কলমে ধরে দেখানো হয়েছে, প্রতিটি ফাইল ও প্রতিটি মেথড ম্যাপ করা হয়েছে, ৫৮টি CSS নিয়ম একটি একটি করে তালিকাভুক্ত, ৫,১৬,৫৪৪ সারির ডেটাসেটের প্রোফাইল দেওয়া হয়েছে, এবং শেষে রেসিপি তালিকা, ট্রাবলশুটিং নির্দেশিকা ও সীমাবদ্ধতার অধ্যায় রয়েছে। এই ওয়েবসাইটে সেই সব বিষয়বস্তু এমনভাবে সাজানো হয়েছে যা ঘুরে দেখা, খোঁজা ও বাংলায় পড়া যায় — এবং এতে কিছু নতুন অধ্যায়ও যোগ করা হয়েছে, যা মূল নথিতে ছিল না।"
+          "bn": "এই সাইটটি রিপোজিটরির `ARCHITECTURE.md` ফাইলের একটি বিশ্বস্ত, সম্প্রসারিত রূপান্তর। ফাইলটি ২,০১৭ লাইনের এবং ইতিমধ্যে অস্বাভাবিকভাবে সম্পূর্ণ: এতে প্রোগ্রামটি কী করে তা বলা আছে, প্রয়োজনীয় জাভাএফএক্স পরিভাষা শেখানো হয়েছে, রেট লিমিটিং অ্যালগরিদম লাইনে লাইনে ব্যাখ্যা করা হয়েছে, আটটি অনুরোধ হাতে-কলমে ধরে দেখানো হয়েছে, প্রতিটি ফাইল ও প্রতিটি মেথড ম্যাপ করা হয়েছে, ৫৮টি CSS নিয়ম একটি একটি করে তালিকাভুক্ত, ৫,১৬,৫৪৪ সারির ডেটাসেটের প্রোফাইল দেওয়া হয়েছে, এবং শেষে রেসিপি তালিকা, ট্রাবলশুটিং নির্দেশিকা ও সীমাবদ্ধতার অধ্যায় রয়েছে। এই ওয়েবসাইটে সেই সব বিষয়বস্তু এমনভাবে সাজানো হয়েছে যা ঘুরে দেখা, খোঁজা ও বাংলায় পড়া যায় — এবং এতে কিছু নতুন অধ্যায়ও যোগ করা হয়েছে, যা মূল ডকুমেন্টে ছিল না।"
         }
       },
       {
@@ -144,7 +144,7 @@
           {
             "text": {
               "en": "**Appendices C to J** are additions: they do not exist in the source document. They were written from the same material to make the documentation more useful — the full set of formulas in one place, a design-token reference with measured contrast ratios, a concrete test strategy, a user guide, a migration roadmap, production considerations, a consolidated changelog and an FAQ. Each one carries an *extended* badge in the sidebar and says so in its opening paragraph.",
-              "bn": "**উপাধিপত্র C থেকে J** — এগুলো সংযোজন: মূল নথিতে এগুলো নেই। একই উপকরণ থেকে এগুলো লেখা হয়েছে, যাতে নথিটি আরও কাজে লাগে — সব সূত্র এক জায়গায়, মাপা কনট্রাস্ট অনুপাতসহ ডিজাইন টোকেন রেফারেন্স, একটি নির্দিষ্ট টেস্ট কৌশল, একটি ইউজার গাইড, একটি মাইগ্রেশন রোডম্যাপ, প্রকৃত ব্যবহারের বিবেচনা, একটি সংক্ষিপ্ত চেঞ্জলগ, এবং একটি FAQ। প্রতিটির সাইডবারে *সম্প্রসারিত* চিহ্ন আছে এবং প্রথম অনুচ্ছেদে সেটি জানানো হয়েছে।"
+              "bn": "**উপাধিপত্র C থেকে J** — এগুলো সংযোজন: মূল ডকুমেন্টে এগুলো নেই। একই উপকরণ থেকে এগুলো লেখা হয়েছে, যাতে ডকুমেন্টটি আরও কাজে লাগে — সব সূত্র এক জায়গায়, মাপা কনট্রাস্ট অনুপাতসহ ডিজাইন টোকেন রেফারেন্স, একটি নির্দিষ্ট টেস্ট কৌশল, একটি ইউজার গাইড, একটি মাইগ্রেশন রোডম্যাপ, প্রকৃত ব্যবহারের বিবেচনা, একটি সংক্ষিপ্ত চেঞ্জলগ, এবং একটি FAQ। প্রতিটির সাইডবারে *সম্প্রসারিত* চিহ্ন আছে এবং প্রথম অনুচ্ছেদে সেটি জানানো হয়েছে।"
             }
           }
         ]
@@ -154,7 +154,7 @@
         "kind": "note",
         "text": {
           "en": "**Provenance.** The Java sources described here are not present in this repository — only `ARCHITECTURE.md` is. Every code listing, line count, colour value and benchmark figure on this site is therefore quoted from that document, not re-derived from the code. Where this site adds analysis (for example the contrast ratios in Appendix D), it says so and shows how the number was obtained.",
-          "bn": "**উৎস।** এখানে বর্ণিত জাভা সোর্স ফাইলগুলো এই রিপোজিটরিতে নেই — কেবল `ARCHITECTURE.md` আছে। তাই এই সাইটের প্রতিটি কোড তালিকা, লাইন সংখ্যা, রঙের মান ও বেঞ্চমার্ক ফলাফল ওই নথি থেকেই উদ্ধৃত, কোড থেকে নতুন করে বের করা নয়। যেখানে এই সাইট নিজস্ব বিশ্লেষণ যোগ করেছে (যেমন উপাধিপত্র D-তে কনট্রাস্ট অনুপাত), সেখানে তা উল্লেখ করা হয়েছে এবং সংখ্যাটি কীভাবে পাওয়া গেছে তা দেখানো হয়েছে।"
+          "bn": "**উৎস।** এখানে বর্ণিত জাভা সোর্স ফাইলগুলো এই রিপোজিটরিতে নেই — কেবল `ARCHITECTURE.md` আছে। তাই এই সাইটের প্রতিটি কোড তালিকা, লাইন সংখ্যা, রঙের মান ও বেঞ্চমার্ক ফলাফল ওই ডকুমেন্ট থেকেই উদ্ধৃত, কোড থেকে নতুন করে বের করা নয়। যেখানে এই সাইট নিজস্ব বিশ্লেষণ যোগ করেছে (যেমন উপাধিপত্র D-তে কনট্রাস্ট অনুপাত), সেখানে তা উল্লেখ করা হয়েছে এবং সংখ্যাটি কীভাবে পাওয়া গেছে তা দেখানো হয়েছে।"
         }
       },
       {
@@ -170,7 +170,7 @@
         "t": "p",
         "text": {
           "en": "The document assumes you know Java but not JavaFX, and it says so in chapter 4. Different readers need different routes through it:",
-          "bn": "এই নথিতে ধরা নেওয়া হয়েছে আপনি জাভা জানেন কিন্তু জাভাএফএক্স জানেন না — অধ্যায় ৪-এ তা স্পষ্ট বলা হয়েছে। ভিন্ন পাঠকের জন্য ভিন্ন পথ নির্দেশিত:"
+          "bn": "এই ডকুমেন্টে ধরা নেওয়া হয়েছে আপনি জাভা জানেন কিন্তু জাভাএফএক্স জানেন না — অধ্যায় ৪-এ তা স্পষ্ট বলা হয়েছে। ভিন্ন পাঠকের জন্য ভিন্ন পথ নির্দেশিত:"
         }
       },
       {
@@ -183,7 +183,7 @@
             },
             "text": {
               "en": "Read chapters 1 to 5 in order. They establish the program's purpose, the domain vocabulary, and every JavaFX mechanism the rest of the document depends on — observable properties, the extractor idiom, virtualised lists, cell factories, FXML injection, modality, animation.",
-              "bn": "অধ্যায় ১ থেকে ৫ পর্যায়ক্রমে পড়ুন। এগুলো প্রোগ্রামের উদ্দেশ্য, ডোমেইন পরিভাষা, এবং বাকি নথির উপর নির্ভরশীল প্রতিটি জাভাএফএক্স ব্যবস্থা স্থাপন করে — অবজার্ভেবল প্রপার্টি, এক্সট্রাক্টর আইডিয়ম, ভার্চুয়ালাইজড লিস্ট, সেল ফ্যাক্টরি, FXML ইনজেকশন, মোডালিটি, অ্যানিমেশন।"
+              "bn": "অধ্যায় ১ থেকে ৫ পর্যায়ক্রমে পড়ুন। এগুলো প্রোগ্রামের উদ্দেশ্য, ডোমেইন পরিভাষা, এবং বাকি অংশগুলোর উপর নির্ভরশীল প্রতিটি জাভাএফএক্স ব্যবস্থা স্থাপন করে — অবজার্ভেবল প্রপার্টি, এক্সট্রাক্টর আইডিয়ম, ভার্চুয়ালাইজড লিস্ট, সেল ফ্যাক্টরি, FXML ইনজেকশন, মোডালিটি, অ্যানিমেশন।"
             }
           },
           {
@@ -343,7 +343,7 @@
         "id": "coverage",
         "text": {
           "en": "Coverage of the source document",
-          "bn": "মূল নথির পরিপূর্ণতা"
+          "bn": "মূল ডকুমেন্টের পরিপূর্ণতা"
         }
       },
       {
@@ -647,7 +647,7 @@
             },
             {
               "en": "Fifteen decisions from the document, plus one added here",
-              "bn": "নথির পনেরোটি সিদ্ধান্ত, এবং এখানে যোগ করা আরও একটি"
+              "bn": "ডকুমেন্টের পনেরোটি সিদ্ধান্ত, এবং এখানে যোগ করা আরও একটি"
             }
           ],
           [
@@ -799,7 +799,7 @@
             },
             "v": {
               "en": "Any count quoted from the document is a measurement taken on the machine described there, not a specification. They will differ on your hardware.",
-              "bn": "নথি থেকে উদ্ধৃত প্রতিটি সংখ্যা সেখানে বর্ণিত মেশিনে নেওয়া পরিমাপ, কোনো স্পেসিফিকেশন নয়। আপনার হার্ডওয়্যারে ভিন্ন হবে।"
+              "bn": "ডকুমেন্ট থেকে উদ্ধৃত প্রতিটি সংখ্যা সেখানে বর্ণিত মেশিনে নেওয়া পরিমাপ, কোনো স্পেসিফিকেশন নয়। আপনার হার্ডওয়্যারে ভিন্ন হবে।"
             }
           },
           {

@@ -109,19 +109,27 @@
 
   function md(src) {
     var text = L(src, md.lang || "en");
-    // Split on backticks so markers inside code spans are never interpreted.
+    // Code spans are lifted out before emphasis is applied, so **bold** and
+    // *italic* can wrap a code span instead of being split by it. They are
+    // escaped too, which the previous per-chunk version did not do.
+    var codes = [];
     var out = "";
     text.split("`").forEach(function (chunk, i) {
-      if (i % 2 === 1) { out += "<code>" + chunk + "</code>"; return; }
-      out += esc(chunk)
-        .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
-        .replace(/(^|[\s(])\*([^*\n]+)\*/g, "$1<em>$2</em>")
-        .replace(/~~([^~]+)~~/g, "<del>$1</del>")
-        .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, function (_, label, href) {
-          return link(href, md.lang || "en") + label + "</a>";
-        });
+      if (i % 2 === 1) {
+        codes.push(esc(chunk));
+        out += "\u0000" + (codes.length - 1) + "\u0000";
+        return;
+      }
+      out += esc(chunk);
     });
-    return out;
+    out = out
+      .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+      .replace(/(^|[\s(])\*([^*\n]+)\*/g, "$1<em>$2</em>")
+      .replace(/~~([^~]+)~~/g, "<del>$1</del>")
+      .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, function (_, label, href) {
+        return link(href, md.lang || "en") + label + "</a>";
+      });
+    return out.replace(/\u0000(\d+)\u0000/g, function (_, n) { return "<code>" + codes[n] + "</code>"; });
   }
 
   function mdIn(lang, src) {
@@ -166,7 +174,15 @@
     },
 
     p: function (b, lang) {
-      return "<p" + (b.cls ? ' class="' + esc(b.cls) + '"' : "") + ">" + mdIn(lang, b.text) + "</p>";
+      // A blank line inside a leaf means the Bengali side merged two source
+      // paragraphs; render them as paragraphs rather than running them together.
+      return String(L(b.text, lang))
+        .split(/\n{2,}/)
+        .filter(function (s) { return s.trim(); })
+        .map(function (s) {
+          return "<p" + (b.cls ? ' class="' + esc(b.cls) + '"' : "") + ">" + mdIn(lang, s) + "</p>";
+        })
+        .join("");
     },
 
     ul: function (b, lang) {
@@ -293,7 +309,7 @@
       : "";
     return '<a class="chapter-card" href="#/' + lang + "/" + c.id + '">' +
       '<span class="c-num">' + esc(c.num) + "</span>" +
-      '<span class="c-title">' + esc(L(c.title, lang)) + "</span>" +
+      '<span class="c-title">' + mdIn(lang, c.title) + "</span>" +
       (b.lead === false ? "" : '<span class="c-desc">' + esc(shorten(plain(L(c.lead, lang)), b.words || 190)) + "</span>") +
       badge + "</a>";
   }

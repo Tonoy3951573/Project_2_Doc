@@ -38,7 +38,7 @@
         "t": "p",
         "text": {
           "en": "Data flows strictly downward: `policy` depends on `model`, `ui` depends on both. The `model` package depends on nothing in the project (though `Client` and `RatePolicy` do import JavaFX types — see chapter 22).",
-          "bn": "ডেটা কঠোরভাবে নিচের দিকে প্রবাহিত হয়: `policy` নির্ভর করে `model`-এর উপর, `ui` দুটোর উপরই। `model` প্যাকেজ প্রজেক্টের কিছুর উপরও নির্ভর করে না (তবে `Client` ও `RatePolicy` জাভাএফএক্স টাইপ ইমপোর্ট করে — অধ্যায় ২২ দেখুন)।"
+          "bn": "ডেটা কঠোরভাবে নিম্নমুখী প্রবাহিত হয়: `policy` নির্ভর করে `model`-এর ওপর, `ui` নির্ভর করে উভয়ের ওপর। `model` প্যাকেজটি প্রজেক্টের কোনো কিছুর ওপর নির্ভর করে না (যদিও `Client` এবং `RatePolicy` JavaFX টাইপগুলো ইমপোর্ট করে — দেখুন [§22](#/bn/limitations))।"
         }
       },
       {
@@ -54,7 +54,7 @@
         "t": "p",
         "text": {
           "en": "`SimulationController` holds all mutable state in five `ObservableList`s. There are no other mutable fields holding collections.",
-          "bn": "`SimulationController` সব পরিবর্তনযোগ্য অবস্থা রাখে পাঁচটি `ObservableList`-এ। কলেকশন ধরে রাখা অন্য কোনো পরিবর্তনযোগ্য ফিল্ড নেই।"
+          "bn": "`SimulationController` পাঁচটি `ObservableList`-এ সমস্ত পরিবর্তনযোগ্য স্টেট ধারণ করে।"
         }
       },
       {
@@ -78,29 +78,29 @@
             "`clients`",
             {
               "en": "Registered clients",
-              "bn": "নিবন্ধিত ক্লায়েন্ট"
+              "bn": "নিবন্ধিত ক্লায়েন্টসমূহ"
             },
             {
               "en": "`ClientList`, `clientChoiceBox`, both KPI labels, the report's list",
-              "bn": "`ClientList`, `clientChoiceBox`, দুটি KPI লেবেল, রিপোর্টের তালিকা"
+              "bn": "`ClientList`, `clientChoiceBox`, উভয় KPI লেবেল, রিপোর্টের লিস্ট"
             }
           ],
           [
             "`requests`",
             {
               "en": "Requests inside the current window",
-              "bn": "বর্তমান উইন্ডোর ভেতরের অনুরোধ"
+              "bn": "বর্তমান উইন্ডোর ভেতরের রিকোয়েস্টসমূহ"
             },
             {
               "en": "nothing (internal to the policy)",
-              "bn": "কিছু নয় (পলিসির অভ্যন্তরীণ)"
+              "bn": "nothing (পলিসির অভ্যন্তরীণ)"
             }
           ],
           [
             "`logs`",
             {
               "en": "Request history, newest first",
-              "bn": "অনুরোধের ইতিহাস, নতুনটি আগে"
+              "bn": "রিকোয়েস্ট হিস্ট্রি, সর্বশেষটি প্রথমে"
             },
             "`LogList`"
           ],
@@ -116,7 +116,7 @@
             "`trafficSeries`",
             {
               "en": "Per-second accepted counts",
-              "bn": "প্রতি সেকেন্ডে গৃহীত সংখ্যা"
+              "bn": "প্রতি সেকেন্ডে গৃহীত কাউন্ট"
             },
             "`trafficChart`"
           ]
@@ -147,7 +147,7 @@
         "t": "p",
         "text": {
           "en": "`clients` is created with an **extractor** that declares which of each element's properties the list should watch:",
-          "bn": "`clients` তৈরি হয় একটি **এক্সট্রাক্টর** দিয়ে, যা ঘোষণা করে প্রতিটি উপাদানের কোন প্রপার্টিগুলো লিস্টটি নজরে রাখবে:"
+          "bn": "`clients` একটি **extractor** দিয়ে তৈরি করা হয় যা ঘোষণা করে যে প্রতিটি উপাদানের কোন প্রপার্টিগুলো লিস্টটির পর্যবেক্ষণ করা উচিত:"
         }
       },
       {
@@ -159,14 +159,14 @@
         "t": "p",
         "text": {
           "en": "Because the list observes those four properties, mutating `client.violationScore` fires a change event on the list, which refreshes the affected `ListView` cell. That is why a badge updates the instant its score changes, with no hand-written listener. The same list backs the abuse report's `ListView`, so that dialog updates too.",
-          "bn": "যেহেতু লিস্টটি সেই চারটি প্রপার্টি পর্যবেক্ষণ করে, `client.violationScore` বদলালে লিস্টে একটি পরিবর্তন ইভেন্ট পড়ে, যা প্রভাবিত `ListView` সেলকে নতুন করে আঁকে। এ কারণেই স্কোর বদলানো মুহূর্তেই ব্যাজ হালনাগাদ হয়, কোনো হাতে-লেখা লিসেনার ছাড়াই। একই লিস্ট অপব্যবহার রিপোর্টের `ListView`-ও চালায়, তাই সেই ডায়ালগও আপডেট হয়।"
+          "bn": "যেহেতু লিস্টটি এই চারটি প্রপার্টি পর্যবেক্ষণ করে, তাই `client.violationScore` পরিবর্তন করলে লিস্টে একটি চেঞ্জ ইভেন্ট ফায়ার হয়, যা প্রভাবিত `ListView` সেলকে রিফ্রেশ করে। এই কারণেই কোনো ম্যানুয়াল লিসেনার ছাড়াই স্কোর পরিবর্তনের সাথে সাথে একটি ব্যাজ আপডেট হয়। একই লিস্ট অ্যাবিউজ রিপোর্টের `ListView`-এর পেছনেও কাজ করে, তাই সেই ডায়ালগটিও আপডেট হয়।"
         }
       },
       {
         "t": "p",
         "text": {
           "en": "The two KPI labels use `Bindings.createStringBinding`, recomputing whenever the observed list changes.",
-          "bn": "দুটি KPI লেবেল `Bindings.createStringBinding` ব্যবহার করে, যা পর্যবেক্ষিত লিস্ট বদলালেই নতুন করে হিসাব করে।"
+          "bn": "দুটি KPI লেবেল `Bindings.createStringBinding` ব্যবহার করে, যা পর্যবেক্ষণকৃত লিস্ট পরিবর্তিত হলে প্রতিবার পুনঃগণনা করে।"
         }
       },
       {
@@ -182,14 +182,14 @@
         "t": "p",
         "text": {
           "en": "`DailyAcceptedIndex` maintains, for every (client, type, local date), how many requests were **accepted**. It exists because deriving a limit needs \"the busiest day this client ever had\", and rescanning 500,000 log rows to find that on every single request is far too slow. See chapter 18.",
-          "bn": "`DailyAcceptedIndex` প্রতি (ক্লায়েন্ট, টাইপ, স্থানীয় তারিখ)-এর জন্য রাখে কতগুলো অনুরোধ **গৃহীত** হয়েছিল। এটি আছে কারণ লিমিট অনুমান করতে লাগে \"এই ক্লায়েন্টের সবচেয়ে ব্যস্ত দিন কোনটি ছিল\", আর প্রতিটি অনুরোধে ৫,০০,০০০ লগ সারি আবার স্ক্যান করা অত্যন্ত ধীর। অধ্যায় ১৮ দেখুন।"
+          "bn": "`DailyAcceptedIndex` প্রতিটি (client, type, local date)-এর জন্য কতগুলো রিকোয়েস্ট **গৃহীত (accepted)** হয়েছিল তা বজায় রাখে। এটি বিদ্যমান কারণ একটি লিমিট বের করার জন্য \"এই ক্লায়েন্টের সবচেয়ে ব্যস্ততম দিন কোনটি ছিল\" তা জানা প্রয়োজন, এবং প্রতিটি একক রিকোয়েস্টে সেটি খুঁজে পেতে 500,000 লগ সারি পুনরায় স্ক্যান করা অত্যন্ত ধীরগতির। দেখুন [§18](#/bn/performance)।"
         }
       },
       {
         "t": "p",
         "text": {
           "en": "It is kept in step with `logs` by a `ListChangeListener`, so it is correct for *any* mutation path rather than depending on scattered manual bookkeeping.",
-          "bn": "এটি একটি `ListChangeListener`-এর মাধ্যমে `logs`-এর সঙ্গে সমন্বয় রাখা হয়, তাই এটি *যেকোনো* পরিবর্তনের পথে সঠিক থাকে, আলাদা আলাদা জায়গায় ছড়িয়ে রাখা হাতে-লেখা হিসাবের উপর নির্ভর করে না।"
+          "bn": "এটি একটি `ListChangeListener` দ্বারা `logs`-এর সাথে সমন্বিত রাখা হয়, তাই এটি বিক্ষিপ্ত ম্যানুয়াল হিসাবের ওপর নির্ভর করার পরিবর্তে *যেকোনো* মিউটেশন পাথের জন্যই সঠিক থাকে।"
         }
       },
       {
@@ -217,7 +217,7 @@
         "t": "p",
         "text": {
           "en": "The order of statements in `initialize()` matters. In particular:",
-          "bn": "`initialize()`-এ বক্তব্যের ক্রম গুরুত্বপূর্ণ। বিশেষত:"
+          "bn": "`initialize()`-এ স্টেটমেন্টের ক্রম গুরুত্বপূর্ণ। বিশেষ করে:"
         }
       },
       {
@@ -226,25 +226,25 @@
           {
             "text": {
               "en": "`setItems(...)` is called **before** the selection listeners are added, so populating the lists does not trigger a cascade of label updates.",
-              "bn": "`setItems(...)` সিলেকশন লিসেনার যোগ করার **আগে** কল করা হয়, তাই লিস্ট পূরণ করলে লেবেল আপডেটের ঝড় শুরু হয় না।"
+              "bn": "সিলেকশন লিসেনার যুক্ত করার **আগে** `setItems(...)` কল করা হয়, যাতে লিস্টগুলো পপুলেট করার ফলে লেবেল আপডেটের ক্যাসকেড ট্রিগার না হয়।"
             }
           },
           {
             "text": {
               "en": "`initializeDefaultSettings()` runs **before** `updatePolicyDisplay()`, so the first label render uses real values.",
-              "bn": "`initializeDefaultSettings()` `updatePolicyDisplay()`-এর **আগে** চলে, তাই প্রথম লেবেল রেন্ডার আসল মান ব্যবহার করে।"
+              "bn": "`updatePolicyDisplay()`-এর **আগে** `initializeDefaultSettings()` রান হয়, যাতে প্রথম লেবেল রেন্ডার আসল মানগুলো ব্যবহার করে।"
             }
           },
           {
             "text": {
               "en": "The `logs` change listener is registered **before** `loadLogsFromCsv()`, so the index is populated when the history arrives.",
-              "bn": "`logs` পরিবর্তনের লিসেনার `loadLogsFromCsv()`-এর **আগে** নিবন্ধিত হয়, তাই ইতিহাস এলে ইনডেক্স পূর্ণ থাকে।"
+              "bn": "`loadLogsFromCsv()`-এর **আগে** `logs` চেঞ্জ লিসেনার রেজিস্টার করা হয়, যাতে হিস্ট্রি আসার সাথে সাথেই ইনডেক্সটি পপুলেট হয়।"
             }
           },
           {
             "text": {
               "en": "`setupTrafficChart()` and `startTrafficTimer()` run **before** the history load, so the chart is live while the data streams in.",
-              "bn": "`setupTrafficChart()` ও `startTrafficTimer()` ইতিহাস লোডের **আগে** চলে, তাই ডেটা আসতে আসতে চার্টটি জীবন্ত থাকে।"
+              "bn": "হিস্ট্রি লোডের **আগে** `setupTrafficChart()` এবং `startTrafficTimer()` রান হয়, যাতে ডেটা স্ট্রিম করার সময় চার্টটি লাইভ থাকে।"
             }
           }
         ]
@@ -262,7 +262,7 @@
         }
       }
     ]
-  });
+  });;
 
   DOC.register({
     "id": "threading",
@@ -290,7 +290,7 @@
         "t": "p",
         "text": {
           "en": "JavaFX permits only the FX Application Thread to touch the scene graph.",
-          "bn": "জাভাএফএক্স সিন গ্রাফ স্পর্শ করতে কেবল FX অ্যাপ্লিকেশন থ্রেডকেই অনুমতি দেয়।"
+          "bn": "JavaFX দৃশ্য গ্রাফ স্পর্শ করার জন্য কেবল FX Application Thread-কে অনুমতি দেয়।"
         }
       },
       {
@@ -321,7 +321,7 @@
             },
             {
               "en": "`launch` hands over to the FX thread.",
-              "bn": "`launch` FX থ্রেডে হস্তান্তর করে।"
+              "bn": "`launch` FX থ্রেডের কাছে হস্তান্তর করে।"
             }
           ],
           [
@@ -337,7 +337,7 @@
             "FX",
             {
               "en": "Called from inside `start`.",
-              "bn": "`start`-এর ভেতর থেকে কল হয়।"
+              "bn": "`start`-এর ভেতর থেকে কল করা হয়।"
             }
           ],
           [
@@ -348,7 +348,7 @@
             "FX",
             {
               "en": "Every one is invoked by the FX event loop.",
-              "bn": "প্রতিটিই FX ইভেন্ট লুপ থেকে আহ্বানিত।"
+              "bn": "প্রতিটি FX ইভেন্ট লুপ দ্বারা ইনভোক করা হয়।"
             }
           ],
           [
@@ -370,7 +370,7 @@
             "FX",
             {
               "en": "**Keeps running inside a modal's nested event loop** — hence the explicit pause.",
-              "bn": "**মোডালের নেস্টেড ইভেন্ট লুপের ভেতরেও চলতে থাকে** — তাই স্পষ্টভাবে থামাতে হয়।"
+              "bn": "**একটি মোডালের নেস্টেড ইভেন্ট লুপের ভেতরে চলতে থাকে** — তাই সুস্পষ্ট পজ করা প্রয়োজন।"
             }
           ],
           [
@@ -381,7 +381,7 @@
             "FX",
             {
               "en": "`showAndWait()` starts a nested event loop.",
-              "bn": "`showAndWait()` একটি নেস্টেড ইভেন্ট লুপ চালু করে।"
+              "bn": "`showAndWait()` একটি নেস্টেড ইভেন্ট লুপ শুরু করে।"
             }
           ],
           [
@@ -395,7 +395,7 @@
             },
             {
               "en": "Pure I/O and string parsing; touches no UI and no JavaFX collection.",
-              "bn": "শুধু I/O ও স্ট্রিং পার্সিং; কোনো UI বা জাভাএফএক্স কলেকশন স্পর্শ করে না।"
+              "bn": "বিশুদ্ধ I/O এবং স্ট্রিং পার্সিং; কোনো UI বা JavaFX কালেকশন স্পর্শ করে না।"
             }
           ],
           [
@@ -409,7 +409,7 @@
             },
             {
               "en": "The hand-off point.",
-              "bn": "হ্যান্ড-অফ পয়েন্ট।"
+              "bn": "হস্তান্তরের পয়েন্ট।"
             }
           ],
           [
@@ -476,7 +476,7 @@
         },
         "text": {
           "en": "`readHistoryRows` deliberately creates no `Client` and no `Log`; it produces only immutable `HistoryRow` records. That is what makes it safe off the FX thread. Client creation — which mutates the `clients` list — happens in `mergeHistoryRows` on the FX thread.",
-          "bn": "`readHistoryRows` ইচ্ছাকৃতভাবে কোনো `Client` বা `Log` তৈরি করে না; এটি কেবল অপরিবর্তনীয় `HistoryRow` রেকর্ড তৈরি করে। এটিই FX থ্রেডের বাইরে এটিকে নিরাপদ করে। ক্লায়েন্ট তৈরি — যা `clients` লিস্ট বদলায় — FX থ্রেডে `mergeHistoryRows`-এ ঘটে।"
+          "bn": "`readHistoryRows` ইচ্ছাকৃতভাবেই কোনো `Client` বা `Log` তৈরি করে না; এটি কেবল অপরিবর্তনীয় `HistoryRow` রেকর্ড তৈরি করে। এটিই এটিকে FX থ্রেডের বাইরে নিরাপদ করে তোলে। ক্লায়েন্ট তৈরি — যা `clients` লিস্টকে পরিবর্তিত করে — FX থ্রেডে `mergeHistoryRows`-এর মধ্যে ঘটে।"
         }
       },
       {
@@ -531,7 +531,7 @@
         }
       }
     ]
-  });
+  });;
 
   DOC.register({
     "id": "controller",
@@ -589,7 +589,7 @@
             "`TextField`",
             {
               "en": "Name entry for a new client.",
-              "bn": "নতুন ক্লায়েন্টের নাম লেখার ঘর।"
+              "bn": "নতুন ক্লায়েন্টের নাম এন্ট্রি।"
             }
           ],
           [
@@ -598,7 +598,7 @@
             "`Label`",
             {
               "en": "KPI: accepted requests across all clients.",
-              "bn": "KPI: সব ক্লায়েন্টের গৃহীত অনুরোধ।"
+              "bn": "KPI: সমস্ত ক্লায়েন্ট জুড়ে গৃহীত রিকোয়েস্ট।"
             }
           ],
           [
@@ -607,7 +607,7 @@
             "`Label`",
             {
               "en": "KPI: violations across all clients.",
-              "bn": "KPI: সব ক্লায়েন্টের লঙ্ঘন।"
+              "bn": "KPI: সমস্ত ক্লায়েন্ট জুড়ে ভায়োলেশন।"
             }
           ],
           [
@@ -625,7 +625,7 @@
             "`ListView<Log>`",
             {
               "en": "The request log.",
-              "bn": "অনুরোধের লগ।"
+              "bn": "রিকোয়েস্ট লগ।"
             }
           ],
           [
@@ -634,7 +634,7 @@
             "`ComboBox<Client>`",
             {
               "en": "Which client the next request belongs to.",
-              "bn": "পরবর্তী অনুরোধ কোন ক্লায়েন্টের।"
+              "bn": "পরবর্তী রিকোয়েস্টটি কোন ক্লায়েন্টের।"
             }
           ],
           [
@@ -643,7 +643,7 @@
             "`ComboBox<RequestType>`",
             {
               "en": "Which type the next request is.",
-              "bn": "পরবর্তী অনুরোধ কোন ধরনের।"
+              "bn": "পরবর্তী রিকোয়েস্টটি কোন টাইপের।"
             }
           ],
           [
@@ -652,7 +652,7 @@
             "`Button`",
             {
               "en": "Kept for completeness; the FXML wires the action.",
-              "bn": "সম্পূর্ণতার জন্য রাখা; অ্যাকশন FXML-ই ওয়্যার করে।"
+              "bn": "সম্পূর্ণতার জন্য রাখা হয়েছে; FXML অ্যাকশনটি যুক্ত করে।"
             }
           ],
           [
@@ -670,7 +670,7 @@
             "`Label`",
             {
               "en": "Window size, e.g. \"10S\".",
-              "bn": "উইন্ডোর আকার, যেমন \"10S\"।"
+              "bn": "উইন্ডো সাইজ, যেমন \"10S\"।"
             }
           ],
           [
@@ -679,7 +679,7 @@
             "`Label`",
             {
               "en": "The enforced limit, e.g. \"47 / window\".",
-              "bn": "প্রয়োগ হওয়া লিমিট, যেমন \"47 / window\"।"
+              "bn": "প্রয়োগকৃত লিমিট, যেমন \"47 / window\"।"
             }
           ],
           [
@@ -688,7 +688,7 @@
             "`Button`",
             {
               "en": "Toggles the simulation; also restyled at runtime.",
-              "bn": "সিমুলেশন টগল করে; রানটাইমে স্টাইলও বদলায়।"
+              "bn": "সিমুলেশন টগল করে; রানটাইমে পুনরায় স্টাইল করা হয়।"
             }
           ],
           [
@@ -697,7 +697,7 @@
             "`LineChart<String,Number>`",
             {
               "en": "Per-second accepted requests.",
-              "bn": "প্রতি সেকেন্ডে গৃহীত অনুরোধ।"
+              "bn": "প্রতি সেকেন্ডে গৃহীত রিকোয়েস্ট।"
             }
           ],
           [
@@ -706,7 +706,7 @@
             "`NumberAxis`",
             {
               "en": "Auto-ranging, forced to include zero.",
-              "bn": "স্বয়ংক্রিয় রেঞ্জ, শূন্য অন্তর্ভুক্ত করে।"
+              "bn": "অটো-রেঞ্জিং, শূন্য অন্তর্ভুক্ত করতে বাধ্য করা হয়েছে।"
             }
           ],
           [
@@ -715,7 +715,7 @@
             "`Circle`",
             {
               "en": "The pulsing status dot.",
-              "bn": "নাড়া-নাড়া স্ট্যাটাস ডট।"
+              "bn": "পালসিং স্ট্যাটাস ডট।"
             }
           ]
         ]
@@ -770,7 +770,7 @@
             "`FIXED_WINDOW`",
             {
               "en": "Which policy class to build.",
-              "bn": "কোন পলিসি ক্লাস তৈরি হবে।"
+              "bn": "কোন পলিসি ক্লাস তৈরি করতে হবে।"
             }
           ],
           [
@@ -789,7 +789,7 @@
             },
             {
               "en": "Per type; 0 means \"derive from history\".",
-              "bn": "প্রতি টাইপ; ০ মানে \"ইতিহাস থেকে অনুমান\"।"
+              "bn": "প্রতি টাইপের জন্য; 0 মানে \"হিস্ট্রি থেকে উদ্ভূত\"।"
             }
           ],
           [
@@ -800,7 +800,7 @@
             },
             {
               "en": "Penalty weights.",
-              "bn": "জরিমানার ওজন।"
+              "bn": "পেনাল্টি ওয়েটসমূহ।"
             }
           ],
           [
@@ -824,7 +824,7 @@
             "100",
             {
               "en": "…`CRITICAL`, and the lockout trigger.",
-              "bn": "…`CRITICAL`, এবং লক-আউটের ট্রিগার।"
+              "bn": "…`CRITICAL`, এবং লকআউট ট্রিগার।"
             }
           ],
           [
@@ -832,7 +832,7 @@
             "1",
             {
               "en": "Score removed per accepted request.",
-              "bn": "প্রতি গৃহীত অনুরোধে সরানো স্কোর।"
+              "bn": "প্রতি গৃহীত রিকোয়েস্টে সরানো স্কোর।"
             }
           ]
         ]
@@ -863,56 +863,56 @@
             "`autoSimTimeline`",
             {
               "en": "The 800 ms `Timeline`; null when stopped.",
-              "bn": "৮০০ মিলিসেকেন্ডের `Timeline`; থামলে null।"
+              "bn": "800 ms-এর `Timeline`; থামানো থাকলে null।"
             }
           ],
           [
             "`isAutoSimRunning`",
             {
               "en": "Whether the simulation should be running.",
-              "bn": "সিমুলেশন চলবে কি না।"
+              "bn": "সিমুলেশন চলা উচিত কি না।"
             }
           ],
           [
             "`autoSimClientIndex`",
             {
               "en": "Round-robin cursor; only ever read modulo the client count.",
-              "bn": "রাউন্ড-রবিন কার্সর; ক্লায়েন্ট সংখ্যা দিয়ে মডিউলো করে পড়া হয়।"
+              "bn": "রাউন্ড-রবিন কার্সার; সর্বদা ক্লায়েন্ট কাউন্টের মডিউলো হিসেবে রিড করা হয়।"
             }
           ],
           [
             "`random`",
             {
               "en": "`Random` for picking a request type.",
-              "bn": "অনুরোধের ধরন বাছাইয়ের জন্য `Random`।"
+              "bn": "রিকোয়েস্ট টাইপ বেছে নেওয়ার জন্য `Random`।"
             }
           ],
           [
             "`suppressIndexSync`",
             {
               "en": "Set while `logs` is changed in bulk, so the change listener stands down.",
-              "bn": "`logs` বাল্কে বদলানোর সময় সেট থাকে, যাতে পরিবর্তন লিসেনার নীরব থাকে।"
+              "bn": "`logs` যখন একবারে প্রচুর পরিবর্তিত হয় তখন সেট করা হয়, যাতে চেঞ্জ লিসেনার বিরত থাকে।"
             }
           ],
           [
             "`historyLoading`",
             {
               "en": "Guards against two concurrent history loads.",
-              "bn": "একসঙ্গে দুটি ইতিহাস লোড হওয়া ঠেকায়।"
+              "bn": "দুটি সমসাময়িক হিস্ট্রি লোডের বিরুদ্ধে পাহারা দেয়।"
             }
           ],
           [
             "`validRequestsThisSecond`",
             {
               "en": "Accepted requests since the last chart tick.",
-              "bn": "শেষ চার্ট টিকের পরের গৃহীত অনুরোধ।"
+              "bn": "শেষ চার্ট টিকের পর থেকে গৃহীত রিকোয়েস্টসমূহ।"
             }
           ],
           [
             "`secondCounter`",
             {
               "en": "Monotonic tick number, used as the chart's category label.",
-              "bn": "একপর থেকে বাড়া টিক নম্বর, চার্টের ক্যাটেগরি লেবেল হিসেবে ব্যবহৃত।"
+              "bn": "মোনোটনিক টিক নম্বর, যা চার্টের ক্যাটাগরি লেবেল হিসেবে ব্যবহৃত হয়।"
             }
           ]
         ]
@@ -942,5 +942,5 @@
         }
       }
     ]
-  });
+  });;
 })();

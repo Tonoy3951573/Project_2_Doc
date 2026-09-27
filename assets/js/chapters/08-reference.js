@@ -45,21 +45,21 @@
             "k": "`Main.main(String[])`",
             "v": {
               "en": "Delegates to `MainApp.main`.",
-              "bn": "`MainApp.main`-এ প্রেরণ করে।"
+              "bn": "**`Main.main(String[])`** — `MainApp.main`-এ অর্পণ করে।"
             }
           },
           {
             "k": "`MainApp.start(Stage)`",
             "v": {
               "en": "Loads the FXML and shows the window.",
-              "bn": "FXML লোড করে উইন্ডো দেখায়।"
+              "bn": "**`MainApp.start(Stage)`** — FXML লোড করে এবং উইন্ডো প্রদর্শন করে। **`MainApp.main(String[])`** — `Application.launch()` কল করে।"
             }
           },
           {
             "k": "`MainApp.main(String[])`",
             "v": {
               "en": "Calls `Application.launch()`.",
-              "bn": "`Application.launch()` কল করে।"
+              "bn": "**`MainApp.start(Stage)`** — FXML লোড করে এবং উইন্ডো প্রদর্শন করে। **`MainApp.main(String[])`** — `Application.launch()` কল করে।"
             }
           }
         ]
@@ -80,23 +80,29 @@
             "k": "`Client`",
             "v": {
               "en": "constructor, `getName`, `getTotalRequest`, `totalRequestProperty`, `increaseTotalRequest`, `getViolationScore`, `violationScoreProperty`, `addViolationScore`, `decayViolationScore`, `getViolationCount`, `violationCountProperty`, `increaseViolationCount`, `getLevel`, `levelProperty`, `getLastViolationTime`, `reset`, `updateLevelFromScore`, `toString`. See [chapter 11](#/en/model).",
-              "bn": "কনস্ট্রাক্টর, `getName`, `getTotalRequest`, `totalRequestProperty`, `increaseTotalRequest`, `getViolationScore`, `violationScoreProperty`, `addViolationScore`, `decayViolationScore`, `getViolationCount`, `violationCountProperty`, `increaseViolationCount`, `getLevel`, `levelProperty`, `getLastViolationTime`, `reset`, `updateLevelFromScore`, `toString`। [অধ্যায় ১১](#/bn/model) দেখুন।"
+              "bn": "**`Client`** — constructor, `getName`, `getTotalRequest`, `totalRequestProperty`, `increaseTotalRequest`, `getViolationScore`, `violationScoreProperty`, `addViolationScore`, `decayViolationScore`, `getViolationCount`, `violationCountProperty`, `increaseViolationCount`, `getLevel`, `levelProperty`, `getLastViolationTime`, `reset`, `updateLevelFromScore`, `toString`। দেখুন [§11](#/bn/model)।"
             }
           },
           {
             "k": "`DailyAcceptedIndex`",
-            "v": "`add`, `remove`, `clear`, `maxDailyAccepted`, `tally`, `perType`."
+            "v": {
+              "en": "`add`, `remove`, `clear`, `maxDailyAccepted`, `tally`, `perType`.",
+              "bn": "**`DailyAcceptedIndex`** — `add`, `remove`, `clear`, `maxDailyAccepted`, `tally`, `perType`।"
+            }
           },
           {
             "k": "`Log`",
             "v": {
               "en": "constructor `Log(Request, String)`, `getClient`, `getTime`, `getType`, `getStatus`, `toString`, plus `STATUS_ACCEPTED` / `STATUS_BLOCKED`.",
-              "bn": "কনস্ট্রাক্টর `Log(Request, String)`, `getClient`, `getTime`, `getType`, `getStatus`, `toString`, এবং `STATUS_ACCEPTED` / `STATUS_BLOCKED`।"
+              "bn": "**`Log`** — constructor `Log(Request, String)`, `getClient`, `getTime`, `getType`, `getStatus`, `toString`, সাথে `STATUS_ACCEPTED` / `STATUS_BLOCKED`।"
             }
           },
           {
             "k": "`Request`",
-            "v": "`Request(Client, RequestType)`, `Request(Client, RequestType, LocalDateTime)`, `getClient`, `getTime`, `getType`."
+            "v": {
+              "en": "`Request(Client, RequestType)`, `Request(Client, RequestType, LocalDateTime)`, `getClient`, `getTime`, `getType`.",
+              "bn": "**`Request`** — `Request(Client, RequestType)`, `Request(Client, RequestType, LocalDateTime)`, `getClient`, `getTime`, `getType`।"
+            }
           }
         ]
       },
@@ -116,16 +122,22 @@
             "k": "`RatePolicy`",
             "v": {
               "en": "`evaluate`, and `Decision` with `allowed` / `blocked`.",
-              "bn": "`evaluate`, এবং `allowed` / `blocked`-সহ `Decision`।"
+              "bn": "**`RatePolicy`** — `evaluate`, এবং `allowed` / `blocked` সহ `Decision`।"
             }
           },
           {
             "k": "`AbstractWindowPolicy`",
-            "v": "constructor, `evaluate`, abstract `windowFor`, `penalise`, `refreshLevel`, `isCoolingDown`, `getMaxRequests`, `getWindow`."
+            "v": {
+              "en": "constructor, `evaluate`, abstract `windowFor`, `penalise`, `refreshLevel`, `isCoolingDown`, `getMaxRequests`, `getWindow`.",
+              "bn": "**`AbstractWindowPolicy`** — constructor, `evaluate`, abstract `windowFor`, `penalise`, `refreshLevel`, `isCoolingDown`, `getMaxRequests`, `getWindow`।"
+            }
           },
           {
             "k": "`FixedWindowPolicy` / `SlidingWindowPolicy`",
-            "v": "constructor and `windowFor`."
+            "v": {
+              "en": "constructor and `windowFor`.",
+              "bn": "**`AbstractWindowPolicy`** — constructor, `evaluate`, abstract `windowFor`, `penalise`, `refreshLevel`, `isCoolingDown`, `getMaxRequests`, `getWindow`।"
+            }
           }
         ]
       },
@@ -349,7 +361,7 @@
         "kind": "note",
         "text": {
           "en": "Line numbers refer to `SimulationController.java` as of this document and will drift as the file changes; the method names will not. The declaration order is itself information: the two modals sit at lines 596 and 1251, which is why the file reads as \"dashboard logic, then a 348-line dialog, then more dashboard logic, then a 150-line report, then renderers\".",
-          "bn": "লাইন নম্বরগুলো এই নথির সময়কার `SimulationController.java`-কে নির্দেশ করে এবং ফাইল বদলালে সরে যাবে; মেথডের নাম নয়। ঘোষণার ক্রমটিও নিজেই তথ্য: দুটি মোডাল ৫৯৬ ও ১২৫১ লাইনে, তাই ফাইলটি পড়া যায় \"ড্যাশবোর্ডের যুক্তি, তারপর ৩৪৮ লাইনের ডায়ালগ, তারপর আরও ড্যাশবোর্ডের যুক্তি, তারপর ১৫০ লাইনের রিপোর্ট, তারপর রেন্ডারার\"।"
+          "bn": "লাইন নম্বরগুলো এই ডকুমেন্টের সময়কার `SimulationController.java`-কে নির্দেশ করে এবং ফাইল বদলালে সরে যাবে; মেথডের নাম নয়। ঘোষণার ক্রমটিও নিজেই তথ্য: দুটি মোডাল ৫৯৬ ও ১২৫১ লাইনে, তাই ফাইলটি পড়া যায় \"ড্যাশবোর্ডের যুক্তি, তারপর ৩৪৮ লাইনের ডায়ালগ, তারপর আরও ড্যাশবোর্ডের যুক্তি, তারপর ১৫০ লাইনের রিপোর্ট, তারপর রেন্ডারার\"।"
         }
       },
       {
@@ -360,7 +372,7 @@
         }
       }
     ]
-  });
+  });;
 
   DOC.register({
     "id": "appendix-b",
@@ -380,7 +392,7 @@
         "kind": "note",
         "text": {
           "en": "A `ListCell` subclass overrides `updateItem(T item, boolean empty)`. The `empty` flag marks filler cells; when true the graphic and text must be cleared or the row will show stale content. `ListView` recycles cells, so `updateItem` is called far more often than there are items.",
-          "bn": "একটি `ListCell` সাবক্লাস `updateItem(T item, boolean empty)` ওভাররাইড করে। `empty` পতাকা ফিলার সেলগুলো নির্দেশ করে; সত্য হলে গ্রাফিক ও টেক্সট মুছে ফেলতে হয়, নয়তে সারিতে পুরোনো কনটেন্ট দেখাবে। `ListView` সেল পুনর্ব্যবহার করে, তাই `updateItem` আইটেমের সংখ্যার চেয়ে অনেক বেশি বার ডাকা হয়।"
+          "bn": "একটি `ListCell` সাবক্লাস `updateItem(T item, boolean empty)` ওভাররাইড করে। `empty` ফ্ল্যাগ ফিলার সেলগুলোকে চিহ্নিত করে; যখন এটি true হয় তখন গ্রাফিক এবং টেক্সট অবশ্যই মুছে ফেলতে হবে অন্যথায় সারিটি পুরানো কনটেন্ট দেখাবে। `ListView` সেলগুলো পুনরায় ব্যবহার করে, তাই আইটেমের সংখ্যার চেয়ে `updateItem` অনেক বেশি ঘন ঘন কল করা হয়।"
         }
       },
       {
@@ -396,7 +408,7 @@
         "t": "p",
         "text": {
           "en": "`updateItem`:",
-          "bn": "`updateItem`:"
+          "bn": "একটি `ListCell` সাবক্লাস `updateItem(T item, boolean empty)` ওভাররাইড করে। `empty` ফ্ল্যাগ ফিলার সেলগুলোকে চিহ্নিত করে; যখন এটি true হয় তখন গ্রাফিক এবং টেক্সট অবশ্যই মুছে ফেলতে হবে অন্যথায় সারিটি পুরানো কনটেন্ট দেখাবে। `ListView` সেলগুলো পুনরায় ব্যবহার করে, তাই আইটেমের সংখ্যার চেয়ে `updateItem` অনেক বেশি ঘন ঘন কল করা হয়।"
         }
       },
       {
@@ -438,14 +450,14 @@
         "t": "p",
         "text": {
           "en": "`updateSelected(boolean)` is overridden so that selection styling is reapplied when the selection state changes, calling `updateCardStyle` with the current item.",
-          "bn": "`updateSelected(boolean)` ওভাররাইড করা, যাতে সিলেকশনের অবস্থা বদলালে সিলেকশনের স্টাইল আবার প্রয়োগ হয়, সেখানে বর্তমান আইটেম দিয়ে `updateCardStyle` কল করে।"
+          "bn": "`updateSelected(boolean)` ওভাররাইড করা হয়েছে যাতে সিলেকশন স্টেট পরিবর্তিত হলে সিলেকশন স্টাইলিং পুনরায় প্রয়োগ করা হয়, বর্তমান আইটেমের সাথে `updateCardStyle` কল করে।"
         }
       },
       {
         "t": "p",
         "text": {
           "en": "`updateCardStyle(HBox, Client)` computes:",
-          "bn": "`updateCardStyle(HBox, Client)` হিসাব করে:"
+          "bn": "`updateCardStyle(HBox, Client)` গণনা করে:"
         }
       },
       {
@@ -456,7 +468,7 @@
         "t": "p",
         "text": {
           "en": "Badge text and colours:",
-          "bn": "ব্যাজের লেখা ও রঙ:"
+          "bn": "ব্যাজ টেক্সট এবং রঙসমূহ:"
         }
       },
       {
@@ -539,7 +551,7 @@
         "t": "p",
         "text": {
           "en": "`updateItem`:",
-          "bn": "`updateItem`:"
+          "bn": "একটি `ListCell` সাবক্লাস `updateItem(T item, boolean empty)` ওভাররাইড করে। `empty` ফ্ল্যাগ ফিলার সেলগুলোকে চিহ্নিত করে; যখন এটি true হয় তখন গ্রাফিক এবং টেক্সট অবশ্যই মুছে ফেলতে হবে অন্যথায় সারিটি পুরানো কনটেন্ট দেখাবে। `ListView` সেলগুলো পুনরায় ব্যবহার করে, তাই আইটেমের সংখ্যার চেয়ে `updateItem` অনেক বেশি ঘন ঘন কল করা হয়।"
         }
       },
       {
@@ -592,7 +604,7 @@
         "t": "p",
         "text": {
           "en": "`setStatusStyle(Label, String)` compares case-insensitively against `Log.STATUS_ACCEPTED` (`#22c55e` on `#052e16`) and `Log.STATUS_BLOCKED` (`#ef4444` on `#450a0a`). A status matching neither is left unstyled.",
-          "bn": "`setStatusStyle(Label, String)` কেস-অসংবেদীভাবে `Log.STATUS_ACCEPTED` (`#052e16`-এর উপর `#22c55e`) ও `Log.STATUS_BLOCKED` (`#450a0a`-এর উপর `#ef4444`) এর সঙ্গে তুলনা করে। দুটোর সঙ্গেই না মিলে এমন স্ট্যাটাস স্টাইলহীন থাকে।"
+          "bn": "`setStatusStyle(Label, String)` `Log.STATUS_ACCEPTED` (`#052e16`-এর ওপর `#22c55e`) এবং `Log.STATUS_BLOCKED` (`#450a0a`-এর ওপর `#ef4444`)-এর সাথে কেস-ইনসেনসিটিভভাবে তুলনা করে। কোনোটির সাথেই মেলে না এমন একটি স্ট্যাটাস আনস্টাইলড রাখা হয়।"
         }
       },
       {
@@ -620,14 +632,14 @@
         "t": "p",
         "text": {
           "en": "The richest of the three. It receives the parent `ListView` in its constructor so it can bind its card width to the list width.",
-          "bn": "তিনটির মধ্যে সবচেয়ে সমৃদ্ধ। এটি কনস্ট্রাক্টরে প্যারেন্ট `ListView` পায়, যাতে কার্ডের প্রস্থ তালিকার প্রস্থে বাঁধতে পারে।"
+          "bn": "তিনটির মধ্যে সবচেয়ে সমৃদ্ধ। এটি এর কনস্ট্রাক্টরে প্যারেন্ট `ListView` গ্রহণ করে যাতে এটি এর কার্ডের প্রস্থকে লিস্টের প্রস্থের সাথে আবদ্ধ করতে পারে।"
         }
       },
       {
         "t": "p",
         "text": {
           "en": "`updateItem`:",
-          "bn": "`updateItem`:"
+          "bn": "একটি `ListCell` সাবক্লাস `updateItem(T item, boolean empty)` ওভাররাইড করে। `empty` ফ্ল্যাগ ফিলার সেলগুলোকে চিহ্নিত করে; যখন এটি true হয় তখন গ্রাফিক এবং টেক্সট অবশ্যই মুছে ফেলতে হবে অন্যথায় সারিটি পুরানো কনটেন্ট দেখাবে। `ListView` সেলগুলো পুনরায় ব্যবহার করে, তাই আইটেমের সংখ্যার চেয়ে `updateItem` অনেক বেশি ঘন ঘন কল করা হয়।"
         }
       },
       {
@@ -736,7 +748,7 @@
         "t": "p",
         "text": {
           "en": "`scoreColor` (the label) and `createFill` (the bar) use different bands:",
-          "bn": "`scoreColor` (লেবেল) ও `createFill` (বার) ভিন্ন ব্যান্ড ব্যবহার করে:"
+          "bn": "`scoreColor` (লেবেল) এবং `createFill` (বার) বিভিন্ন ব্যান্ড ব্যবহার করে:"
         }
       },
       {
@@ -792,7 +804,7 @@
         "t": "p",
         "text": {
           "en": "In the `0.2 – 0.35` band the label reads amber while the bar is still green. Cosmetic, and unintentional.",
-          "bn": "`0.2 – 0.35` ব্যান্ডে লেবেল অ্যাম্বার হলেও বার এখনো সবুজ। সৌন্দর্যবিষয়ক, এবং অনিচ্ছাকৃত।"
+          "bn": "`0.2 – 0.35` ব্যান্ডে লেবেলটি অ্যাম্বার দেখায় যখন বারটি তখনও সবুজ থাকে। এটি কসমেটিক, এবং অনিচ্ছাকৃত।"
         }
       },
       {
@@ -807,5 +819,5 @@
         }
       }
     ]
-  });
+  });;
 })();

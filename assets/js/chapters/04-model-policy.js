@@ -34,7 +34,7 @@
         "t": "p",
         "text": {
           "en": "The mutable per-caller record. **Not** a JavaFX `Node`; it uses JavaFX property wrappers so the UI can observe it.",
-          "bn": "প্রতি-ক্রেতার পরিবর্তনযোগ্য রেকর্ড। এটি জাভাএফএক্স `Node` **নয়**; UI যাতে পর্যবেক্ষণ করতে পারে তার জন্য জাভাএফএক্স প্রপার্টি র‍্যাপার ব্যবহার করে।"
+          "bn": "পরিবর্তনযোগ্য প্রতি-কলার রেকর্ড। কোনো JavaFX `Node` **নয়**; এটি JavaFX প্রপার্টি র্যাপার ব্যবহার করে যাতে UI এটিকে পর্যবেক্ষণ করতে পারে।"
         }
       },
       {
@@ -54,63 +54,63 @@
             "`String name`",
             {
               "en": "`final`, set in the constructor. The registry key.",
-              "bn": "কনস্ট্রাক্টরে সেট, `final`। রেজিস্ট্রির কী।"
+              "bn": "`final`, কনস্ট্রাক্টরে সেট করা। রেজিস্ট্রি কি (registry key)।"
             }
           ],
           [
             "`IntegerProperty totalRequest`",
             {
               "en": "Accepted-request counter, starts 0.",
-              "bn": "গৃহীত-অনুরোধের গণনক, শুরু ০।"
+              "bn": "গৃহীত-রিকোয়েস্ট কাউন্টার, 0 দিয়ে শুরু।"
             }
           ],
           [
             "`IntegerProperty violationCount`",
             {
               "en": "Blocked-request counter, starts 0.",
-              "bn": "প্রত্যাখ্যাত-অনুরোধের গণনক, শুরু ০।"
+              "bn": "ব্লক করা-রিকোয়েস্ট কাউন্টার, 0 দিয়ে শুরু।"
             }
           ],
           [
             "`IntegerProperty violationScore`",
             {
               "en": "Accumulated penalty, starts 0.",
-              "bn": "জমা জরিমানা, শুরু ০।"
+              "bn": "পুঞ্জীভূত পেনাল্টি, 0 দিয়ে শুরু।"
             }
           ],
           [
             "`ObjectProperty<ViolationLevel> level`",
             {
               "en": "Risk badge, starts `NONE`.",
-              "bn": "ঝুঁকির ব্যাজ, শুরু `NONE`।"
+              "bn": "ঝুঁকি ব্যাজ, `NONE` দিয়ে শুরু।"
             }
           ],
           [
             "`LocalDateTime lastViolationTime`",
             {
               "en": "Plain field, **not** a property. Set by `addViolationScore`, read by the policy's cooldown check, nulled by `reset`.",
-              "bn": "সাধারণ ফিল্ড, **প্রপার্টি নয়**। `addViolationScore` সেট করে, পলিসির কুলডাউন যাচাই পড়ে, `reset` null করে।"
+              "bn": "সাধারণ ফিল্ড, কোনো প্রপার্টি **নয়**। `addViolationScore` দ্বারা সেট করা হয়, পলিসির কুলডাউন চেক দ্বারা রিড করা হয়, `reset` দ্বারা null করা হয়।"
             }
           ],
           [
             "`Client(String name)`",
             {
               "en": "Assigns the name only.",
-              "bn": "শুধু নাম বরাদ্দ করে।"
+              "bn": "শুধুমাত্র নাম নির্ধারণ করে।"
             }
           ],
           [
             "`getName()`",
             {
               "en": "The accessor.",
-              "bn": "অ্যাকসেসর।"
+              "bn": "অ্যাক্সেসর।"
             }
           ],
           [
             "`getTotalRequest()` / `totalRequestProperty()`",
             {
               "en": "Plain read / observable read.",
-              "bn": "সাধারণ রিড / অবজার্ভেবল রিড।"
+              "bn": "সাধারণ রিড / observable রিড।"
             }
           ],
           [
@@ -124,28 +124,28 @@
             "`getViolationScore()` / `violationScoreProperty()`",
             {
               "en": "Plain read / observable read.",
-              "bn": "সাধারণ রিড / অবজার্ভেবল রিড।"
+              "bn": "সাধারণ রিড / observable রিড।"
             }
           ],
           [
             "`addViolationScore(int)`",
             {
               "en": "Adds the penalty **and** stamps `lastViolationTime`.",
-              "bn": "জরিমানা যোগ করে **এবং** `lastViolationTime`-এ ছাপ দেয়।"
+              "bn": "পেনাল্টি যোগ করে **এবং** `lastViolationTime` স্ট্যাম্প করে।"
             }
           ],
           [
             "`decayViolationScore(int)`",
             {
               "en": "Subtracts, floored at 0. Does not touch the timestamp.",
-              "bn": "বিয়োগ করে, ০-এর নিচে নামতে দেয় না। টাইমস্ট্যাম্প স্পর্শ করে না।"
+              "bn": "বিয়োগ করে, সর্বনিম্ন 0 (floored at 0)। টাইমস্ট্যাম্প স্পর্শ করে না।"
             }
           ],
           [
             "`getViolationCount()` / `violationCountProperty()`",
             {
               "en": "Plain read / observable read.",
-              "bn": "সাধারণ রিড / অবজার্ভেবল রিড।"
+              "bn": "সাধারণ রিড / observable রিড।"
             }
           ],
           [
@@ -159,35 +159,35 @@
             "`getLevel()` / `levelProperty()`",
             {
               "en": "Plain read / observable read.",
-              "bn": "সাধারণ রিড / অবজার্ভেবল রিড।"
+              "bn": "সাধারণ রিড / observable রিড।"
             }
           ],
           [
             "`getLastViolationTime()`",
             {
               "en": "Read by the policy.",
-              "bn": "পলিসি পড়ে।"
+              "bn": "পলিসি দ্বারা রিড করা হয়।"
             }
           ],
           [
             "`reset()`",
             {
               "en": "Returns the client to a pristine state; used by Clear and Reload.",
-              "bn": "ক্লায়েন্টকে সুদ্ধ অবস্থায় ফিরিয়ে দেয়; Clear ও Reload ব্যবহার করে।"
+              "bn": "ক্লায়েন্টকে প্রাথমিক অবস্থায় ফিরিয়ে আনে; Clear এবং Reload দ্বারা ব্যবহৃত হয়।"
             }
           ],
           [
             "`updateLevelFromScore(int,int,int)`",
             {
               "en": "**The only writer of `level`.** Compares the score against critical → high → warning.",
-              "bn": "**`level`-এর একমাত্র লেখক।** স্কোরকে critical → high → warning-এর সঙ্গে তুলনা করে।"
+              "bn": "**`level`-এর একমাত্র রাইটার (writer)।** স্কোরকে critical → high → warning-এর সাথে তুলনা করে।"
             }
           ],
           [
             "`toString()`",
             {
               "en": "Returns the name, which is what `ComboBox<Client>` displays.",
-              "bn": "নাম ফেরত দেয়, যা `ComboBox<Client>` প্রদর্শন করে।"
+              "bn": "নাম রিটার্ন করে, যা `ComboBox<Client>` প্রদর্শন করে।"
             }
           ]
         ]
@@ -201,14 +201,14 @@
         },
         "text": {
           "en": "Removing one is what guarantees the badge can never disagree with the score. The document is blunt about this: *\"There is deliberately **no setter for `level`**. Removing one is what guarantees the badge can never disagree with the score.\"*",
-          "bn": "সেটার না থাকাই নিশ্চিত করে যে ব্যাজ কখনো স্কোরের বিরুদ্ধে যেতে পারে না। নথি এ বিষয়ে স্পষ্ট: *\"`level`-এর জন্য ইচ্ছাকৃতভাবে কোনো সেটার নেই। সেটার সরানোই নিশ্চিত করে যে ব্যাজ কখনো স্কোরের সঙ্গে অমিল করতে পারে না।\"*"
+          "bn": "ইচ্ছাকৃতভাবেই **`level`-এর জন্য কোনো সেটার (setter) নেই**। এটি বাদ দেওয়াই নিশ্চিত করে যে ব্যাজটি কখনোই স্কোরের সাথে অসামঞ্জস্যপূর্ণ হতে পারবে না।"
         }
       },
       {
         "t": "p",
         "text": {
           "en": "`Client` does not override `equals`, so it has *identity* equality: two clients with the same name are still different objects. That matters, and is discussed in chapter 19.",
-          "bn": "`Client` `equals` ওভাররাইড করে না, তাই এর *আইডেন্টিটি* সমতা: একই নামের দুটি ক্লায়েন্ট এখনো ভিন্ন অবজেক্ট। এটি গুরুত্বপূর্ণ, অধ্যায় ১৯-এ আলোচিত।"
+          "bn": "`Client` `equals` ওভাররাইড করে না, তাই এতে *আইডেন্টিটি (identity)* সমতা রয়েছে: একই নামের দুটি ক্লায়েন্ট তবুও দুটি ভিন্ন অবজেক্ট। এটি গুরুত্বপূর্ণ, এবং [§19](#/bn/decisions)-এ আলোচনা করা হয়েছে।"
         }
       },
       {
@@ -224,7 +224,7 @@
         "t": "p",
         "text": {
           "en": "An immutable-in-practice value holder: `client`, `time`, `type`.",
-          "bn": "বাস্তবে অপরিবর্তনীয় একটি ভ্যালু হোল্ডার: `client`, `time`, `type`।"
+          "bn": "ব্যবহারিক অর্থে অপরিবর্তনীয় মান ধারক: `client`, `time`, `type`।"
         }
       },
       {
@@ -233,13 +233,13 @@
           {
             "text": {
               "en": "`Request(Client, RequestType)` — stamps `time` with `LocalDateTime.now()`. Used for live traffic.",
-              "bn": "`Request(Client, RequestType)` — `time`-এ `LocalDateTime.now()` ছাপ দেয়। লাইভ ট্রাফিকের জন্য ব্যবহৃত।"
+              "bn": "`Request(Client, RequestType)` — `time`-কে `LocalDateTime.now()` দিয়ে স্ট্যাম্প করে। লাইভ ট্রাফিকের জন্য ব্যবহৃত হয়।"
             }
           },
           {
             "text": {
               "en": "`Request(Client, RequestType, LocalDateTime)` — explicit timestamp. Used only when replaying the CSV, which carries its own times from the past.",
-              "bn": "`Request(Client, RequestType, LocalDateTime)` — সুস্পষ্ট টাইমস্ট্যাম্প। কেবল CSV পুনরায় চালানোর সময় ব্যবহৃত, যেখানে অতীতের নিজস্ব সময় আছে।"
+              "bn": "`Request(Client, RequestType, LocalDateTime)` — স্পষ্ট টাইমস্ট্যাম্প। শুধুমাত্র CSV রিপ্লে করার সময় ব্যবহৃত হয়, যা অতীত থেকে নিজস্ব সময় বহন করে।"
             }
           }
         ]
@@ -248,7 +248,7 @@
         "t": "p",
         "text": {
           "en": "Plus `getClient()`, `getTime()`, `getType()`. No setters, no `equals`, no `hashCode`. Because it uses identity equality, `requests.remove(request)` removes exactly the instance just added.",
-          "bn": "এর সঙ্গে `getClient()`, `getTime()`, `getType()`। কোনো সেটার নেই, `equals` নেই, `hashCode` নেই। যেহেতু এটি আইডেন্টিটি সমতা ব্যবহার করে, `requests.remove(request)` ঠিক এইমাত্র যোগ করা ইনস্ট্যান্সটিই সরায়।"
+          "bn": "সাথে `getClient()`, `getTime()`, `getType()`। কোনো সেটার নেই, কোনো `equals` নেই, কোনো `hashCode` নেই। যেহেতু এটি আইডেন্টিটি সমতা ব্যবহার করে, তাই `requests.remove(request)` ঠিক সেই ইনস্ট্যান্সটি সরিয়ে দেয় যা এইমাত্র যোগ করা হয়েছিল।"
         }
       },
       {
@@ -276,7 +276,7 @@
         "t": "p",
         "text": {
           "en": "A durable record of an outcome. Built **from a `Request`**, copying its client, type and time, plus a status.",
-          "bn": "একটি ফলাফলের স্থায়ী রেকর্ড। **একটি `Request` থেকে** তৈরি, তার ক্লায়েন্ট, টাইপ ও সময় কপি করে, সঙ্গে একটি স্ট্যাটাস।"
+          "bn": "একটি ফলাফলের স্থায়ী রেকর্ড। **একটি `Request` থেকে** তৈরি হয়, এর ক্লায়েন্ট, টাইপ এবং সময় কপি করে, সাথে একটি স্ট্যাটাস যুক্ত করে।"
         }
       },
       {
@@ -288,14 +288,14 @@
         "t": "p",
         "text": {
           "en": "These constants exist because the literals were previously repeated in five places, where a typo would silently change behaviour. `DailyAcceptedIndex` and the log cell both compare against them.",
-          "bn": "এই কনস্ট্যান্টগুলো আছে কারণ লিটারেলগুলো আগে পাঁচটি জায়গায় পুনরাবৃত্তি হতো, যেখানে একটি বানানভুল নীরবেই আচরণ বদলে দিত। `DailyAcceptedIndex` ও লগ সেল দুটোই এগুলির সঙ্গে তুলনা করে।"
+          "bn": "এই কনস্ট্যান্টগুলো বিদ্যমান কারণ লিটারেলগুলো পূর্বে পাঁচটি স্থানে পুনরাবৃত্তি করা হয়েছিল, যেখানে একটি টাইপো নিঃশব্দে আচরণ পরিবর্তন করতে পারত। `DailyAcceptedIndex` এবং লগ সেল উভয়ই এগুলোর সাথে তুলনা করে।"
         }
       },
       {
         "t": "p",
         "text": {
           "en": "Accessors: `getClient()`, `getTime()`, `getType()`, `getStatus()`. `toString()` renders `\"<client> <type> <status>\"`.",
-          "bn": "অ্যাকসেসর: `getClient()`, `getTime()`, `getType()`, `getStatus()`। `toString()` বানায় `\"<client> <type> <status>\"`।"
+          "bn": "অ্যাক্সেসরসমূহ: `getClient()`, `getTime()`, `getType()`, `getStatus()`। `toString()` রেন্ডার করে `\"<client> <type> <status>\"`।"
         }
       },
       {
@@ -367,7 +367,7 @@
         "t": "p",
         "text": {
           "en": "An incremental aggregate. Internal shape:",
-          "bn": "একটি ক্রমবর্ধমান সমষ্টি। অভ্যন্তরীণ আকৃতি:"
+          "bn": "একটি ক্রমবর্ধমান সমষ্টি (incremental aggregate)। অভ্যন্তরীণ রূপ:"
         }
       },
       {
@@ -378,7 +378,7 @@
         "t": "p",
         "text": {
           "en": "Reading the nesting right to left: *for each client (by identity), for each request type, a date-sorted map from local date to accepted count.*",
-          "bn": "স্তরের খাঁট ডান দিক থেকে পড়ুন: *প্রতিটি ক্লায়েন্টের জন্য (আইডেন্টিটি অনুযায়ী), প্রতিটি অনুরোধের ধরনের জন্য, স্থানীয় তারিখ থেকে গৃহীত সংখ্যার তারিখ-সাজানো ম্যাপ।*"
+          "bn": "নেস্টিংটি ডান থেকে বামে পড়লে: *প্রতিটি ক্লায়েন্টের জন্য (আইডেন্টিটি অনুসারে), প্রতিটি রিকোয়েস্ট টাইপের জন্য, লোকাল ডেট থেকে অ্যাক্সেপ্টেড কাউন্টের একটি তারিখ-অনুসারে সাজানো ম্যাপ।*"
         }
       },
       {
@@ -398,42 +398,42 @@
             "`add(Log)`",
             {
               "en": "Ignores anything not `ACCEPTED`; otherwise `+1` on that day and drops that client's cached peak.",
-              "bn": "`ACCEPTED` নয় এমন সব বাদ দেয়; অন্যথায় সেই দিনে `+1` এবং ওই ক্লায়েন্টের ক্যাশ করা পিক মুছে দেয়।"
+              "bn": "`ACCEPTED` নয় এমন সবকিছু উপেক্ষা করে; অন্যথায় সেই দিনে `+1` করে এবং সেই ক্লায়েন্টের ক্যাশ করা পিক বাদ দেয়।"
             }
           ],
           [
             "`remove(Log)`",
             {
               "en": "The exact inverse, for when a log is genuinely removed.",
-              "bn": "ঠিক বিপরীত, যখন কোনো লগ সত্যিই সরানো হয়।"
+              "bn": "একটি লগ সত্যিকার অর্থে মুছে ফেলার সময়ের জন্য ঠিক বিপরীত প্রক্রিয়া।"
             }
           ],
           [
             "`clear()`",
             {
               "en": "Empties both maps.",
-              "bn": "দুটি ম্যাপই খালি করে।"
+              "bn": "উভয় ম্যাপ খালি করে।"
             }
           ],
           [
             "`maxDailyAccepted(Client, RequestType)`",
             {
               "en": "The busiest single day, or 0. Cached per client+type until that client's tallies change.",
-              "bn": "সবচেয়ে ব্যস্ত একটি দিন, বা ০। ওই ক্লায়েন্টের গণনা বদলানোর আগ পর্যন্ত ক্লায়েন্ট+টাইপ অনুযায়ী ক্যাশ করা।"
+              "bn": "সবচেয়ে ব্যস্ততম একক দিন, অথবা 0। সেই ক্লায়েন্টের ট্যালি পরিবর্তিত না হওয়া পর্যন্ত প্রতি client+type ভিত্তিতে ক্যাশ করা হয়।"
             }
           ],
           [
             "`tally(...)` *(private)*",
             {
               "en": "`merge(day, delta, sum)`, then invalidates the cache entry.",
-              "bn": "`merge(day, delta, sum)`, তারপর ক্যাশ এন্ট্রি অবৈধ করে।"
+              "bn": "`merge(day, delta, sum)`, তারপর ক্যাশ এন্ট্রিটি অবৈধ (invalidate) করে দেয়।"
             }
           ],
           [
             "`perType(...)` *(private)*",
             {
               "en": "Safe lookup returning an empty map when absent.",
-              "bn": "নিরাপদ লুকআপ; না থাকলে খালি ম্যাপ ফেরত দেয়।"
+              "bn": "নিরাপদ লুকআপ যা অনুপস্থিত থাকলে একটি খালি ম্যাপ রিটার্ন করে।"
             }
           ]
         ]
@@ -484,7 +484,7 @@
         }
       }
     ]
-  });
+  });;
 
   DOC.register({
     "id": "policy",
@@ -512,7 +512,7 @@
         "t": "p",
         "text": {
           "en": "The interface, plus one nested type.",
-          "bn": "ইন্টারফেস, আর একটি নেস্টেড টাইপ।"
+          "bn": "ইন্টারফেস, সাথে একটি নেস্টেড টাইপ।"
         }
       },
       {
@@ -524,14 +524,14 @@
         "t": "p",
         "text": {
           "en": "`Decision` keeps two questions apart. `allowed` answers *\"may this request through?\"* and is the **only** thing the caller should use to decide serve-versus-block. `level` is the client's standing risk, derived solely from its score. A request can be blocked while the client is still low risk, and a client can sit at `CRITICAL` purely because of its score.",
-          "bn": "`Decision` দুটি প্রশ্ন আলাদা রাখে। `allowed` উত্তর দেয় *\"এই অনুরোধটি কি যেতে পারে?\"* এবং পরিবেশন না প্রত্যাখ্যান তা ঠিক করার জন্য ক্রেতার ব্যবহার করার কথা **কেবল** এটিই। `level` হলো ক্লায়েন্টের স্থায়ী ঝুঁকি, কেবল তার স্কোর থেকে অনুমানিত। ক্লায়েন্ট কম ঝুঁকিতে থেকেও একটি অনুরোধ প্রত্যাখ্যাত হতে পারে, আর ক্লায়েন্ট কেবল স্কোর বেশি হওয়ার কারণেই `CRITICAL`-এ থাকতে পারে।"
+          "bn": "`Decision` দুটি প্রশ্নকে আলাদা রাখে। `allowed` উত্তর দেয় *\"এই রিকোয়েস্টটি কি পার হতে পারবে?\"* এবং সার্ভ-বনাম-ব্লক সিদ্ধান্ত নিতে কলারের ব্যবহারের জন্য এটিই **একমাত্র** বিষয়। `level` হলো ক্লায়েন্টের স্থায়ী ঝুঁকি, যা কেবল তার স্কোর থেকে উদ্ভূত হয়। ক্লায়েন্ট কম ঝুঁকিতে থাকা অবস্থাতেও একটি রিকোয়েস্ট ব্লক হতে পারে, এবং ক্লায়েন্ট কেবল তার স্কোরের কারণেই `CRITICAL`-এ থাকতে পারে।"
         }
       },
       {
         "t": "p",
         "text": {
           "en": "The signature takes the `RequestType` explicitly, because the configured limit is per client **per type**. Counting all of a client's traffic against one type's limit would make the per-type limits meaningless.",
-          "bn": "সিগনেচারে `RequestType` সুস্পষ্টভাবে নেওয়া আছে, কারণ কনফিগার করা লিমিট প্রতি ক্লায়েন্ট **প্রতি টাইপে**। একটি ক্লায়েন্টের সব ট্রাফিক একটি টাইপের লিমিটের বিপরীতে গোনা হলে প্রতি-টাইপ লিমিট অর্থহীন হয়ে পড়ত।"
+          "bn": "সিগনেচারটি স্পষ্টভাবে `RequestType` গ্রহণ করে, কারণ কনফিগার করা লিমিট প্রতি ক্লায়েন্টে **প্রতি টাইপের জন্য**। একটি টাইপের লিমিটের বিপরীতে একজন ক্লায়েন্টের সমস্ত ট্রাফিক গণনা করা প্রতি-টাইপ লিমিটকে অর্থহীন করে তুলবে।"
         }
       },
       {
@@ -559,7 +559,7 @@
         "t": "p",
         "text": {
           "en": "Package-private. Holds everything the two policies share, so they cannot drift apart.",
-          "bn": "প্যাকেজ-প্রাইভেট। দুটি পলিসির যা ভাগ করে নেয় তা সব রাখে, যাতে তারা আলাদা হয়ে না যায়।"
+          "bn": "প্যাকেজ-প্রাইভেট। দুটি পলিসির মধ্যে যা কিছু শেয়ার করা হয়েছে তা ধারণ করে, যাতে তারা একে অপরের থেকে বিচ্ছিন্ন না হয়ে পড়ে।"
         }
       },
       {
@@ -579,70 +579,70 @@
             "`record Window(LocalDateTime start, LocalDateTime end)`",
             {
               "en": "A **half-open** range `[start, end)`.",
-              "bn": "একটি **অর্ধ-উন্মুক্ত** পরিসর `[start, end)`।"
+              "bn": "একটি **half-open** পরিসর `[start, end)`।"
             }
           ],
           [
             "`WARNING_PENALTY = 5`, `HIGH_PENALTY = 15`, `CRITICAL_PENALTY = 30`",
             {
               "en": "Base penalties, multiplied by the type's severity.",
-              "bn": "ভিত্তি জরিমানা, টাইপের সিভারিটি দিয়ে গুণ করা।"
+              "bn": "বেস পেনাল্টি, যা টাইপের সিভিয়ারিটি দ্বারা গুণিত হয়।"
             }
           ],
           [
             "Constructor",
             {
               "en": "Takes `maxRequests`, `window`, `severityMultipliers`, `int[] violationThresholds`, `decayAmount`. **Throws `IllegalArgumentException` if the threshold array is null or shorter than 3.**",
-              "bn": "নেয় `maxRequests`, `window`, `severityMultipliers`, `int[] violationThresholds`, `decayAmount`। **থ্রেশহোল্ড অ্যারে null হলে বা ৩-এর কম হলে `IllegalArgumentException` ছুঁড়ে।**"
+              "bn": "`maxRequests`, `window`, `severityMultipliers`, `int[] violationThresholds`, `decayAmount` গ্রহণ করে। **থ্রেশহোল্ড অ্যারে null হলে বা এর দৈর্ঘ্য 3-এর কম হলে `IllegalArgumentException` থ্রো করে।**"
             }
           ],
           [
             "`abstract Window windowFor(LocalDateTime latest)`",
             {
               "en": "The single method subclasses implement.",
-              "bn": "একমাত্র মেথড যা সাবক্লাসগুলো বাস্তবায়ন করে।"
+              "bn": "সাবক্লাসগুলো বাস্তবায়ন করে এমন একমাত্র মেথড।"
             }
           ],
           [
             "`evaluate(...)`",
             {
               "en": "The algorithm in chapter 6.",
-              "bn": "অধ্যায় ৬-এর অ্যালগরিদম।"
+              "bn": "[§6](#/bn/limiting)-এর অ্যালগরিদম।"
             }
           ],
           [
             "`penalise(Client, int)` *(private)*",
             {
               "en": "Adds the penalty, bumps the count, re-derives the level, returns a blocked `Decision`.",
-              "bn": "জরিমানা যোগ করে, গণনা বাড়ায়, লেভেল পুনরায় অনুমান করে, ব্লক করা `Decision` ফেরত দেয়।"
+              "bn": "পেনাল্টি যোগ করে, কাউন্ট বাড়ায়, লেভেল পুনরায় নির্ধারণ করে, একটি ব্লকড `Decision` রিটার্ন করে।"
             }
           ],
           [
             "`refreshLevel(Client)` *(private)*",
             {
               "en": "One-line wrapper over `updateLevelFromScore`.",
-              "bn": "`updateLevelFromScore`-এর এক লাইনের আবরণ।"
+              "bn": "`updateLevelFromScore`-এর ওপর এক লাইনের র্যাপার।"
             }
           ],
           [
             "`isCoolingDown(Client)` *(private)*",
             {
               "en": "True when `now - lastViolationTime < window`.",
-              "bn": "`now - lastViolationTime < window` হলে সত্য।"
+              "bn": "`now - lastViolationTime < window` হলে True হয়।"
             }
           ],
           [
             "`getMaxRequests()`",
             {
               "en": "Public accessor for the configured limit.",
-              "bn": "কনফিগার করা লিমিটের পাবলিক অ্যাকসেসর।"
+              "bn": "কনফিগার করা লিমিটের জন্য পাবলিক অ্যাক্সেসর।"
             }
           ],
           [
             "`getWindow()`",
             {
               "en": "`protected`; only the subclasses need it.",
-              "bn": "`protected`; শুধু সাবক্লাসগুলোর দরকার।"
+              "bn": "`protected`; কেবল সাবক্লাসগুলোর এটি প্রয়োজন।"
             }
           ]
         ]
@@ -651,7 +651,7 @@
         "t": "p",
         "text": {
           "en": "The filter inside `evaluate` uses `==` (identity) for both the client and the type. The type filter is what makes per-type limits work.",
-          "bn": "`evaluate`-এর ভেতরের ফিল্টারে ক্লায়েন্ট ও টাইপ — দুটোর জন্যই `==` (আইডেন্টিটি) ব্যবহার করা হয়। টাইপ ফিল্টারই প্রতি-টাইপ লিমিটকে কাজ করায়।"
+          "bn": "`evaluate`-এর ভেতরের ফিল্টারটি ক্লায়েন্ট এবং টাইপ উভয়ের জন্যই `==` (আইডেন্টিটি) ব্যবহার করে। টাইপ ফিল্টারটিই প্রতি-টাইপ লিমিটকে কার্যকর করে তোলে।"
         }
       },
       {
@@ -679,7 +679,7 @@
         "t": "p",
         "text": {
           "en": "`FixedWindowPolicy` extends `AbstractWindowPolicy`. Its entire contribution is `windowFor` — the epoch-anchored grid shown in chapter 6. `SlidingWindowPolicy` extends `AbstractWindowPolicy` and also only implements `windowFor`.",
-          "bn": "`FixedWindowPolicy` `AbstractWindowPolicy`-কে এক্সটেন্ড করে। এর সম্পূর্ণ অবদান `windowFor` — অধ্যায় ৬-এ দেখানো এপোক-অ্যাঙ্কর করা গ্রিড। `SlidingWindowPolicy`-ও `AbstractWindowPolicy` এক্সটেন্ড করে এবং তাও শুধু `windowFor` বাস্তবায়ন করে।"
+          "bn": "`AbstractWindowPolicy`-কে এক্সটেন্ড করে। এর সম্পূর্ণ অবদান হলো `windowFor` — [§6](#/bn/limiting)-এ দেখানো epoch-anchored গ্রিড।"
         }
       },
       {
@@ -691,5 +691,5 @@
         "text": "  SlidingWindowPolicy.windowFor(latest)\n      start = latest - 10s            end = latest + 1ns\n      |                              |\n      +--------[ ][ ][ ][ ][ ][ ]-----+   6 requests, all counted\n\n  FixedWindowPolicy.windowFor(latest)      window = 10s, grid on epoch\n      start = epoch-aligned multiple of 10s  end = start + 10s\n           |                      |\n      -----+----[ ][ ][ ]---------+------  only 3 counted\n           ^ the other 3 fall in the previous window\n\n  A burst of 6 in 8 seconds:  sliding allows, fixed may block early\n  A burst of 6 in 60 seconds: fixed blocks at most 3, sliding sees the tail only"
       }
     ]
-  });
+  });;
 })();

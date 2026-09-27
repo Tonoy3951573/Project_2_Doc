@@ -18,7 +18,7 @@
     },
     "lead": {
       "en": "Fifteen decisions from the source document, each of which fixed something that was actually wrong, plus one this site adds (no. 15). This chapter is the one to read before changing anything: most of these choices look arbitrary until you know the problem they solved.",
-      "bn": "মূল নথির পনেরোটি সিদ্ধান্ত, প্রতিটিই এমন কিছু ঠিক করেছে যা সত্যিই ভুল ছিল, এবং এই সাইটের যোগ করা আরও একটি (নং ১৫)। কিছু পরিবর্তনের আগে এই অধ্যায়টি পড়ুন: এই সিদ্ধান্তগুলোর বেশিরভাগ সমস্যাটি জানা পর্যন্ত বিভ্রান্তিকর মনে হয়।"
+      "bn": "মূল ডকুমেন্টের পনেরোটি সিদ্ধান্ত, প্রতিটিই এমন কিছু ঠিক করেছে যা সত্যিই ভুল ছিল, এবং এই সাইটের যোগ করা আরও একটি (নং ১৫)। কিছু পরিবর্তনের আগে এই অধ্যায়টি পড়ুন: এই সিদ্ধান্তগুলোর বেশিরভাগ সমস্যাটি জানা পর্যন্ত বিভ্রান্তিকর মনে হয়।"
     },
     "blocks": [
       {
@@ -46,7 +46,7 @@
         "t": "p",
         "text": {
           "en": "The policy originally returned a `ViolationLevel`, and the controller assigned it directly to the client's badge. That made the badge report a per-request verdict while the score printed next to it said something else. Separating *\"may this through?\"* from *\"how risky is this client?\"* removed the possibility of disagreement, and deleting `Client.setLevel` enforces it.",
-          "bn": "পলিসি মূলে একটি `ViolationLevel` ফেরত দিত, আর কন্ট্রোলার সেটি সরাসরি ক্লায়েন্টের ব্যাজে বসাত। ফলে ব্যাজ একটি প্রতি-অনুরোধের সিদ্ধান্ত জানাত, অথচ পাশে ছাপা স্কোর অন্য কিছু বলত। *\"এটি কি যেতে পারে?\"* আর *\"এই ক্লায়েন্ট কতটা ঝুঁকিপূর্ণ?\"* — এই দুটি আলাদা করলে অমিলের সম্ভাবনাই শেষ হলো, আর `Client.setLevel` মুছে দেওয়া সেটি বাস্তবায়ন করে।"
+          "bn": "পলিসিটি মূলত একটি `ViolationLevel` রিটার্ন করত, এবং কন্ট্রোলার এটি সরাসরি ক্লায়েন্টের ব্যাজে অ্যাসাইন করত। এর ফলে ব্যাজটি একটি প্রতি-রিকোয়েস্টের রায় রিপোর্ট করত যখন এর পাশে মুদ্রিত স্কোর অন্য কিছু বলত। *\"এই রিকোয়েস্টটি কি পার হতে পারবে?\"* থেকে *\"এই ক্লায়েন্ট কতটা ঝুঁকিপূর্ণ?\"* আলাদা করা মতভেদের সম্ভাবনা দূর করেছে, এবং `Client.setLevel` মুছে ফেলা এটিকে কঠোরভাবে প্রয়োগ করে।"
         }
       },
       {
@@ -78,7 +78,7 @@
         "t": "p",
         "text": {
           "en": "The limit is configured per client per type, so the count must be per client per type. Counting all of a client's traffic against one type's limit made the per-type feature inert.",
-          "bn": "লিমিট প্রতি ক্লায়েন্ট প্রতি টাইপে কনফিগার করা, তাই গণনাও প্রতি ক্লায়েন্ট প্রতি টাইপে হতে হবে। একটি ক্লায়েন্টের সব ট্রাফিক একটি টাইপের লিমিটের বিপরীতে গোনায় প্রতি-টাইপ বৈশিষ্ট্য নিষ্ক্রিয় হয়ে পড়ত।"
+          "bn": "লিমিট প্রতি ক্লায়েন্টে প্রতি টাইপের জন্য কনফিগার করা হয়েছে, তাই কাউন্ট অবশ্যই প্রতি ক্লায়েন্টে প্রতি টাইপের হতে হবে। একটি টাইপের লিমিটের বিপরীতে একজন ক্লায়েন্টের সমস্ত ট্রাফিক গণনা করা প্রতি-টাইপ ফিচারটিকে নিষ্ক্রিয় করে তুলেছিল।"
         }
       },
       {
@@ -94,7 +94,7 @@
         "t": "p",
         "text": {
           "en": "Aligning it to `getSecond() % windowSeconds` only made sense for windows dividing 60, so a 7-, 45-, 90-, 600- or 3600-second window produced a grid that reset at every minute boundary. Epoch anchoring makes every window length behave the same way.",
-          "bn": "`getSecond() % windowSeconds`-এ সারিবদ্ধ করলে কেবল ৬০-এর ভাজক উইন্ডোতেই অর্থ ছিল, ফলে ৭-, ৪৫-, ৯০-, ৬০০- বা ৩৬০০-সেকেন্ডের উইন্ডো প্রতি মিনিটের সীমানায় রিসেট হওয়া একটি গ্রিড তৈরি করত। এপোক-সংযুক্তিতে প্রতিটি উইন্ডো দৈর্ঘ্য একইভাবে আচরণ করে।"
+          "bn": "এটিকে `getSecond() % windowSeconds`-এ সারিবদ্ধ করা কেবল 60 দ্বারা বিভাজ্য উইন্ডোগুলোর জন্যই অর্থপূর্ণ ছিল, তাই একটি 7-, 45-, 90-, 600- বা 3600-সেকেন্ডের উইন্ডো এমন একটি গ্রিড তৈরি করত যা প্রতি মিনিট সীমানায় রিসেট হয়ে যেত।"
         }
       },
       {
@@ -110,7 +110,7 @@
         "t": "p",
         "text": {
           "en": "The label and the policy used to compute limits by two different routes, so the number on screen was frequently not the number being enforced. The most user-visible class of bug in the whole program, and the cheapest to fix.",
-          "bn": "লেবেল ও পলিসি আগে দুটি ভিন্ন পথে সীমা হিসাব করত, তাই স্ক্রিনে দেখানো সংখ্যা প্রায়ই প্রয়োগ হওয়া সংখ্যা ছিল না। পুরো প্রোগ্রামের সবচেয়ে দৃশ্যমান বাগ শ্রেণি, এবং সবচেয়ে সস্তায় ঠিক করারটা।"
+          "bn": "লেবেল এবং পলিসি দুটি ভিন্ন রুটের মাধ্যমে লিমিট গণনা করত, তাই স্ক্রিনে প্রদর্শিত সংখ্যাটি প্রায়শই প্রয়োগকৃত সংখ্যা হতো না।"
         }
       },
       {
@@ -126,7 +126,7 @@
         "t": "p",
         "text": {
           "en": "They were seeded to 50/20/5/10, which meant the \"custom\" branch always won and the history-derived feature — a headline feature of the settings dialog — was unreachable. A feature that cannot be reached is indistinguishable from a feature that does not exist.",
-          "bn": "সেগুলো ৫০/২০/৫/১০-এ সেট করা ছিল, ফলে \"কাস্টম\" শাখা সবসময় জিতত এবং ইতিহাস-অনুমান বৈশিষ্ট্য — সেটিংস ডায়ালগের একটি প্রধান বৈশিষ্ট্য — অপ্রাপ্য হয়ে থাকত। যে বৈশিষ্ট্যে পৌঁছানো যায় না, তা না-থাকা বৈশিষ্ট্য থেকে আলাদা নয়।"
+          "bn": "সেগুলো 50/20/5/10 হিসেবে সিড করা হয়েছিল, যার অর্থ ছিল \"কাস্টম\" ব্রাঞ্চটি সর্বদা জিতত এবং হিস্ট্রি-উদ্ভূত ফিচারটি — যা সেটিংস ডায়ালগের একটি প্রধান ফিচার — দুর্গম ছিল।"
         }
       },
       {
@@ -142,7 +142,7 @@
         "t": "p",
         "text": {
           "en": "A modal runs a nested event loop, so the `Timeline` kept firing and shifting the limits under the user's hands. Pausing is one line; the `finally` that restores it is what makes it safe if the dialog throws.",
-          "bn": "একটি মোডাল নেস্টেড ইভেন্ট লুপ চালায়, তাই `Timeline` চলতে থাকত এবং ব্যবহারকারীর হাতের নিচে লিমিট সরিয়ে দিত। থামানো এক লাইন; ফিরিয়ে আনা `finally`-টি নিশ্চিত করে ডায়ালগ ব্যতিক্রেম ছুঁড়লেও অবস্থা ঠিক থাকে।"
+          "bn": "একটি মোডাল একটি নেস্টেড ইভেন্ট লুপ চালায়, তাই `Timeline` অনবরত ফায়ার হতে থাকত এবং ব্যবহারকারীর হাতের নিচেই লিমিটগুলো পরিবর্তন করে দিত।"
         }
       },
       {
@@ -158,7 +158,7 @@
         "t": "p",
         "text": {
           "en": "Reset used to write straight into the controller's fields, so *Reset → ✕* silently applied a reset nobody saved. Named constants made it possible to repopulate the form from the defaults without touching the fields that are in force.",
-          "bn": "Reset আগে সরাসরি কন্ট্রোলারের ফিল্ডে লিখত, তাই *Reset → ✕* নীরবে এমন একটি রিসেট প্রয়োগ করত যা কেউ সেভ করেনি। নামানো কনস্ট্যান্টগুলো কার্যকর ফিল্ডগুলো স্পর্শ না করেই ডিফল্ট থেকে ফর্ম পুনরায় পূরণ করা সম্ভব করে।"
+          "bn": "রিসেট সরাসরি কন্ট্রোলারের ফিল্ডে রাইট করত, তাই *Reset → ✕* নিঃশব্দে এমন একটি রিসেট প্রয়োগ করত যা কেউ সেভ করেনি।"
         }
       },
       {
@@ -174,7 +174,7 @@
         "t": "p",
         "text": {
           "en": "The registry is keyed by name and the history loader resolves names the same way, so a second entry with an existing name would be invisible to its own history. Rather than a new dialog, the existing client is **selected** — that selection *is* the feedback.",
-          "bn": "রেজিস্ট্রি নামে কী-ভুক্ত এবং ইতিহাস লোডারও নাম একইভাবে সমাধান করে, তাই বিদ্যমান নামের দ্বিতীয় এন্ট্রি তার নিজের ইতিহাসের কাছে অদৃশ্য থাকত। নতুন ডায়ালগের বদলে বিদ্যমান ক্লায়েন্টটি **নির্বাচিত** করা হয় — সেই সিলেকশনই *হলো* প্রতিক্রিয়া।"
+          "bn": "রেজিস্ট্রিটি নাম দ্বারা চিহ্নিত এবং হিস্ট্রি লোডার একইভাবে নাম সমাধান করে, তাই বিদ্যমান নামের একটি দ্বিতীয় এন্ট্রি তার নিজস্ব হিস্ট্রির কাছে অদৃশ্য থাকত। একটি নতুন ডায়ালগের পরিবর্তে, বিদ্যমান ক্লায়েন্টটিকে **সিলেক্ট** করা হয় — সেই সিলেকশনটিই *হলো* প্রতিক্রিয়া।"
         }
       },
       {
@@ -190,7 +190,7 @@
         "t": "p",
         "text": {
           "en": "Dropping only the log left clients holding scores nothing backed, and because limits are derived from the log it also changed every client's effective limit silently.",
-          "bn": "শুধু লগ বাদ দিলে ক্লায়েন্টরা এমন স্কোর ধরে থাকত যার কোনো ভিত্তি ছিল না, আর লিমিট লগ থেকে অনুমানিত হওয়ায় প্রতিটি ক্লায়েন্টের কার্যকর লিমিটও নীরবে বদলে যেত।"
+          "bn": "কেবল লগ বাদ দিলে ক্লায়েন্টরা এমন স্কোর ধরে রাখত যার পেছনে কোনো ভিত্তি ছিল না, এবং যেহেতু লিমিটগুলো লগ থেকে উদ্ভূত হয় তাই এটি নিঃশব্দে প্রতিটি ক্লায়েন্টের কার্যকর লিমিটও পরিবর্তন করত।"
         }
       },
       {
@@ -206,7 +206,7 @@
         "t": "p",
         "text": {
           "en": "Trimming the display must not change enforcement. This is the one genuinely subtle coupling in the codebase, which is why it is commented in three places.",
-          "bn": "প্রদর্শন ছাঁটা যেতে পারে, প্রয়োগ বদলাতে পারে না। কোডবেসের একমাত্র সত্যিকারের সূক্ষ্ম যুক্তি এটি, তাই এটি তিন জায়গায় মন্তব্য করা আছে।"
+          "bn": "ডিসপ্লে ট্রিম করা প্রয়োগের আচরণ পরিবর্তন করবে না। কোডবেসে এটিই একমাত্র সত্যিকার অর্থে সূক্ষ্ম কাপলিং, যে কারণে তিনটি স্থানে এটি মন্তব্য করা হয়েছে।"
         }
       },
       {
@@ -222,7 +222,7 @@
         "t": "p",
         "text": {
           "en": "`DailyAcceptedIndex` uses `IdentityHashMap` and the policy filters with `==` precisely because `Client` has no `equals` override. Name-based lookups (`findClientByName`, the CSV loader) are a separate, deliberate concern. The consequence: two `Client` objects that happen to share a name are *not* the same client, which is why the UI refuses to create one.",
-          "bn": "`DailyAcceptedIndex` `IdentityHashMap` ব্যবহার করে এবং পলিসি `==` দিয়ে ফিল্টার করে ঠিক তখনই, যখন `Client`-এ `equals` ওভাররাইড নেই। নামভিত্তিক লুকআপ (`findClientByName`, CSV লোডার) আলাদা, সচেতন বিষয়। পরিণতি: নাম একই হলেও দুটি `Client` অবজেক্ট *একই ক্লায়েন্ট নয়*, তাই UI তৈরি করতে অস্বীকার করে।"
+          "bn": "`DailyAcceptedIndex` `IdentityHashMap` ব্যবহার করে এবং পলিসি `==` দিয়ে ফিল্টার করে ঠিক এই কারণেই যে `Client`-এ কোনো `equals` ওভাররাইড নেই। নাম-ভিত্তিক লুকআপ (`findClientByName`, CSV লোডার) হলো একটি পৃথক, ইচ্ছাকৃত বিষয়। এর ফলাফল: একই নাম শেয়ার করে এমন দুটি `Client` অবজেক্ট একই ক্লায়েন্ট *নয়*, যে কারণে UI এমন একটি তৈরি করতে অস্বীকার করে।"
         }
       },
       {
@@ -238,7 +238,7 @@
         "t": "p",
         "text": {
           "en": "They were 95% duplicated — 90 of 99 identical lines — which is exactly how the two drifted apart in the first place. They now differ only in `windowFor`.",
-          "bn": "তারা ৯৫% সদৃশ ছিল — ৯৯ লাইনের মধ্যে ৯০টি অবিকল — এবং ঠিক এভাবেই দুটি প্রথমবার আলাদা হয়ে গিয়েছিল। এখন এদের পার্থক্য কেবল `windowFor`।"
+          "bn": "তারা 95% ডুপ্লিকেট ছিল — 99টির মধ্যে 90টি অভিন্ন লাইন — যা ঠিক সেভাবেই দুটিকে প্রথম স্থানে বিচ্ছিন্ন করে দিয়েছিল। তারা এখন কেবল `windowFor`-এ ভিন্ন।"
         }
       },
       {
@@ -254,7 +254,7 @@
         "t": "p",
         "text": {
           "en": "JavaFX reaches them reflectively. It works, and it keeps the controller's surface small — the FXML is the public API, and there is no second, invisible one.",
-          "bn": "জাভাএফএক্স রিফ্লেকশনের মাধ্যমে এদের খোঁজে। এটি কাজ করে, আর কন্ট্রোলারের প্রকাশ্য পৃষ্ঠ ছোট রাখে — FXML-ই হলো পাবলিক API, আর দ্বিতীয় অদৃশ্য কোনো API নেই।"
+          "bn": "JavaFX রিফ্লেকশনের মাধ্যমে এগুলোতে পৌঁছায়। এটি কাজ করে, এবং এটি কন্ট্রোলারের সারফেস ছোট রাখে।"
         }
       },
       {
@@ -269,8 +269,8 @@
       {
         "t": "p",
         "text": {
-          "en": "**Added by this site**, not one of the document\u2019s fifteen: the document covers half-open ranges in its algorithm and glossary chapters but never lists them as a decision. Every `Window` is `[start, end)`. The sliding window achieves it with `plusNanos(1)`, the fixed window with `start.plusSeconds(n)`. Mixing conventions is how a boundary request ends up counted twice or not at all.",
-          "bn": "**এই সাইটের যোগ**, নথির পনেরোটির মধ্যে নয়: নথিতে অর্ধ-উন্মুক্ত পরিসরের কথা অ্যালগরিদম ও শব্দকোষ অধ্যায়ে আছে, কিন্তু সিদ্ধান্ত হিসেবে তালিকাভুক্ত নয়। প্রতিটি `Window` হলো `[start, end)`। স্লাইডিং উইন্ডো এটি `plusNanos(1)` দিয়ে, ফিক্সড উইন্ডো `start.plusSeconds(n)` দিয়ে অর্জন করে। রীতি মিশিয়ে দেওয়ার ফলেই সীমানার অনুরোধ দুবার গোনা হয় বা একবারও গোনা হয় না।"
+          "en": "**Added by this site**, not one of the document’s fifteen: the document covers half-open ranges in its algorithm and glossary chapters but never lists them as a decision. Every `Window` is `[start, end)`. The sliding window achieves it with `plusNanos(1)`, the fixed window with `start.plusSeconds(n)`. Mixing conventions is how a boundary request ends up counted twice or not at all.",
+          "bn": "**এই সাইটের যোগ**, ডকুমেন্টের পনেরোটির মধ্যে নয়: ডকুমেন্টে অর্ধ-উন্মুক্ত পরিসরের কথা অ্যালগরিদম ও শব্দকোষ অধ্যায়ে আছে, কিন্তু সিদ্ধান্ত হিসেবে তালিকাভুক্ত নয়। প্রতিটি `Window` হলো `[start, end)`। স্লাইডিং উইন্ডো এটি `plusNanos(1)` দিয়ে, ফিক্সড উইন্ডো `start.plusSeconds(n)` দিয়ে অর্জন করে। রীতি মিশিয়ে দেওয়ার ফলেই সীমানার অনুরোধ দুবার গোনা হয় বা একবারও গোনা হয় না।"
         }
       },
       {
@@ -286,7 +286,7 @@
         "t": "p",
         "text": {
           "en": "The per-client UUID, the unreachable counter wrap, and four CSS selectors for UI that was never built. Each was a small lie about what the program does.",
-          "bn": "প্রতি-ক্লায়েন্ট UUID, অপ্রাপ্য কাউন্টার র্যাপ, আর যে UI কখনো তৈরি হয়নি তার জন্য চারটি CSS সিলেক্টর। প্রতিটিই প্রোগ্রাম কী করে সে সম্পর্কে একটি ছোট মিথ্যা ছিল।"
+          "bn": "প্রতি-ক্লায়েন্ট UUID, নাগালের বাইরে থাকা কাউন্টার র্যাপ, এবং এমন UI-এর জন্য চারটি CSS সিলেক্টর যা কখনোই তৈরি করা হয়নি।"
         }
       },
       {
@@ -302,7 +302,7 @@
         }
       }
     ]
-  });
+  });;
 
   DOC.register({
     "id": "recipes",
@@ -365,7 +365,7 @@
         "t": "p",
         "text": {
           "en": "The settings dialog and the report pick up the new type automatically, because both iterate `RequestType.values()`.",
-          "bn": "সেটিংস ডায়ালগ ও রিপোর্ট নতুন টাইপ স্বয়ংক্রিয়ভাবে নেয়, কারণ দুটোই `RequestType.values()`-এর উপর পুনরাবৃত্তি করে।"
+          "bn": "সেটিংস ডায়ালগ এবং রিপোর্ট নতুন টাইপটি স্বয়ংক্রিয়ভাবে গ্রহণ করে, কারণ উভয়ই `RequestType.values()` পুনরাবৃত্তি করে।"
         }
       },
       {
@@ -389,7 +389,7 @@
         "t": "p",
         "text": {
           "en": "Edit `DEFAULT_WINDOW_SECONDS`, `DEFAULT_WARNING_THRESHOLD`, `DEFAULT_HIGH_THRESHOLD`, `DEFAULT_CRITICAL_THRESHOLD` or `DEFAULT_DECAY_AMOUNT` in `SimulationController`. The named constants exist so that Reset Defaults stays in sync automatically.",
-          "bn": "`SimulationController`-এ `DEFAULT_WINDOW_SECONDS`, `DEFAULT_WARNING_THRESHOLD`, `DEFAULT_HIGH_THRESHOLD`, `DEFAULT_CRITICAL_THRESHOLD` বা `DEFAULT_DECAY_AMOUNT` সম্পাদনা করুন। নামানো কনস্ট্যান্টগুলো আছে যাতে Reset Defaults স্বয়ংক্রিয়ভাবে সমন্বয় থাকে।"
+          "bn": "`SimulationController`-এ `DEFAULT_WINDOW_SECONDS`, `DEFAULT_WARNING_THRESHOLD`, `DEFAULT_HIGH_THRESHOLD`, `DEFAULT_CRITICAL_THRESHOLD` বা `DEFAULT_DECAY_AMOUNT` সম্পাদনা করুন। নামযুক্ত কনস্ট্যান্টগুলো বিদ্যমান যাতে Reset Defaults স্বয়ংক্রিয়ভাবে সিঙ্কে থাকে।"
         }
       },
       {
@@ -405,7 +405,7 @@
         "t": "p",
         "text": {
           "en": "Edit `MAX_RETAINED_LOGS`. Nothing else needs to change: both the bulk load (`recentOnly`) and live traffic (`recordLiveLog`) read it.",
-          "bn": "`MAX_RETAINED_LOGS` সম্পাদনা করুন। আর কিছু বদলাতে হবে না: বাল্ক লোড (`recentOnly`) ও লাইভ ট্রাফিক (`recordLiveLog`) — দুটোই এটি পড়ে।"
+          "bn": "`MAX_RETAINED_LOGS` সম্পাদনা করুন। অন্য কিছুই পরিবর্তন করার প্রয়োজন নেই: বাল্ক লোড (`recentOnly`) এবং লাইভ ট্রাফিক (`recordLiveLog`) উভয়ই এটি রিড করে।"
         }
       },
       {
@@ -421,7 +421,7 @@
         "t": "p",
         "text": {
           "en": "Edit `autoThresholdFor` — `THRESHOLD_HEADROOM` (currently 1.5) and `THRESHOLD_CEILING` (currently 200) are the two knobs, and `getDefaultThreshold` is the floor.",
-          "bn": "`autoThresholdFor` সম্পাদনা করুন — `THRESHOLD_HEADROOM` (বর্তমানে ১.৫) ও `THRESHOLD_CEILING` (বর্তমানে ২০০) দুটি নিয়ামক, আর `getDefaultThreshold` হলো নিম্নতলা।"
+          "bn": "`autoThresholdFor` সম্পাদনা করুন — `THRESHOLD_HEADROOM` (বর্তমানে 1.5) এবং `THRESHOLD_CEILING` (বর্তমানে 200) হলো দুটি নব (knob), এবং `getDefaultThreshold` হলো ফ্লোর।"
         }
       },
       {
@@ -518,7 +518,7 @@
         "t": "p",
         "text": {
           "en": "The abstract base means a new window-based policy is about ten lines.",
-          "bn": "অ্যাবস্ট্রাক্ট বেসের কারণে নতুন উইন্ডো-ভিত্তিক পলিসি প্রায় দশ লাইনের।"
+          "bn": "অ্যাবস্ট্রাক্ট বেস থাকার মানে হলো একটি নতুন উইন্ডো-ভিত্তিক পলিসি তৈরি করা প্রায় দশ লাইনের কাজ।"
         }
       },
       {
@@ -534,7 +534,7 @@
         "t": "p",
         "text": {
           "en": "`buildAndShowSettingsDialog()` is 348 lines of imperative JavaFX and is the single largest method in the project. To extract it: create `settings.fxml` with an `fx:controller` of your choice, move the static structure there, and keep only the dynamic parts (spinner ranges, initial values, and the three button handlers) in Java.",
-          "bn": "`buildAndShowSettingsDialog()` ৩৪৮ লাইনের আদেশবাচক জাভাএফএক্স এবং প্রজেক্টের একক বৃহত্তম মেথড। এটি বের করতে: আপনার পছন্দের `fx:controller`-সহ একটি `settings.fxml` তৈরি করুন, স্থিতিশীল কাঠামোটি সেখানে সরান, আর শুধু গতিশীল অংশগুলো (স্পিনারের সীমা, প্রাথমিক মান, তিনটি বোতামের হ্যান্ডলার) জাভায় রাখুন।"
+          "bn": "`buildAndShowSettingsDialog()` হলো 348 লাইনের ইম্পারেটিভ JavaFX এবং এটি প্রজেক্টের একক বৃহত্তম মেথড। এটি এক্সট্র্যাক্ট করতে: আপনার পছন্দের একটি `fx:controller` দিয়ে `settings.fxml` তৈরি করুন, স্ট্যাটিক স্ট্রাকচার সেখানে নিয়ে যান, এবং কেবল ডাইনামিক অংশগুলো (স্পিনার রেঞ্জ, প্রাথমিক মান, এবং তিনটি বাটন হ্যান্ডলার) Java-তে রাখুন।"
         }
       },
       {
@@ -558,7 +558,7 @@
         "t": "p",
         "text": {
           "en": "`RatePolicy` is a pure function of its inputs and needs no JavaFX toolkit beyond `javafx.base` for `ObservableList`, so it tests directly:",
-          "bn": "`RatePolicy` তার ইনপুটের একটি শুদ্ধ ফাংশন এবং `ObservableList`-এর জন্য `javafx.base`-এর বাইরে কোনো জাভাএফএক্স টুলকিট লাগে না, তাই সরাসরি টেস্ট করা যায়:"
+          "bn": "`RatePolicy` হলো এর ইনপুটগুলোর একটি বিশুদ্ধ ফাংশন এবং `ObservableList`-এর জন্য `javafx.base` ছাড়া এর কোনো JavaFX টুলকিটের প্রয়োজন নেই, তাই এটি সরাসরি টেস্ট করা যায়:"
         }
       },
       {
@@ -570,7 +570,7 @@
         "t": "p",
         "text": {
           "en": "Useful cases, all of which caught real bugs: identical bursts shifted by one window length must decide identically; two request types must not count against each other; level must equal `updateLevelFromScore` of the score; a `CRITICAL` client must recover after a cooldown.",
-          "bn": "উপযোগী কেস, যেগুলো প্রতিটিই বাস্তব বাগ ধরেছে: একটি উইন্ডো দৈর্ঘ্য দিয়ে সরানো সদৃশ ঝড় একই সিদ্ধান্ত দিতে হবে; দুটি অনুরোধের ধরন একে অপরের বিপরীতে গোনা হবে না; লেভেল অবশ্যই স্কোরের `updateLevelFromScore`-এর সমান হবে; একটি `CRITICAL` ক্লায়েন্ট কুলডাউনের পরে ফিরে আসতে হবে।"
+          "bn": "দরকারী কেসসমূহ, যার সবগুলোই বাস্তব বাগ ধরেছিল: এক উইন্ডো দৈর্ঘ্য স্থানান্তরিত অভিন্ন বার্স্ট অবশ্যই অভিন্ন সিদ্ধান্ত দেবে; দুটি রিকোয়েস্ট টাইপ একে অপরের বিপরীতে গণনা করা উচিত নয়; লেভেল অবশ্যই স্কোরের `updateLevelFromScore`-এর সমান হতে হবে; একজন `CRITICAL` ক্লায়েন্টকে অবশ্যই একটি কুলডাউনের পরে পুনরুদ্ধার করতে হবে।"
         }
       },
       {
@@ -593,7 +593,7 @@
         "t": "p",
         "text": {
           "en": "A minimal `pom.xml` needs `javafx-controls` and `javafx-fxml` (both pull `javafx-graphics`), `maven.compiler.release` 21, and `javafx-maven-plugin` for a runnable jar. That would remove the hard-coded `/usr/share/openjfx/lib` dependency entirely.",
-          "bn": "একটি ন্যূনতম `pom.xml`-এর জন্য `javafx-controls` ও `javafx-fxml` দরকার (দুটোই `javafx-graphics` আনে), `maven.compiler.release` 21, এবং চালানোর উপযোগী জারের জন্য `javafx-maven-plugin`। এতে হার্ড-কোড করা `/usr/share/openjfx/lib` নির্ভরতা সম্পূর্ণরূপে চলে যাবে।"
+          "bn": "একটি ন্যূনতম `pom.xml`-এর জন্য `javafx-controls` এবং `javafx-fxml` প্রয়োজন (উভয়ই `javafx-graphics` পুল করে), `maven.compiler.release` 21, এবং একটি রানযোগ্য jar-এর জন্য `javafx-maven-plugin`। এটি হার্ড-কোডেড `/usr/share/openjfx/lib` ডিপেন্ডেন্সি সম্পূর্ণরূপে দূর করবে।"
         }
       },
       {
@@ -604,7 +604,7 @@
         }
       }
     ]
-  });
+  });;
 
   DOC.register({
     "id": "troubleshooting",
@@ -648,7 +648,7 @@
         "t": "p",
         "text": {
           "en": "The FXML failed to load, almost always because a referenced `onAction` handler does not exist, or because the controller class moved. The stack trace names the offending attribute.",
-          "bn": "FXML লোড হয়নি, প্রায় সবসময় কারণ উল্লিখিত কোনো `onAction` হ্যান্ডলার নেই, বা কন্ট্রোলার ক্লাস সরে গেছে। স্ট্যাক ট্রেস অপরাধী অ্যাট্রিবিউটের নাম বলে দেয়।"
+          "bn": "`logs.csv` ক্লাসপাতে নেই। এটি `src/`-এর অধীনে থাকে, তাই এটি কেবল তখনই সেখানে পৌঁছায় যদি আপনার বিল্ড সোর্স রুট থেকে নন-`.java` ফাইল কপি করে। একটি ম্যানুয়াল বিল্ডের সাথে, `cp -r resources/com out/classes/` যথেষ্ট নয় — আপনার `cp src/com/simulator/files out/classes/com/simulator/`-ও প্রয়োজন।"
         }
       },
       {
@@ -664,7 +664,7 @@
         "t": "p",
         "text": {
           "en": "A syntax error in `style.css` — usually a selector list that lost a comma, or a multi-line function value whose commas were stripped. The line and column are given. Check brace balance and that every selector in a comma-separated group ends with a comma except the last.",
-          "bn": "`style.css`-এ একটি সিনট্যাক্স ত্রুটি — সাধারণত কমা হারানো সিলেক্টর তালিকা, বা কমা ছেঁকে ফেলা বহু-লাইনের ফাংশন মান। লাইন ও কলাম দেওয়া আছে। ব্র্যাকেটের ভারসাম্য দেখুন এবং কমা-বিভক্ত দলের প্রতিটি সিলেক্টর কমা দিয়ে শেষ হচ্ছে কি না তা দেখুন (শেষটি ছাড়া)।"
+          "bn": "FXML লোড হতে ব্যর্থ হয়েছে, প্রায় সবসময়ই কারণ একটি রেফারেন্সকৃত `onAction` হ্যান্ডলারের অস্তিত্ব নেই, বা কন্ট্রোলার ক্লাসটি স্থানান্তরিত হয়েছে। স্ট্যাক ট্রেস অপরাধী অ্যাট্রিবিউটটির নাম দেয়।"
         }
       },
       {
@@ -680,7 +680,7 @@
         "t": "p",
         "text": {
           "en": "Two likely causes. Either the client is `CRITICAL` and inside its cooldown (it will be refused until a full window passes) — or you have set a custom threshold of 1 or 2 for the type. Check the \"Reload History\" button to get a clean state, and look at the Violations KPI.",
-          "bn": "দুটি সম্ভাব্য কারণ। হয় ক্লায়েন্টটি `CRITICAL` এবং কুলডাউনের ভেতরে (একটি পূর্ণ উইন্ডো না কেটে যাওয়া পর্যন্ত প্রত্যাখ্যাত হবে) — অথবা আপনি ওই টাইপের জন্য কাস্টম থ্রেশহোল্ড ১ বা ২ দিয়েছেন। পরিষ্কার অবস্থায় ফিরতে \"Reload History\" বোতামটি দেখুন, আর Violations KPI-তে তাকান।"
+          "bn": "দুটি সম্ভাব্য কারণ। হয় ক্লায়েন্ট `CRITICAL` এবং তার কুলডাউনের ভেতরে রয়েছে (একটি পূর্ণ উইন্ডো অতিক্রান্ত না হওয়া পর্যন্ত তাকে প্রত্যাখ্যান করা হবে) — অথবা আপনি টাইপটির জন্য 1 বা 2-এর কাস্টম থ্রেশহোল্ড সেট করেছেন। একটি পরিষ্কার স্টেট পেতে \"Reload History\" বাটনটি পরীক্ষা করুন, এবং Violations KPI দেখুন।"
         }
       },
       {
@@ -696,7 +696,7 @@
         "t": "p",
         "text": {
           "en": "The cooldown is one full window long. With the default 10 s window, wait ten seconds and try again. If the window is set to 3600 s, that is an hour by design. Then the client needs enough *accepted* requests to decay its score below the critical threshold — with the default decay of 1 per request, that is 6 requests from 105.",
-          "bn": "কুলডাউন একটি পূর্ণ উইন্ডোর দৈর্ঘ্য। ডিফল্ট ১০ সে উইন্ডোয় দশ সেকেন্ড অপেক্ষা করে আবার চেষ্টা করুন। উইন্ডো ৩৬০০ সে হলে সেটি ডিজাইন করেই এক ঘণ্টা। এরপর ক্লায়েন্টকে ক্রিটিক্যাল থ্রেশহোল্ডের নিচে স্কোর নামাতে যথেষ্ট *গৃহীত* অনুরোধ লাগবে — প্রতি অনুরোধে ডিফল্ট ডিকে ১ হলে ১০৫ থেকে ৬টি অনুরোধ।"
+          "bn": "কুলডাউনটি একটি পূর্ণ উইন্ডো দীর্ঘ। ডিফল্ট 10 s উইন্ডোর সাথে, দশ সেকেন্ড অপেক্ষা করুন এবং আবার চেষ্টা করুন। যদি উইন্ডোটি 3600 s-এ সেট করা থাকে, তবে এটি ডিজাইন অনুসারে এক ঘন্টা। তারপর ক্লায়েন্টের স্কোর ক্রিটিকাল থ্রেশহোল্ডের নিচে নামাতে যথেষ্ট *গৃহীত (accepted)* রিকোয়েস্ট প্রয়োজন — প্রতি রিকোয়েস্টে 1-এর ডিফল্ট ক্ষয়সহ, এটি 105 থেকে 6টি রিকোয়েস্ট।"
         }
       },
       {
@@ -712,7 +712,7 @@
         "t": "p",
         "text": {
           "en": "It is per client **and** per type, so switching type legitimately changes it. It also depends on which client is selected.",
-          "bn": "এটি প্রতি ক্লায়েন্ট **এবং** প্রতি টাইপে, তাই ধরন বদলালে এটি বৈধভাবেই বদলায়। এটি নির্বাচিত ক্লায়েন্টের উপরও নির্ভর করে।"
+          "bn": "এটি প্রতি ক্লায়েন্ট **এবং** প্রতি টাইপের জন্য, তাই টাইপ পরিবর্তন করা বৈধভাবেই এটি পরিবর্তন করে। এটি কোন ক্লায়েন্ট নির্বাচিত তার ওপরও নির্ভর করে।"
         }
       },
       {
@@ -728,7 +728,7 @@
         "t": "p",
         "text": {
           "en": "Every client may be `CRITICAL` and locked out, in which case every generated request is blocked. Check the client registry badges and the Violations KPI. Note also that the simulation moves the visible selection every 800 ms.",
-          "bn": "সব ক্লায়েন্টই হয়তো `CRITICAL` ও লক-আউট, তবে তখন প্রতিটি তৈরি অনুরোধ প্রত্যাখ্যাত হবে। ক্লায়েন্ট রেজিস্ট্রির ব্যাজ ও Violations KPI দেখুন। মনে রাখুন সিমুলেশন প্রতি ৮০০ মিলিসেকেন্ডে দৃশ্যমান সিলেকশন সরায়।"
+          "bn": "প্রতিটি ক্লায়েন্ট `CRITICAL` এবং লকআউট হতে পারে, যে ক্ষেত্রে প্রতিটি উৎপন্ন রিকোয়েস্ট ব্লক করা হয়। ক্লায়েন্ট রেজিস্ট্রি ব্যাজ এবং Violations KPI পরীক্ষা করুন। আরও লক্ষ্য করুন যে সিমুলেশনটি প্রতি 800 ms পরপর দৃশ্যমান সিলেকশনকে স্থানান্তরিত করে।"
         }
       },
       {
@@ -744,7 +744,7 @@
         "t": "p",
         "text": {
           "en": "This was possible before the duplicate check was added. If you see it, one was likely created before the fix; there is no merge, so delete by clearing and reloading, which resets telemetry but keeps the registry.",
-          "bn": "ডুপ্লিকেট যাচাই যোগ হওয়ার আগে এটি সম্ভব ছিল। এটি দেখলে সম্ভবত একটি ফিক্সের আগে তৈরি হয়েছিল; কোনো মার্জ নেই, তাই ক্লিয়ার ও রিলোড করে মুছুন, যা টেলিমেট্রি রিসেট করে কিন্তু রেজিস্ট্রি রাখে।"
+          "bn": "ডুপ্লিকেট চেক যোগ করার আগে এটি সম্ভব ছিল। আপনি যদি এটি দেখতে পান, তবে একটি সম্ভবত ফিক্সের আগে তৈরি করা হয়েছিল; কোনো মার্জ নেই, তাই ক্লিয়ার এবং রিলোড করে মুছে ফেলুন, যা টেলিমেট্রি রিসেট করে কিন্তু রেজিস্ট্রি রাখে।"
         }
       },
       {
@@ -760,7 +760,7 @@
         "t": "p",
         "text": {
           "en": "It is 500×680 while the main window is a fixed 1000×600. On a display shorter than ~700 px the dialog will overflow.",
-          "bn": "এটি ৫০০×৬৮০ আর প্রধান উইন্ডো নির্দিষ্ট ১০০০×৬০০। ~৭০০ px-এর চেয়ে ছোট ডিসপ্লেতে ডায়ালগটি উপচে পড়বে।"
+          "bn": "প্রত্যাশিত এবং ক্ষতিকর নয়। FXML একটি নতুন Scene Builder থেকে এক্সপোর্ট করা হয়েছিল। এটি দূর করতে আপনার রানটাইমের সাথে মেলাতে FXML-এ `xmlns` পরিবর্তন করুন।"
         }
       },
       {
@@ -776,7 +776,7 @@
         "t": "p",
         "text": {
           "en": "Expected and harmless. The FXML was exported from a newer Scene Builder. Change the `xmlns` in the FXML to match your runtime to silence it.",
-          "bn": "প্রত্যাশিত ও নিরাপদ। FXML একটি নতুন Scene Builder থেকে এক্সপোর্ট করা। নীরব করতে FXML-এর `xmlns` আপনার রানটাইমের সঙ্গে মিলিয়ে নিন।"
+          "bn": "আপনি যদি `xmlns`-কে আপনার রানটাইমের চেয়ে *নতুন* সংস্করণে পরিবর্তন করেন, তবে লোডারটি প্রকৃতপক্ষে ব্যর্থ হবে। রানটাইমের সাথে এটি হুবহু মেলান।"
         }
       },
       {
@@ -792,11 +792,11 @@
         "t": "p",
         "text": {
           "en": "If you change `xmlns` to a version *newer* than your runtime, the loader will actually fail. Match it exactly to the runtime.",
-          "bn": "`xmlns` আপনার রানটাইমের চেয়ে *নতুন* কোনো সংস্করণে বদলালে লোডার সত্যিই ব্যর্থ হবে। এটি রানটাইমের সঙ্গে হুবহু মিলিয়ে নিন।"
+          "bn": "আপনি যদি `xmlns`-কে আপনার রানটাইমের চেয়ে *নতুন* সংস্করণে পরিবর্তন করেন, তবে লোডারটি প্রকৃতপক্ষে ব্যর্থ হবে। রানটাইমের সাথে এটি হুবহু মেলান।"
         }
       }
     ]
-  });
+  });;
 
   DOC.register({
     "id": "limitations",
@@ -824,7 +824,7 @@
         "t": "p",
         "text": {
           "en": "`GateKeeper.iml` hard-codes `/usr/share/openjfx/lib`. The project cannot be built by anyone else, on CI, or on a machine where JavaFX lives elsewhere. A `pom.xml` with JavaFX 21 and JUnit 5 is the highest-value missing piece.",
-          "bn": "`GateKeeper.iml` হার্ড-কোড করে `/usr/share/openjfx/lib`। এই প্রজেক্ট অন্য কেউ, CI, বা জাভাএফএক্স অন্য কোথায় থাকা মেশিনে বিল্ড করতে পারে না। JavaFX 21 ও JUnit 5-সহ একটি `pom.xml` এখানে সবচেয়ে মূল্যবান অনুপস্থিত জিনিস।"
+          "bn": "`GateKeeper.iml` `/usr/share/openjfx/lib`-কে হার্ড-কোড করে। প্রজেক্টটি অন্য কারো দ্বারা, CI-তে বা এমন কোনো মেশিনে যেখানে JavaFX অন্য কোথাও থাকে সেখানে তৈরি করা যাবে না। JavaFX 21 এবং JUnit 5 সহ একটি `pom.xml` হলো সবচেয়ে মূল্যবান অনুপস্থিত অংশ।"
         }
       },
       {
@@ -856,7 +856,7 @@
         "t": "p",
         "text": {
           "en": "`RatePolicy.evaluate` takes an `ObservableList`, and `Client` wraps JavaFX properties. That makes the core untestable without JavaFX on the classpath and unusable from a server-side context. Both were deliberate trade-offs for a simulator, but they are the main thing to revisit if this code were ever to head anywhere real.",
-          "bn": "`RatePolicy.evaluate` একটি `ObservableList` নেয়, আর `Client` জাভাএফএক্স প্রপার্টি মোড়ে রাখে। ফলে ক্লাসপাথে জাভাএফএক্স ছাড়া কোর অটেস্টেবল, আর সার্ভার-পার্শ্বের কোনো প্রসঙ্গে অব্যবহারযোগ্য নয়। সিমুলেটরের জন্য দুটোই সচেতন ঝুঁকি-সুবিধা, তবে এই কোড কখনো সত্যিকারের কিছু হলে পুনর্বিচারাধীন হওয়ার প্রথম বিষয় এগুলো।"
+          "bn": "`RatePolicy.evaluate` একটি `ObservableList` গ্রহণ করে, এবং `Client` JavaFX প্রপার্টি র্যাপ করে। এটি ক্লাসপাতে JavaFX ছাড়া কোরটিকে টেস্টের অযোগ্য এবং সার্ভার-সাইড প্রেক্ষাপট থেকে ব্যবহারের অনুপযোগী করে তোলে। উভয়ই একটি সিমুলেটরের জন্য ইচ্ছাকৃত ট্রেড-অফ ছিল, কিন্তু এই কোডটি যদি কখনো বাস্তব কোনো দিকে এগিয়ে যায় তবে এগুলোই প্রধান পুনর্বিবেচনার বিষয়।"
         }
       },
       {
@@ -880,7 +880,7 @@
         "t": "p",
         "text": {
           "en": "`MainApp` does not override `stop()`, so neither `Timeline` is explicitly stopped. The JVM exiting is what ends them.",
-          "bn": "`MainApp` `stop()` ওভাররাইড করে না, তাই কোনো `Timeline`-ও স্পষ্টভাবে থামানো হয় না। JVM বন্ধ হয়েই সেগুলোর শেষ।"
+          "bn": "`MainApp` `stop()` ওভাররাইড করে না, তাই কোনো `Timeline`-ই স্পষ্টভাবে থামানো হয় না। JVM প্রস্থান করাই এদের সমাপ্তি ঘটায়।"
         }
       },
       {
@@ -912,7 +912,7 @@
         "t": "p",
         "text": {
           "en": "Both modals size their `Scene` exactly to the card (`500×680` for a 500-wide card, `560×560` for a padded root), leaving no room for the 25 px `dropshadow` blur to render, so the shadow is cut off at the edges.",
-          "bn": "দুটি মোডালই তাদের `Scene` ঠিক কার্ডের আকারে সাজায় (৫০০ চওড়া কার্ডের জন্য ৫০০×৬৮০, প্যাড করা রুটের জন্য ৫৬০×৫৬০), ফলে ২৫ px `dropshadow` ব্লার আঁকার জায়গাই থাকে না, তাই প্রান্তে ছায়া কেটে যায়।"
+          "bn": "উভয় মোডাল তাদের `Scene`-কে ঠিক কার্ডের মাপে সাইজ করে (একটি 500-প্রশস্ত কার্ডের জন্য `500×680`, একটি প্যাডেড রুটের জন্য `560×560`), যা 25 px `dropshadow` ব্লার রেন্ডার করার জন্য কোনো জায়গা রাখে না, তাই ছায়া প্রান্তে কেটে যায়।"
         }
       },
       {
@@ -928,7 +928,7 @@
         "t": "p",
         "text": {
           "en": "Every 800 ms tick moves the client and type combo boxes, so clicking them while it runs is futile. A click landing between ticks also routes to whichever client the tick last selected.",
-          "bn": "প্রতি ৮০০ মিলিসেকেন্ডের প্রতিটি টিক ক্লায়েন্ট ও ধরনের কম্বো বক্স সরায়, তাই চলাকালীন সেগুলোতে ক্লিক করা নিষ্ফল। দুটি টিকের মধ্যে পড়ে যাওয়া ক্লিকটিও গেলে ওই ক্লায়েন্টেই যায় যেটি শেষ টিকে নির্বাচিত ছিল।"
+          "bn": "প্রতি 800 ms টিক ক্লায়েন্ট এবং টাইপ কম্বো বক্সগুলোকে সরিয়ে দেয়, তাই এটি চলাকালীন সেগুলোতে ক্লিক করা নিষ্ফল। টিকগুলোর মাঝে পড়া একটি ক্লিকও টিক সর্বশেষ যে ক্লায়েন্টকে বেছে নিয়েছিল তার কাছে চলে যায়।"
         }
       },
       {
@@ -944,7 +944,7 @@
         "t": "p",
         "text": {
           "en": "`onSingleRequest` returns without feedback when no client or type is selected, and `startAutoSimulation` returns silently when the registry is empty. Nothing on screen explains why.",
-          "bn": "কোনো ক্লায়েন্ট বা ধরন নির্বাচিত না থাকলে `onSingleRequest` প্রতিক্রিয়াহীন ফিরে আসে, আর রেজিস্ট্রি খালি হলে `startAutoSimulation` নীরবে ফিরে আসে। পর্দায় কিছুই বলে না কেন।"
+          "bn": "কোনো ক্লায়েন্ট বা টাইপ নির্বাচিত না থাকলে `onSingleRequest` কোনো প্রতিক্রিয়া ছাড়াই ফিরে আসে, এবং রেজিস্ট্রি খালি থাকলে `startAutoSimulation` নিঃশব্দে ফিরে আসে। স্ক্রিনে কিছুই ব্যাখ্যা করে না কেন।"
         }
       },
       {
@@ -960,7 +960,7 @@
         "t": "p",
         "text": {
           "en": "Because the peak includes today, a very heavy session can raise a client's own limit. Latent with the bundled data.",
-          "bn": "যেহেতু পিকে আজকের দিন অন্তর্ভুক্ত, খুব ভারী একটি সেশন ক্লায়েন্টের নিজের লিমিট বাড়াতে পারে। বান্ডেল করা ডেটার সঙ্গে এটি নিষ্ক্রিয়।"
+          "bn": "যেহেতু পিকের মধ্যে আজকের দিনটিও অন্তর্ভুক্ত, তাই একটি অত্যন্ত ভারী সেশন একজন ক্লায়েন্টের নিজস্ব লিমিট বাড়িয়ে দিতে পারে। বান্ডল করা ডেটার সাথে এটি সুপ্ত অবস্থায় থাকে।"
         }
       },
       {
@@ -976,7 +976,7 @@
         "t": "p",
         "text": {
           "en": "They are `setEditable(true)` with no input filter, so committing a non-numeric or out-of-range value behaves unpredictably.",
-          "bn": "সেগুলো `setEditable(true)` কিন্তু কোনো ইনপুট ফিল্টার নেই, তাই সংখ্যা নয় বা সীমার বাইরের মান দিলে আচরণ অনির্ভাব্য হয়।"
+          "bn": "কোনো ইনপুট ফিল্টার ছাড়াই সেগুলোকে `setEditable(true)` করা হয়েছে, তাই একটি নন-নিউমেরিক বা আউট-অফ-রেঞ্জ মান সাবমিট করা অপ্রত্যাশিত আচরণ করে।"
         }
       },
       {
@@ -1000,7 +1000,7 @@
         "t": "p",
         "text": {
           "en": "It is required for the auto-calc feature to be meaningful, but it dominates the repository. A generator script plus a 1,000-row sample would be a better trade.",
-          "bn": "অটো-ক্যালক বৈশিষ্ট্য অর্থবহ হতে এটি দরকার, কিন্তু এটি রিপোজিটরি আধিপত্য বহন করে। একটি জেনারেটর স্ক্রিপ্ট এবং ১,০০০ সারির নমুনা ভালো বিনিময় হতো।"
+          "bn": "অটো-ক্যালকুলেশন ফিচারটি অর্থপূর্ণ হওয়ার জন্য এটি প্রয়োজনীয়, তবে এটি রিপোজিটরিতে আধিপত্য বিস্তার করে।"
         }
       },
       {
@@ -1016,7 +1016,7 @@
         "t": "p",
         "text": {
           "en": "It mixes state, policy construction, file I/O, two modals built in imperative Java, and three cell renderers. It is the obvious next thing to split; the README's original plan described a `services` layer that was never built.",
-          "bn": "এতে অবস্থা, পলিসি নির্মাণ, ফাইল I/O, আদেশবাচক জাভায় তৈরি দুটি মোডাল, আর তিনটি সেল রেন্ডারার একসঙ্গে মিশে আছে। এটিই ভাগ করার সবচেয়ে স্পষ্ট পরবর্তী লক্ষ্য; README-র মূল পরিকল্পনায় একটি `services` স্তরের কথা ছিল, যা কখনো তৈরি হয়নি।"
+          "bn": "এবং স্টেট, পলিসি নির্মাণ, ফাইল I/O, ইম্পারেটিভ Java-তে নির্মিত দুটি মোডাল এবং তিনটি সেল রেন্ডারারকে মিশ্রিত করে। এটি বিভক্ত করার জন্য পরবর্তী স্পষ্ট বিষয়; README-এর মূল পরিকল্পনায় একটি `services` লেয়ারের বর্ণনা ছিল যা কখনোই তৈরি করা হয়নি।"
         }
       },
       {
@@ -1032,7 +1032,7 @@
         }
       }
     ]
-  });
+  });;
 
   DOC.register({
     "id": "glossary",
@@ -1076,7 +1076,7 @@
             },
             {
               "en": "A named API caller with accumulated telemetry.",
-              "bn": "জমা টেলিমেট্রিসহ একজন নামাঙ্কিত API ক্রেতা।"
+              "bn": "সঞ্চিত টেলিমেট্রিসহ একজন নামযুক্ত API কলার।"
             }
           ],
           [
@@ -1086,7 +1086,7 @@
             },
             {
               "en": "One attempt by a client, of one type, at one moment.",
-              "bn": "একটি মুহূর্তে, একটি নির্দিষ্ট ধরনে, কোনো ক্লায়েন্টের একটি চেষ্টা।"
+              "bn": "একজন ক্লায়েন্টের একটি নির্দিষ্ট টাইপের, একটি নির্দিষ্ট মুহূর্তের একটি প্রচেষ্টা।"
             }
           ],
           [
@@ -1096,7 +1096,7 @@
             },
             {
               "en": "`READ`, `WRITE`, `LOGIN` or `PAYMENT`; each has a severity weight.",
-              "bn": "`READ`, `WRITE`, `LOGIN` বা `PAYMENT`; প্রতিটির একটি সিভারিটি ওজন আছে।"
+              "bn": "`READ`, `WRITE`, `LOGIN` বা `PAYMENT`; প্রতিটির একটি সিভিয়ারিটি ওয়েট রয়েছে।"
             }
           ],
           [
@@ -1106,7 +1106,7 @@
             },
             {
               "en": "A durable `ACCEPTED`/`BLOCKED` record, built from a request.",
-              "bn": "একটি অনুরোধ থেকে তৈরি স্থায়ী `ACCEPTED`/`BLOCKED` রেকর্ড।"
+              "bn": "একটি স্থায়ী `ACCEPTED`/`BLOCKED` রেকর্ড, যা একটি রিকোয়েস্ট থেকে নির্মিত।"
             }
           ],
           [
@@ -1116,7 +1116,7 @@
             },
             {
               "en": "The time span a rate limit applies over.",
-              "bn": "যে সময়ের মধ্যে রেট লিমিট প্রযোজ্য।"
+              "bn": "যে সময়কাল জুড়ে একটি রেট লিমিট প্রযোজ্য হয়।"
             }
           ],
           [
@@ -1126,7 +1126,7 @@
             },
             {
               "en": "Requests of one type a client may make per window.",
-              "bn": "প্রতি উইন্ডোয় একটি ক্লায়েন্ট একটি ধরনের কতগুলো অনুরোধ করতে পারে।"
+              "bn": "প্রতি উইন্ডোতে একজন ক্লায়েন্ট যে পরিমাণ নির্দিষ্ট টাইপের রিকোয়েস্ট করতে পারে।"
             }
           ],
           [
@@ -1136,7 +1136,7 @@
             },
             {
               "en": "A window on a global grid; bursts across a boundary are split.",
-              "bn": "বৈশ্বিক গ্রিডের উইন্ডো; সীমানা পার হওয়া ঝড় ভাগ হয়ে যায়।"
+              "bn": "একটি গ্লোবাল গ্রিডের ওপর উইন্ডো; সীমানা অতিক্রমকারী বার্স্ট বিভক্ত হয়ে যায়।"
             }
           ],
           [
@@ -1146,7 +1146,7 @@
             },
             {
               "en": "A window that always ends at the newest request.",
-              "bn": "যে উইন্ডো সবসময় সবচেয়ে নতুন অনুরোধে শেষ হয়।"
+              "bn": "একটি উইন্ডো যা সর্বদা সর্বশেষ রিকোয়েস্টে শেষ হয়।"
             }
           ],
           [
@@ -1156,7 +1156,7 @@
             },
             {
               "en": "Accumulated penalty; decays on accepted requests.",
-              "bn": "জমা জরিমানা; গৃহীত অনুরোধে কমে।"
+              "bn": "পুঞ্জীভূত পেনাল্টি; গৃহীত রিকোয়েস্টে হ্রাস পায়।"
             }
           ],
           [
@@ -1166,7 +1166,7 @@
             },
             {
               "en": "`NONE`/`WARNING`/`HIGH`/`CRITICAL`, derived from the score alone.",
-              "bn": "`NONE`/`WARNING`/`HIGH`/`CRITICAL`, কেবল স্কোর থেকেই অনুমানিত।"
+              "bn": "`NONE`/`WARNING`/`HIGH`/`CRITICAL`, কেবল স্কোর থেকে উদ্ভূত।"
             }
           ],
           [
@@ -1176,7 +1176,7 @@
             },
             {
               "en": "How long a `CRITICAL` client stays locked out.",
-              "bn": "`CRITICAL` ক্লায়েন্ট কতক্ষণ লক-আউট থাকে।"
+              "bn": "একজন `CRITICAL` ক্লায়েন্ট কতক্ষণ লকআউট থাকে।"
             }
           ],
           [
@@ -1186,7 +1186,7 @@
             },
             {
               "en": "How much score an accepted request removes.",
-              "bn": "একটি গৃহীত অনুরোধ কত স্কোর সরায়।"
+              "bn": "একটি গৃহীত রিকোয়েস্ট কতটা স্কোর সরিয়ে দেয়।"
             }
           ],
           [
@@ -1196,7 +1196,7 @@
             },
             {
               "en": "Multiplier applied to a penalty, per request type.",
-              "bn": "অনুরোধের ধরন অনুযায়ী জরিমানায় প্রয়োগিত গুণক।"
+              "bn": "প্রতি রিকোয়েস্ট টাইপে পেনাল্টিতে প্রয়োগকৃত গুণক।"
             }
           ],
           [
@@ -1206,7 +1206,7 @@
             },
             {
               "en": "A policy's answer: `allowed` (per request) plus `level` (client risk).",
-              "bn": "পলিসির উত্তর: `allowed` (প্রতি অনুরোধ) এবং `level` (ক্লায়েন্ট ঝুঁকি)।"
+              "bn": "একটি পলিসির উত্তর: `allowed` (প্রতি রিকোয়েস্টে) সাথে `level` (ক্লায়েন্ট ঝুঁকি)।"
             }
           ],
           [
@@ -1216,7 +1216,7 @@
             },
             {
               "en": "`[start, end)` — includes `start`, excludes `end`. Avoids double-counting at boundaries.",
-              "bn": "`[start, end)` — `start` অন্তর্ভুক্ত, `end` বাদ। সীমানায় দুবার গণনা এড়ায়।"
+              "bn": "`[start, end)` — `start` অন্তর্ভুক্ত করে, `end` বাদ দেয়। সীমানায় দ্বিগুণ গণনা এড়ায়।"
             }
           ]
         ]
@@ -1250,7 +1250,7 @@
             },
             {
               "en": "Anything in the scene graph.",
-              "bn": "সিন গ্রাফের যেকোনো কিছু।"
+              "bn": "দৃশ্য গ্রাফের যে কোনো কিছু।"
             }
           ],
           [
@@ -1260,7 +1260,7 @@
             },
             {
               "en": "A styleable layout container / rectangle.",
-              "bn": "স্টাইলযোগ্য লেআউট কনটেইনার / আয়তক্ষেত্র।"
+              "bn": "একটি স্টাইলযোগ্য লেআউট কন্টেইনার / আয়তক্ষেত্র।"
             }
           ],
           [
@@ -1270,7 +1270,7 @@
             },
             {
               "en": "A top-level OS window.",
-              "bn": "অপারেটিং সিস্টেমের উচ্চতর উইন্ডো।"
+              "bn": "একটি শীর্ষ-স্তরের OS উইন্ডো।"
             }
           ],
           [
@@ -1280,7 +1280,7 @@
             },
             {
               "en": "The graph attached to a stage.",
-              "bn": "একটি স্টেজের সঙ্গে যুক্ত গ্রাফ।"
+              "bn": "একটি স্টেজের সাথে সংযুক্ত গ্রাফ।"
             }
           ],
           [
@@ -1290,7 +1290,7 @@
             },
             {
               "en": "The tree of nodes.",
-              "bn": "নোডের গাছ।"
+              "bn": "নোডসমূহের ট্রি।"
             }
           ],
           [
@@ -1300,7 +1300,7 @@
             },
             {
               "en": "JavaFX's XML layout format, loaded by `FXMLLoader`.",
-              "bn": "জাভাএফএক্সের XML লেআউট ফরম্যাট, `FXMLLoader` লোড করে।"
+              "bn": "JavaFX-এর XML লেআউট ফরম্যাট, যা `FXMLLoader` দ্বারা লোড করা হয়।"
             }
           ],
           [
@@ -1310,7 +1310,7 @@
             },
             {
               "en": "The attribute that names a node for controller injection.",
-              "bn": "যে অ্যাট্রিবিউট কন্ট্রোলার ইনজেকশনের জন্য নোডের নাম দেয়।"
+              "bn": "কন্ট্রোলার ইনজেকশনের জন্য একটি নোডের নামকরণকারী অ্যাট্রিবিউট।"
             }
           ],
           [
@@ -1320,7 +1320,7 @@
             },
             {
               "en": "The attribute naming the controller class.",
-              "bn": "কন্ট্রোলার ক্লাসের নাম দেওয়া অ্যাট্রিবিউট।"
+              "bn": "কন্ট্রোলার ক্লাসের নামকরণকারী অ্যাট্রিবিউট।"
             }
           ],
           [
@@ -1330,7 +1330,7 @@
             },
             {
               "en": "JavaFX's single UI thread; UI work must happen on it.",
-              "bn": "জাভাএফএক্সের একক UI থ্রেড; UI-র কাজ এখানেই হতে হবে।"
+              "bn": "JavaFX-এর একক UI থ্রেড; UI-এর কাজ অবশ্যই এতে হতে হবে।"
             }
           ],
           [
@@ -1340,7 +1340,7 @@
             },
             {
               "en": "Schedules work onto the FX thread from another thread.",
-              "bn": "অন্য থ্রেড থেকে FX থ্রেডে কাজ নির্ধিস্ত করে।"
+              "bn": "অন্য থ্রেড থেকে FX থ্রেডে কাজের সময় নির্ধারণ করে।"
             }
           ],
           [
@@ -1350,7 +1350,7 @@
             },
             {
               "en": "A `List` that fires change events.",
-              "bn": "একটি `List` যা পরিবর্তন ইভেন্ট ছুঁড়ে।"
+              "bn": "একটি `List` যা চেঞ্জ ইভেন্ট ফায়ার করে।"
             }
           ],
           [
@@ -1360,7 +1360,7 @@
             },
             {
               "en": "An observable value wrapper (`IntegerProperty` etc.).",
-              "bn": "অবজার্ভেবল মানের র‍্যাপার (`IntegerProperty` ইত্যাদি)।"
+              "bn": "একটি observable ভ্যালু র্যাপার (`IntegerProperty` ইত্যাদি)।"
             }
           ],
           [
@@ -1370,7 +1370,7 @@
             },
             {
               "en": "An automatically recomputing expression over observables.",
-              "bn": "অবজার্ভেবলের উপর স্বয়ংক্রিয়ভাবে পুনরায় হিসাব হওয়া অভিব্যক্তি।"
+              "bn": "observables-এর ওপর স্বয়ংক্রিয়ভাবে পুনঃগণনাকারী এক্সপ্রেশন।"
             }
           ],
           [
@@ -1380,7 +1380,7 @@
             },
             {
               "en": "The lambda declaring which element properties an `ObservableList` watches.",
-              "bn": "যে ল্যাম্বা ঘোষণা করে `ObservableList` কোন উপাদান-প্রপার্টিগুলো নজরে রাখবে।"
+              "bn": "একটি `ObservableList` উপাদানের কোন প্রপার্টিগুলো দেখে তা ঘোষণাকারী ল্যাম্বডা।"
             }
           ],
           [
@@ -1390,7 +1390,7 @@
             },
             {
               "en": "A list widget, and the renderer for one row.",
-              "bn": "একটি তালিকা উইজেট, এবং একটি সারির রেন্ডারার।"
+              "bn": "একটি লিস্ট উইজেট, এবং একটি সারির জন্য রেন্ডারার।"
             }
           ],
           [
@@ -1400,7 +1400,7 @@
             },
             {
               "en": "`ListView`'s row-node recycling; why huge lists are cheap to display.",
-              "bn": "`ListView`-এর সারি-নোড পুনর্ব্যবহার; বড় তালিকা সস্তায় দেখানোর কারণ।"
+              "bn": "`ListView`-এর সারি-নোড রিসাইক্লিং; কেন বিশাল লিস্ট প্রদর্শন করা সাশ্রয়ী।"
             }
           ],
           [
@@ -1410,7 +1410,7 @@
             },
             {
               "en": "The supplier of `ListCell`s for a `ListView`.",
-              "bn": "`ListView`-এর জন্য `ListCell` সরবরাহকারী।"
+              "bn": "একটি `ListView`-এর জন্য `ListCell`-এর সরবরাহকারী।"
             }
           ],
           [
@@ -1420,7 +1420,7 @@
             },
             {
               "en": "The node a `ListView` shows when empty.",
-              "bn": "খালি থাকলে `ListView` যে নোড দেখায়।"
+              "bn": "খালি থাকা অবস্থায় একটি `ListView` যে নোডটি দেখায়।"
             }
           ],
           [
@@ -1430,7 +1430,7 @@
             },
             {
               "en": "A numeric field with increment/decrement arrows.",
-              "bn": "বৃদ্ধি/হ্রাস তিরচিহ্নসহ একটি সংখ্যা ক্ষেত্র।"
+              "bn": "ইনক্রিমেন্ট/ডিক্রিমেন্ট তীরসহ একটি সংখ্যাসূচক ফিল্ড।"
             }
           ],
           [
@@ -1450,7 +1450,7 @@
             },
             {
               "en": "A repeating timer, and one scheduled moment.",
-              "bn": "একটি পুনরাবৃত্ত টাইমার, এবং একটি নির্ধারিত মুহূর্ত।"
+              "bn": "একটি পুনরাবৃত্তিকারী টাইমার, এবং একটি নির্ধারিত মুহূর্ত।"
             }
           ],
           [
@@ -1460,7 +1460,7 @@
             },
             {
               "en": "An animation between two opacity values.",
-              "bn": "দুটি অপাসিটি মানের মধ্যে অ্যানিমেশন।"
+              "bn": "দুটি অপাসিটি মানের মধ্যে একটি অ্যানিমেশন।"
             }
           ],
           [
@@ -1470,7 +1470,7 @@
             },
             {
               "en": "Whether a stage blocks the rest of the application.",
-              "bn": "একটি স্টেজ বাকি অ্যাপ্লিকেশনকে আটকে রাখে কি না।"
+              "bn": "একটি স্টেজ অ্যাপ্লিকেশনের বাকি অংশকে ব্লক করে কি না।"
             }
           ],
           [
@@ -1500,7 +1500,7 @@
             },
             {
               "en": "A named CSS hook applied via `styleClass`.",
-              "bn": "`styleClass` দিয়ে প্রয়োগ করা একটি নামাঙ্কিত CSS হুক।"
+              "bn": "`styleClass`-এর মাধ্যমে প্রয়োগ করা একটি নামযুক্ত CSS হুক।"
             }
           ]
         ]
@@ -1534,7 +1534,7 @@
             },
             {
               "en": "An immutable data carrier (Java 16+). Used for `HistoryRow`, `Window`, `Decision`.",
-              "bn": "অপরিবর্তনীয় ডেটা বাহক (জাভা ১৬+)। `HistoryRow`, `Window`, `Decision`-এর জন্য ব্যবহৃত।"
+              "bn": "একটি অপরিবর্তনীয় ডেটা বাহক (Java 16+)। `HistoryRow`, `Window`, `Decision`-এর জন্য ব্যবহৃত।"
             }
           ],
           [
@@ -1544,7 +1544,7 @@
             },
             {
               "en": "A `switch` over an enum with no `default`; the compiler enforces completeness.",
-              "bn": "`default` ছাড়া এনামের উপর `switch`; কম্পাইলার সম্পূর্ণতা বাস্তবায়ন করে।"
+              "bn": "কোনো `default` ছাড়া একটি এনামের ওপর `switch`; কম্পাইলার সম্পূর্ণতা প্রয়োগ করে।"
             }
           ],
           [
@@ -1554,7 +1554,7 @@
             },
             {
               "en": "`==` or `IdentityHashMap`: same object, not merely equal.",
-              "bn": "`==` বা `IdentityHashMap`: শুধু সমান নয়, একই অবজেক্ট।"
+              "bn": "`==` বা `IdentityHashMap`: একই অবজেক্ট, কেবল সমান নয়।"
             }
           ],
           [
@@ -1602,5 +1602,5 @@
         }
       }
     ]
-  });
+  });;
 })();

@@ -19,7 +19,7 @@
     },
     "lead": {
       "en": "The source document explains each rule where it arises. This appendix collects all of them algebraically, so you can compute a verdict by hand from a client's state without reading any code.",
-      "bn": "মূল নথি প্রতিটি নিয়ম যেখানে ওঠে সেখানেই ব্যাখ্যা করে। এই উপাধিপত্র সবগুলো বীজগণিতে সংগ্রহ করে, যাতে কোনো কোড না পড়েই একটি ক্লায়েন্টের অবস্থা থেকে হাতে সিদ্ধান্ত বের করা যায়।"
+      "bn": "মূল ডকুমেন্ট প্রতিটি নিয়ম যেখানে ওঠে সেখানেই ব্যাখ্যা করে। এই উপাধিপত্র সবগুলো বীজগণিতে সংগ্রহ করে, যাতে কোনো কোড না পড়েই একটি ক্লায়েন্টের অবস্থা থেকে হাতে সিদ্ধান্ত বের করা যায়।"
     },
     "blocks": [
       {
@@ -31,7 +31,7 @@
         },
         "text": {
           "en": "It is not in `ARCHITECTURE.md`. Every symbol and constant below is quoted from that document; the arrangement is this website's contribution.",
-          "bn": "এটি `ARCHITECTURE.md`-তে নেই। নিচের প্রতিটি প্রতীক ও ধ্রুববিন্দু সেই নথি থেকেই উদ্ধৃত; সাজানোর কাজটি এই ওয়েবসাইটের অবদান।"
+          "bn": "এটি `ARCHITECTURE.md`-তে নেই। নিচের প্রতিটি প্রতীক ও ধ্রুববিন্দু সেই ডকুমেন্ট থেকেই উদ্ধৃত; সাজানোর কাজটি এই ওয়েবসাইটের অবদান।"
         }
       },
       {
@@ -898,7 +898,7 @@
     },
     "lead": {
       "en": "The project has no tests. This is the plan for getting them, in the order that maximises the value of each test written, based on the bugs the source document records having actually had.",
-      "bn": "প্রজেক্টে কোনো টেস্ট নেই। এটি সেই পরিকল্পনা, যে ক্রমে লেখা প্রতিটি টেস্টের মূল্য সর্বাধিক হবে, মূল নথিতে বর্ণিত প্রকৃতপক্ষে হওয়া বাগগুলোর ভিত্তিতে।"
+      "bn": "প্রজেক্টে কোনো টেস্ট নেই। এটি সেই পরিকল্পনা, যে ক্রমে লেখা প্রতিটি টেস্টের মূল্য সর্বাধিক হবে, মূল ডকুমেন্টে বর্ণিত প্রকৃতপক্ষে হওয়া বাগগুলোর ভিত্তিতে।"
     },
     "blocks": [
       {
@@ -1159,7 +1159,7 @@
             },
             {
               "en": "For 160 generated scenarios, the sequence of `Decision.allowed` values with eviction equals the sequence without it. This is the proof the source document describes running by hand.",
-              "bn": "১৬০টি তৈরি পরিস্থিতিতে ছাঁটাইসহ ও ছাঁটাই ছাড়া `Decision.allowed`-এর ক্রম অভিন্ন। মূল নথিতে বর্ণিত সেই প্রমাণ, যা হাতে চালানো হয়েছিল।"
+              "bn": "১৬০টি তৈরি পরিস্থিতিতে ছাঁটাইসহ ও ছাঁটাই ছাড়া `Decision.allowed`-এর ক্রম অভিন্ন। মূল ডকুমেন্টে বর্ণিত সেই প্রমাণ, যা হাতে চালানো হয়েছিল।"
             }
           ],
           [
@@ -1225,7 +1225,7 @@
           {
             "text": {
               "en": "**Index vs list.** After any sequence of add/remove/trim operations, `DailyAcceptedIndex` must equal a from-scratch rebuild. This is the assertion the source document already performed once, over 80 client x type pairs.",
-              "bn": "**ইনডেক্স বনাম লিস্ট।** যেকোনো add/remove/trim-এর ক্রমের পরে `DailyAcceptedIndex` শূন্য থেকে নতুন করে তৈরি ইনডেক্সের সমান হতে হবে। মূল নথি এই দাবিটি একবার, ৮০টি ক্লায়েন্ট x টাইপ জোড়ায়, ইতিমধ্যে করেছে।"
+              "bn": "**ইনডেক্স বনাম লিস্ট।** যেকোনো add/remove/trim-এর ক্রমের পরে `DailyAcceptedIndex` শূন্য থেকে নতুন করে তৈরি ইনডেক্সের সমান হতে হবে। মূল ডকুমেন্ট এই দাবিটি একবার, ৮০টি ক্লায়েন্ট x টাইপ জোড়ায়, ইতিমধ্যে করেছে।"
             }
           },
           {

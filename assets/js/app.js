@@ -115,6 +115,7 @@
       }).join("") +
       '<div class="sidebar-foot">' +
       '<a href="../ARCHITECTURE.md">' + DOC.esc(t("sourceDoc")) + " ↗</a>" +
+      '<a href="../ARCHITECTURE_bn.md">' + DOC.esc(t("sourceDocBn")) + " ↗</a>" +
       '<a href="#/' + lang + "/overview" + '">' + DOC.esc(t("allChapters")) + "</a>" +
       "</div>";
   }
@@ -135,7 +136,8 @@
       '<span class="meta-item">' + clockIcon() + minutes + " " + DOC.esc(t("readingTime")) + "</span>",
       '<span class="meta-item">' + listIcon() + h2 + " " + DOC.esc(t("sections")) + "</span>",
       '<span class="meta-item">' + docIcon() + words.toLocaleString("en-US") + " " + DOC.esc(t("wordCount")) + "</span>",
-      '<span class="meta-item">' + linkIcon() + '<a href="../ARCHITECTURE.md">' + DOC.esc(t("sourceDoc")) + " ↗</a></span>"
+      '<span class="meta-item">' + linkIcon() + '<a href="../ARCHITECTURE.md">' + DOC.esc(t("sourceDoc")) + " ↗</a>" +
+      '<a href="../ARCHITECTURE_bn.md">' + DOC.esc(t("sourceDocBn")) + " ↗</a></span>"
     ].join("");
 
     el.doc.innerHTML =
@@ -181,6 +183,7 @@
     el.foot.innerHTML =
       '<div class="foot-links">' +
       '<a href="../ARCHITECTURE.md">' + DOC.esc(t("sourceDoc")) + " ↗</a>" +
+      '<a href="../ARCHITECTURE_bn.md">' + DOC.esc(t("sourceDocBn")) + " ↗</a>" +
       '<button class="btn btn-ghost" id="printBtn" type="button">' + DOC.esc(t("legacy")) + "</button>" +
       "</div>" +
       "<p>" + DOC.md(state.lang, t("sourceNote")) + "</p>" +
