@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GateKeeper — Architecture &amp; Code Reference</title>
+<meta name="description" content="A complete bilingual (English / বাংলা) documentation website for the GateKeeper JavaFX rate-limiting and abuse-detection simulator: every file, every function, every design decision, plus worked examples, recipes and extension chapters.">
+<meta name="color-scheme" content="dark light">
+<meta property="og:type" content="website">
+<meta property="og:title" content="GateKeeper — Architecture &amp; Code Reference">
+<meta property="og:description" content="Full bilingual documentation of the GateKeeper JavaFX rate limiter simulator.">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skipToContent">Skip to content</a>
+
+<div class="progress" id="progress" aria-hidden="true"><i></i></div>
+
+<header class="topbar">
+  <button class="icon-btn menu-btn" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+  </button>
+
+  <a class="brand" href="#/en/overview">
+    <span class="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M12 2.5 20 6v6.2c0 4.6-3.2 8.2-8 9.3-4.8-1.1-8-4.7-8-9.3V6l8-3.5Z"/><path d="M8.4 12.1l2.6 2.6 4.6-5" class="tick"/></svg>
+    </span>
+    <span class="brand-text">
+      <strong>GateKeeper</strong>
+      <small data-i18n="brandSub">Architecture &amp; Code Reference</small>
+    </span>
+  </a>
+
+  <button class="search-trigger" id="searchTrigger" aria-label="Search documentation">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+    <span data-i18n="search">Search</span>
+    <kbd>/</kbd>
+  </button>
+
+  <div class="topbar-tools">
+    <div class="seg" role="group" aria-label="Language">
+      <button class="seg-btn" data-setlang="en">EN</button>
+      <button class="seg-btn" data-setlang="bn">বাংলা</button>
+    </div>
+    <button class="icon-btn" id="themeBtn" aria-label="Toggle colour theme">
+      <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+      <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="shell">
+  <nav class="sidebar" id="sidebar" aria-label="Chapters">
+    <div class="sidebar-inner" id="sidebarInner"></div>
+  </nav>
+  <div class="scrim" id="scrim" hidden></div>
+
+  <main class="main" id="main" tabindex="-1">
+    <div class="layout">
+      <article class="doc" id="doc"></article>
+      <aside class="rail" id="rail" aria-label="On this page">
+        <div class="rail-inner" id="railInner"></div>
+      </aside>
+    </div>
+    <nav class="pager" id="pager" aria-label="Chapter navigation"></nav>
+    <footer class="foot" id="foot"></footer>
+  </main>
+</div>
+
+<div class="palette" id="palette" hidden>
+  <div class="palette-box" role="dialog" aria-modal="true" aria-label="Search">
+    <div class="palette-head">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+      <input id="paletteInput" type="search" autocomplete="off" spellcheck="false" data-i18n-attr="placeholder:searchPlaceholder" placeholder="Search 34 chapters…">
+      <button class="icon-btn" id="paletteClose" aria-label="Close search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <div class="palette-results" id="paletteResults"></div>
+    <div class="palette-foot">
+      <span><kbd>&uarr;</kbd><kbd>&darr;</kbd> <span data-i18n="nav">navigate</span></span>
+      <span><kbd>&crarr;</kbd> <span data-i18n="open">open</span></span>
+      <span><kbd>esc</kbd> <span data-i18n="close">close</span></span>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/dsl.js"></script>
+<script src="assets/js/chapters/00-front.js"></script>
+<script src="assets/js/chapters/01-foundations.js"></script>
+<script src="assets/js/chapters/02-engine.js"></script>
+<script src="assets/js/chapters/03-architecture.js"></script>
+<script src="assets/js/chapters/04-model-policy.js"></script>
+<script src="assets/js/chapters/05-ui-fxml-css.js"></script>
+<script src="assets/js/chapters/06-data-runtime.js"></script>
+<script src="assets/js/chapters/07-rationale-ops.js"></script>
+<script src="assets/js/chapters/08-reference.js"></script>
+<script src="assets/js/chapters/09-extended.js"></script>
+<script src="assets/js/chapters/10-extended2.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
